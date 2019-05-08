@@ -49,6 +49,10 @@ const emailVer = require('../models/emailVer.js');
   });
 
   router.put('/confirm/:token',function(req, res){
-    emailVer.eVerUpdate()
+    let id = jwt.verify(req.params.token, EMAIL_SECRET);
+    emailVer.eVerUpdate(id, function(result){
+      console.log('Account has been updated');
+      res.redirect('/login');
+    });
   })
 
