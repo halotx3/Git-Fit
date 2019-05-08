@@ -10,7 +10,7 @@ const orm = {
     },
     //This will be used for cross checking with the DB to confirm if the active status is true or false
     eVerVal: function(table, id, cb){
-        connection.query('SELECT id, isActive FROM ?? WHERE id = ?', [table,id], function(err,result){
+        connection.query('SELECT * FROM ?? WHERE id = ?', [table,id], function(err,result){
             if (err) throw err
             cb (result)
         })

@@ -11,8 +11,10 @@ const orm = require('../config/orm.js');
             cb(res)
         })
     },
-    eVerUpdate: function(cb){
-        orm.eVerUpdate('account_info',)
+    eVerUpdate: function(val,cb){
+        orm.eVerUpdate('account_info',val, function(res){
+            cb(res)
+        })
     }
   };
 

@@ -24,7 +24,31 @@ const emailVer = require('../models/emailVer.js');
             //Sending some data back to validate
             res.json({ id: result.insertId });
             //Logic sending the email after the account is created
+            const emailToken = jwt.sign(
+              {
+                id: result.insertId
+              },
+              EMAIL_SECRET,
+              {
+                expiresIn:'2h'
+              },
+            );
 
+            const verURL = `http://localhost:3000/confirm/${emailToken}`;
+
+            await transporter.sendMail({
+              to: req.body.email,
+              subject: 'Please Verify Your email to Complete Your Git Fit Registration',
+              html: `Hello,<br>
+              Please use the following link to complete your registration and activate your account:<a href="${verURL}">${verURL}</a>`,
+            });
+
+            if (err) throw err;
+             
         })
+  });
+
+  router.put('/confirm/:token',function(req, res){
+    emailVer.eVerUpdate()
   })
 
