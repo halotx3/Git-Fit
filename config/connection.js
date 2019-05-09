@@ -26,4 +26,3 @@ connection.connect(function(err) {
 
 // Exports connection for ORM/Serverjs usage
   module.exports = connection;
-  
