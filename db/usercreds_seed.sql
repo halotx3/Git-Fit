@@ -1,5 +1,5 @@
 -- usercreds data 
-
+USE gitfit_db;
 insert into usercreds (email, password, active) values ('lfrenzl0@linkedin.com', 'TfVC7iFu', false);
 insert into usercreds (email, password, active) values ('nmarjoram1@ftc.gov', 'gVhcf7RC6fPh', true);
 insert into usercreds (email, password, active) values ('zpenburton2@pbs.org', '7s677voaSdOZ', false);
