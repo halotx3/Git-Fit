@@ -1,0 +1,58 @@
+const express = require('express');
+//Packages for email verifcation
+const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
+const randomstring = require("randomstring");
+
+const router = express.Router();
+//Importing the emailVer model which has the specific ORM code
+const emailVer = require('../models/emailVer.js');
+
+//Creates the transporter for email verification
+  const transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASS,
+    },
+  });
+
+  const EMAIL_SECRET = randomstring.generate();
+
+  router.post('/create', function(req, res){
+        emailVer.createUser([req.body.email, req.body.pass], function(result){
+            //Sending some data back to validate
+            res.json({ id: result.insertId });
+            //Logic sending the email after the account is created
+            const emailToken = jwt.sign(
+              {
+                id: result.insertId
+              },
+              EMAIL_SECRET,
+              {
+                expiresIn:'2h'
+              },
+            );
+
+            const verURL = `http://localhost:3000/confirm/${emailToken}`;
+
+            await transporter.sendMail({
+              to: req.body.email,
+              subject: 'Please Verify Your email to Complete Your Git Fit Registration',
+              html: `Hello,<br>
+              Please use the following link to complete your registration and activate your account:<a href="${verURL}">${verURL}</a>`,
+            });
+
+            if (err) throw err;
+             
+        })
+  });
+
+  router.put('/confirm/:token',function(req, res){
+    let id = jwt.verify(req.params.token, EMAIL_SECRET);
+    emailVer.eVerUpdate(id, function(result){
+      console.log('Account has been updated');
+      res.redirect('/login');
+    });
+  })
+
