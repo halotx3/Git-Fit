@@ -2,7 +2,7 @@ require('dotenv').config();
 const mysql = require('mysql');
 
 
-
+//Stores the DB connection Parameters
 let connection = mysql.createConnection({
     host: process.env.RDS_HOST,
     port: process.env.RDS_PORT,
@@ -26,4 +26,3 @@ connection.connect(function(err) {
 
 // Exports connection for ORM/Serverjs usage
   module.exports = connection;
-  

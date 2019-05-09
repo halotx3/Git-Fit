@@ -1,6 +1,6 @@
 -- *********************************Database creation*******************
-drop database if exists gitfit_db;
-CREATE DATABASE gitfit_db;
+-- drop database if exists gitfit_db;
+-- CREATE DATABASE gitfit_db;
 USE gitfit_db;
 
 -- *********************************Creds Table*******************
