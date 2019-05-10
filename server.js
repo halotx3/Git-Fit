@@ -14,13 +14,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Set Handlebars.
+const exphbs = require('express-handlebars');
 
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
 // Import routes and give the server access to them.
-// const routes = require('./controllers/Controller.js');
+const mainroutes = require('./controller/gitFitController.js');
 
-// app.use(routes);
+app.use(mainroutes);
 
 app.listen(PORT, function() {
   console.log('App now listening at localhost:' + PORT);
 });
+
+
