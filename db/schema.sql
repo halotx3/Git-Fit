@@ -1,6 +1,6 @@
 -- *********************************Database creation*******************
-drop database if exists gitfit_db;
-CREATE DATABASE gitfit_db;
+-- drop database if exists gitfit_db;
+-- CREATE DATABASE gitfit_db;
 USE gitfit_db;
 
 -- *********************************Creds Table*******************
@@ -35,8 +35,10 @@ CREATE TABLE profile
 		gym_city varchar(255) NOT NULL,
         gym_state varchar(255) NOT NULL,
 		gym_zip varchar(255) NOT NULL,
-        latitude varchar(255),
-        longitude varchar(255),
+        hlatitude varchar(255),
+        hlongitude varchar(255),
+		glatitude varchar(255),
+        glongitude varchar(255),
         primary_training_type varchar(255) NOT NULL,
         secondary_training_type varchar(255) NOT NULL,
         level varchar(12) NOT NULL,
