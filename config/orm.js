@@ -17,7 +17,7 @@ const orm = {
     },
     //Updates the active status in the DB to true
     eVerUpdate: function(table, id, cb){
-        connection.query('UPDATE ?? SET isActive = true WHERE id = ?',[table,id], function(err,result){
+        connection.query('UPDATE ?? SET active = 1 WHERE id = ?;',[table,id], function(err,result){
             if (err) throw err
             cb (result)
         })

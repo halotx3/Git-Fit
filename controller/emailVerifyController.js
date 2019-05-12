@@ -12,8 +12,8 @@ const emailVer = require('../models/emailVer.js');
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'cdbreach@gmail.com',
-      pass: 'Brown7322',
+      user: process.env.GMAIL,
+      pass: process.env.GMAIL_PASS,
     },
   });
 
@@ -52,9 +52,11 @@ const emailVer = require('../models/emailVer.js');
         })
   });
 
-  router.put('/confirm/:token',function(req, res){
+  router.get('/confirm/:token',function(req, res){
     let id = jwt.verify(req.params.token, EMAIL_SECRET);
-    emailVer.eVerUpdate(id, function(result){
+    console.log(id)
+    console.log(id.id)
+    emailVer.eVerUpdate(id.id, function(result){
       console.log('Account has been updated');
       res.redirect('/login');
     });
