@@ -17,9 +17,9 @@ app.use(express.json());
 
 
 // Import routes and give the server access to them.
-// const routes = require('./controllers/Controller.js');
+const routes = require('./controller/emailVerifyController.js');
 
-// app.use(routes);
+app.use(routes);
 
 app.listen(PORT, function() {
   console.log('App now listening at localhost:' + PORT);

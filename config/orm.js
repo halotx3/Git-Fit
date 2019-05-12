@@ -3,7 +3,7 @@ const connection = require('../config/connection.js');
 const orm = {
     //This will be posting the new user data to the database
     createUser: function(table, vals, cb){
-        connection.query('INSERT INTO ?? (email,password) VALUES (?,?)',[table,vals], function(err,result){
+        connection.query('INSERT INTO ?? (email,password) VALUES (?)',[table,vals], function(err,result){
             if (err) throw err
             cb(result)
         });
@@ -23,3 +23,5 @@ const orm = {
         })
     }
 }
+
+module.exports = orm;
