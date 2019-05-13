@@ -20,6 +20,9 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Import routes and give the server access to them.
+const everRoutes = require('./controller/emailVerifyController.js');
+
+app.use(everRoutes);
 const mainroutes = require('./controller/gitFitController.js');
 
 app.use(mainroutes);

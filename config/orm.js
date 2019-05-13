@@ -3,7 +3,7 @@ const connection = require('../config/connection.js');
 const orm = {
     //This will be posting the new user data to the database
     createUser: function(table, vals, cb){
-        connection.query('INSERT INTO ?? (email,password) VALUES (?,?)',[table,vals], function(err,result){
+        connection.query('INSERT INTO ?? (email,password) VALUES (?)',[table,vals], function(err,result){
             if (err) throw err
             cb(result)
         });
@@ -17,9 +17,11 @@ const orm = {
     },
     //Updates the active status in the DB to true
     eVerUpdate: function(table, id, cb){
-        connection.query('UPDATE ?? SET isActive = true WHERE id = ?',[table,id], function(err,result){
+        connection.query('UPDATE ?? SET active = 1 WHERE id = ?;',[table,id], function(err,result){
             if (err) throw err
             cb (result)
         })
     }
 }
+
+module.exports = orm;
