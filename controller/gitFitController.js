@@ -6,7 +6,7 @@ const router = express.Router();
 const matching = require('../models/qryinfo.js');
 
 // Create all our routes and set up logic within those routes where required.
-router.get('/', function(req, res) {
+router.get('/profile', function(req, res) {
     matching.match(function(data) {
     const hbsObject = {
       profile: data
@@ -17,7 +17,7 @@ router.get('/', function(req, res) {
     //     return res.status(500).end();
     //   }
     // console.log(data);
-    res.render('index', hbsObject);
+    res.render('profile', hbsObject);
     // res.render('index', { burger: data });
     
   });
@@ -42,5 +42,10 @@ router.get('/', function(req, res) {
   
 // });
 // });
+// Create all our routes and set up logic within those routes where required.
+router.get('/', function(req, res) {
+          
+      res.render('index');
+    });
 
-module.exports = router;
+    module.exports = router;
