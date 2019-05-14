@@ -55,4 +55,5 @@ const emailVer = require('../models/emailVer.js');
       res.redirect('/login');
     });
   })
+  module.exports = router;
 
