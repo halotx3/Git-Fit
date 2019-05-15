@@ -22,7 +22,6 @@ const emailVer = require('../models/emailVer.js');
   router.post('/create', function(req, res){
     console.log(req.body.email);
     console.log(req.body.password);
-    emailVer.eVerVal()
     emailVer.createUser([req.body.email, req.body.password], function(result){
             //Sending some data back to validate
             res.json({ id: result.insertId });
@@ -59,7 +58,7 @@ const emailVer = require('../models/emailVer.js');
     console.log(id.id)
     emailVer.eVerUpdate(id.id, function(result){
       console.log('Account has been updated');
-      res.redirect('/login');
+      res.redirect(`/profile/${id.id}`);
     });
   })
   module.exports = router;
