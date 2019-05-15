@@ -50,6 +50,24 @@ const orm = {
 
               cb(result);
         });
+    },
+    createMatch: function (tableInput, value, cb) {
+        connection.query('INSERT INTO ?? (user_id, match_id, approved, type, block) VALUES (?)', [tableInput, value], function (err, result) {
+            if (err) {
+                throw err;
+            }
+
+              cb(result);
+        });
+    },
+    existMatch: function (tableInput, userid, matchid, type, cb) {
+        console.log(tableInput, userid, matchid, type)
+        connection.query('SELECT * FROM ?? where user_id = ? and match_id = ? and type = ?', [tableInput, userid, matchid, type], function (err, result) {
+            if (err) {
+                throw err;
+            }
+              cb(result);
+        });
     }
 
 

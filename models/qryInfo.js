@@ -18,11 +18,21 @@ const orm = require('../config/orm.js');
         orm.zipmatch('profile', val1, val2, function(res) {
           cb(res);
         });
+      },
+      createMatch: function(cols, vals, cb) {
+        orm.createMatch('gitfit_match', cols, vals, function(res) {
+          cb(res);
+        });
+      },
+      existMatch: function(userid, matchid, type, cb) {
+        orm.existMatch('gitfit_match', userid, matchid, type, function(res) {
+          cb(res);
+        });
       }
       
   };
 
-module.exports = match;
+  module.exports = match;
 
 
 
