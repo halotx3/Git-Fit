@@ -21,6 +21,9 @@ app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
 
 // Import routes and give the server access to them.
+const everRoutes = require('./controller/emailVerifyController.js');
+
+app.use(everRoutes);
 const mainroutes = require('./controller/gitFitController.js');
 
 app.use('/', mainroutes);
@@ -31,5 +34,3 @@ app.use('/matches', mainroutes);
 app.listen(PORT, function() {
   console.log('App now listening at localhost:' + PORT);
 });
-
-
