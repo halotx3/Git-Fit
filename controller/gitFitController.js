@@ -23,24 +23,40 @@ router.get('/profile', function(req, res) {
   });
 });
 
-// router.get('/api/match/:id', function(req, res) {
-//   console.log(req.param.id)
-//   const user_id1 = {id: req.params.id}
+router.get('/profile/:id', function(req, res) {
+  console.log(req.params.id);
+  const user_id1 = req.params.id;
+  // console.log(user_id1);
 
-//   matching.appendMatch([[user_id1], function(result) {
-//     // Send back the ID of the new quote
-//     // res.json({ id: result.insertId });
-//     res.render('index', user_id1);
-//   });
+  matching.findzip([user_id1], function(result) {
+    // Send back the ID of the new quote
+    // res.json({ id: result.insertId });
+    // res.render('profile', user_id1);
+    const zip = result[0].home_zip;
+    console.log(result);
+    console.log(zip);
 
-//   // if (err) {
-//   //     return res.status(500).end();
-//   //   }
-//   // console.log(data);
-//   // res.render('index', hbsObject);
-//   // res.render('index', { burger: data });
+    matching.zipmatch([zip],[result[0].id], function(result) {
+      const hbsObject = {
+        profile: result
+      };
+      console.log(hbsObject);
+      res.render('profile', hbsObject);
   
-// });
+  
+  
+      
+    });
+
+  })
+});
+
+  // if (err) {
+  //     return res.status(500).end();
+  //   }
+  // console.log(data);
+  // res.render('index', hbsObject);
+  // res.render('index', { burger: data });
 // });
 // Create all our routes and set up logic within those routes where required.
 router.get('/', function(req, res) {

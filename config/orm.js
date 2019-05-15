@@ -32,23 +32,27 @@ const orm = {
         });
     },
 
-    appendMatch: function (tableInput, id, cb) {
-        connection.query('SELECT * FROM ?? where id = ??', [tableInput, id], function (err, result) {
+    findzip: function (tableInput, id, cb) {
+        connection.query('SELECT * FROM ?? where id = ?', [tableInput, id], function (err, result) {
             if (err) {
                 throw err;
             }
-                console.log(result[0].primary_training_type);
-            // connection.query('SELECT * FROM ?? where primary_training_type = 'cb(result[0].primary_training_type)'', [tableInput], function (err, result) {
-            //     if (err) {
-            //         throw err;
-            //     }
-            //     cb(result);
-            // });
+              cb(result);
+        });
+    },
+    
 
+    zipmatch: function (tableInput, id, origin, cb) {
+        connection.query('SELECT * FROM ?? where home_zip = ? and id <> ?', [tableInput, id, origin], function (err, result) {
+            if (err) {
+                throw err;
+            }
 
               cb(result);
         });
     }
+
+
 }
 
 
