@@ -64,4 +64,22 @@ router.get('/', function(req, res) {
       res.render('index');
     });
 
-    module.exports = router;
+    router.get('/register', function(req, res) {
+          
+      res.render('register', {title: "signup"});
+    });
+    
+    router.get('/matches', function(req, res) {
+          
+      res.render('matches', {title: "Matches"});
+    });
+    
+
+    // POST method route*************************
+  router.post('/loggedIn', function (req, res) {
+  res.send('POST request to the homepage') //Must enter function here ********************
+
+res.render("register");// Enter the path that user will be redirected to******************
+})
+
+module.exports = router;
