@@ -1,16 +1,16 @@
-<ul>
+<div class="card" style="width: 15rem;">
     {{#each profile}}
 
-
-    <li>
-        <p>{{this.first_name}} {{this.last_name}}</p>
-        <img class="picformat" src={{this.photo}} alt="ProfilePic">
-        <button data-profilematchid="{{this.id}}" data-pactivity="{{this.primary_training_type}}"
+  <img class="card-img-top picformat" src="{{this.photo}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{this.first_name}} {{this.last_name}}</h5>
+    <p class="card-text">Match</p>
+    {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+         <button class="btn btn-success" data-profilematchid="{{this.id}}" data-pactivity="{{this.primary_training_type}}"
             class="gitfit-match">Accept</button>
-        <button data-profilematchid="{{this.id}}" data-pactivity="{{this.primary_training_type}}"
+        <button class="btn btn-dark" data-profilematchid="{{this.id}}" data-pactivity="{{this.primary_training_type}}"
             class="gitfit-match">Block</button>
-    </li>
+  </div> <br>
 
-
-    {{/each}}
-</ul>
+     {{/each}}
+</div>
