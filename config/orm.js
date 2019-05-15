@@ -9,12 +9,12 @@ const orm = {
         });
     },
     //This will be used for cross checking with the DB to confirm if the active status is true or false
-    eVerVal: function (table, id, cb) {
-        connection.query('SELECT * FROM ?? WHERE id = ?', [table, id], function (err, result) {
-            if (err) throw err
-            cb(result)
-        })
-    },
+    // eVerVal: function (table, id, cb) {
+    //     connection.query('SELECT * FROM ?? WHERE id = ?', [table, id], function (err, result) {
+    //         if (err) throw err
+    //         cb(result)
+    //     });
+    // },
     //Updates the active status in the DB to true
     eVerUpdate: function(table, id, cb){
         connection.query('UPDATE ?? SET active = 1 WHERE id = ?;',[table,id], function(err,result){
@@ -50,6 +50,18 @@ const orm = {
 
               cb(result);
         });
+    },
+    pullLogin: function(table,val1, val2, cb){
+        connection.query('SELECT * FROM ?? WHERE email = ? AND password = ?',[table,val1,val2], function(err, result){
+            if (err) throw err
+            cb(result)
+        })
+    },
+    activeLoginSession: function(table, id,cb){
+        connection.query('UPDATE ?? SET logged = 1 WHERE id = ?',[table,id],function(err,result){
+            if (err) throw err
+            cb(result)
+        })
     }
 
 
