@@ -76,9 +76,17 @@ router.get('/', function(req, res) {
         const hbsObject = {
             profile: data
           };
-      res.render('matches', {title: "Matches"});
+      res.render('matches', hbsObject);
     });
   });
+  router.get('/profile', function(req, res) {
+
+    chatMatch.showOnlineUsers(function(data){
+      console.log(data)
+    res.json(data);
+
+  });
+});
 
     router.get('/matches/:id', function(req, res) {
       // matching.match(function(data) {

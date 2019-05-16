@@ -1,3 +1,4 @@
+const axios = require('axios');
 let users = [];
 const connection = require('../config/connection.js');
 let connections = [];
@@ -19,9 +20,12 @@ io.sockets.on('connection', function(socket){
    })
    // Send Message
   socket.on('send message', function(data){
-   console.log(data);
+    
+    io.sockets.emit('new message', {activelist: users, msg: data});
 
-   io.sockets.emit('new message', {activelist: users, msg: data, user: socket.username});
+
+
+   // io.sockets.emit('new message', {activelist: users, msg: data, user: socket.username});
   })
   // New Users
   // socket.on('new user', function(data, callback){

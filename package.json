@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/halotx3/Git-Fit#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "date-and-time": "^0.6.3",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",

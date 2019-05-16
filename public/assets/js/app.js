@@ -22,11 +22,11 @@ $(function() {
     socket.emit('send message', $message.val());
     $message.val('');
   });
-  socket.on('new message', function(data) {
+  socket.on('new message',  function(data) {
 
     console.log(data.activelist);
-    console.log(data.user)
-    $chat.prepend(`<div id=${data.user} class="chatmsg">${data.user}:  ${data.msg}</div>`).prepend(now.toLocaleTimeString());
+    console.log(data)
+    $chat.prepend(`<div id=${data.user} class="chatmsg">User:  ${data.msg}</div>`).prepend(now.toLocaleTimeString());
       if (data.activelist[0] == data.user) {
           $(`#${data.user}`).css('background-color', 'lightblue')
         }

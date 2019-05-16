@@ -51,12 +51,12 @@ const orm = {
               cb(result);
         });
     },
-    showOnlineUsers: function(table, JoinTable, vals){
+    showOnlineUsers: function(table, JoinTable, vals, cb){
       connection.query('SELECT usercreds.email, profile.first_name, usercreds.logged FROM ?? LEFT JOIN ?? on profile.cred_id = usercreds.id WHERE usercreds.logged = ?', [table, JoinTable, vals], function (err, result) {
         if (err){
           throw err;
         }
-          console.log(result);
+          cb(result);
       });
     },
     pullLogin: function(table,val1, cb){
