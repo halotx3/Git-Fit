@@ -25,7 +25,7 @@ $(function() {
       console.log(selected);
   
       // Send the PUT request.
-      $.ajax('/buddies/' + "6", {
+      $.ajax('/profile/' + "6", {
         type: 'PUT',
         data: selected
       }).then(
@@ -51,7 +51,7 @@ $(function() {
       console.log(selected);
   
       // Send the PUT request.
-      $.ajax('/buddies/block' + id, {
+      $.ajax('/profile/block' + id, {
         type: 'PUT',
         data: selected
       }).then(
