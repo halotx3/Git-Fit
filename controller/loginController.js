@@ -20,7 +20,9 @@ router.post('/api/verify', function(req, res){
                 if (result[0].active == 1){
                 logon.activeLogon(id,function(result){
                     // if (err) throw err
-                    return(res.redirect(`/profile/${id}`));
+                    res.json(
+                        {id: id,}
+                    )
                 });
             }else{
                 console.log('This account has not yet been activated')
