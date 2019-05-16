@@ -15,6 +15,9 @@ const orm = require('../config/orm.js');
         orm.eVerUpdate('usercreds',vals, function(res){
             cb(res)
         })
+    },
+    createProfile: function(vals, cb){
+        orm.createProfile('profile', )
     }
   };
 
