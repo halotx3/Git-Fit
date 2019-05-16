@@ -1,18 +1,18 @@
 .logo{
-    width: 10%; 
-    length: 10%; 
-    position: relative; 
+    width: 10%;
+    length: 10%;
+    position: relative;
     margin-left: 60px;
-    margin-top: 60px; 
-    padding-right:10px;  
+    margin-top: 60px;
+    padding-right:10px;
 }
 
 .headerLinks2{
-  color: white; 
+  color: white;
     font-weight: bold;
     padding-right: 10px;
     margin-top: 10px;
-      
+
        }
 
        h1{
@@ -27,61 +27,68 @@
       .block{
         display: block;
         margin: 20%;
-        margin-top:0;  
+        margin-top:0;
         /* margin-right: auto; */
         width:70%;
-        background: white;  
-        height: 100%; 
-        border-radius: 70px; 
-        margin-bottom:0px; 
+        background: white;
+        height: 100%;
+        border-radius: 70px;
+        margin-bottom:0px;
       }
 
       #color{
-          background-color:silver; 
+          background-color:silver;
           /* z-index: -1;  */
           background-size: cover;
-          margin-left: 30px; 
+          margin-left: 30px;
       }
 
       #gitfit{
-          display:inline; 
-          padding-right: 10px; 
-          font-weight: bolder; 
-         
+          display:inline;
+          padding-right: 10px;
+          font-weight: bolder;
+
       }
-     
+
       .blockLinks{
         color: rgb(161, 156, 156);
-        font-weight: bold; 
+        font-weight: bold;
         padding-right: 10px;
-        float: right; 
-        margin-right: 25px; 
-                   
+        float: right;
+        margin-right: 25px;
+
       }
 
       .blockLinks1{
         color: rgb(161, 156, 156);
-        font-weight: bold; 
+        font-weight: bold;
         padding-right: 10px;
-        float: right; 
-        margin-right: 25px;  
-        
-            
+        float: right;
+        margin-right: 25px;
+
+
       }
 
       hr{
         width: 60%;
         margin-left: auto;
-        margin-right: auto; 
-        border:10px; 
+        margin-right: auto;
+        border:10px;
         height: 40%;
       }
 
       .video{
-        width: 30%; 
-        margin-right: 10%; 
+        width: 30%;
+        margin-right: 10%;
       }
 
       .back{
         background-color:rgb(161, 156, 156);
+      }
+      #chatBody {
+        height: 200px;
+        width: 100%;
+        border-radius: 2px solid darkgrey;
+        border: 10px;
+        background-color: ivory;
       }

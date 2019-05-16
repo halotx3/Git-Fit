@@ -4,6 +4,7 @@ const router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
 const matching = require('../models/qryinfo.js');
+const chatMatch = require('../models/chatModel.js')
 
 // Create all our routes and set up logic within those routes where required.
 router.get('/profile', function(req, res) {
@@ -19,7 +20,7 @@ router.get('/profile', function(req, res) {
     // console.log(data);
     res.render('profile', hbsObject);
     // res.render('index', { burger: data });
-    
+
   });
 });
 
@@ -42,10 +43,10 @@ router.get('/profile/:id', function(req, res) {
       };
       console.log(hbsObject);
       res.render('profile', hbsObject);
-  
-  
-  
-      
+
+
+
+
     });
 
   })
@@ -60,20 +61,27 @@ router.get('/profile/:id', function(req, res) {
 // });
 // Create all our routes and set up logic within those routes where required.
 router.get('/', function(req, res) {
-          
+
       res.render('index');
     });
 
     router.get('/register', function(req, res) {
-          
+
       res.render('register', {title: "signup"});
     });
-    
+
     router.get('/matches', function(req, res) {
-          
+
+      chatMatch.showOnlineUsers(function(data){
+        const hbsObject = {
+            profile: data
+          };
       res.render('matches', {title: "Matches"});
     });
-    
+  });
+
+
+
 
     // POST method route*************************
   router.post('/loggedIn', function (req, res) {

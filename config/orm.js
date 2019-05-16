@@ -40,7 +40,7 @@ const orm = {
               cb(result);
         });
     },
-    
+
 
     zipmatch: function (tableInput, id, origin, cb) {
         connection.query('SELECT * FROM ?? where home_zip = ? and id <> ?', [tableInput, id, origin], function (err, result) {
@@ -50,10 +50,15 @@ const orm = {
 
               cb(result);
         });
-    }
-
-
+    },
+    showOnlineUsers: function(table, JoinTable, vals){
+      connection.query('SELECT usercreds.email, profile.first_name, usercreds.logged FROM ?? LEFT JOIN ?? on profile.cred_id = usercreds.id WHERE usercreds.logged = ?', [table, JoinTable, vals], function (err, result) {
+        if (err){
+          throw err;
+        }
+          console.log(result);
+      });
+    },
 }
-
 
 module.exports = orm;
