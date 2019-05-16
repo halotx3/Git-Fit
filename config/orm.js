@@ -51,7 +51,6 @@ const orm = {
               cb(result);
         });
     },
-<<<<<<< HEAD
     createMatch: function (tableInput, value, cb) {
         connection.query('INSERT INTO ?? (user_id, match_id, approved, type, block) VALUES (?)', [tableInput, value], function (err, result) {
             if (err) {
@@ -84,7 +83,7 @@ const orm = {
             if (err) throw err
             cb(result)
         });
-=======
+    },
     showOnlineUsers: function(table, JoinTable, vals, cb){
       connection.query('SELECT usercreds.email, profile.first_name, usercreds.logged FROM ?? LEFT JOIN ?? on profile.cred_id = usercreds.id WHERE usercreds.logged = ?', [table, JoinTable, vals], function (err, result) {
         if (err){
@@ -104,16 +103,12 @@ const orm = {
             if (err) throw err
             cb(result)
         })
-<<<<<<< HEAD
     },
     createProfile: function(table,cols,vals,cb){
         connection.query('INSERT INTO ?? (??) VALUES (?)',[table,cols,vals,function(err,result){
             if (err) throw err
             cb(result)
         }])
-=======
->>>>>>> ef9f42787a9e377337f1c53159faca9920fc6d7d
->>>>>>> 88e6bda99dd01f228d38cf93d33dabfc31e37ce0
     }
 
 
