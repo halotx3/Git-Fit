@@ -38,6 +38,8 @@ const surveyRoutes = require('./controller/surveyController.js');
 app.use(chatRoutes);
 app.use(surveyRoutes);
 
+app.use('/', mainroutes);
+
 app.use('/survey', mainroutes);
 app.use('/register', mainroutes);
 app.use('/matches', mainroutes);
