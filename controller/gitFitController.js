@@ -115,14 +115,8 @@ router.get('/profile/:id', function (req, res) {
       };
       console.log(hbsObject);
       res.render('profile', hbsObject);
-<<<<<<< HEAD
       
       console.log(result.length);
-=======
-
-
-
->>>>>>> ef9f42787a9e377337f1c53159faca9920fc6d7d
 
     });
 
@@ -132,14 +126,6 @@ router.get('/profile/:id', function (req, res) {
 })
 
 // Create all our routes and set up logic within those routes where required.
-<<<<<<< HEAD
-router.get('/', function (req, res) {
-
-  res.render('index');
-});
-
-module.exports = router;
-=======
 router.get('/', function(req, res) {
 
       res.render('index');
@@ -207,4 +193,3 @@ res.render("register");// Enter the path that user will be redirected to********
 })
 
 module.exports = router;
->>>>>>> ef9f42787a9e377337f1c53159faca9920fc6d7d
