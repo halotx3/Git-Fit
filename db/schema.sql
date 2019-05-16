@@ -1,6 +1,6 @@
 -- *********************************Database creation*******************
--- drop database if exists gitfit_db;
--- CREATE DATABASE gitfit_db;
+drop database if exists gitfit_db;
+CREATE DATABASE gitfit_db;
 USE gitfit_db;
 
 -- *********************************Creds Table*******************
@@ -30,7 +30,7 @@ CREATE TABLE profile
         home_state varchar(255) NOT NULL,
 		home_zip varchar(255) NOT NULL,
 		mobile varchar(255) NOT NULL,
-        gym_name varchar(255) NOT NULL,        
+        gym_name varchar(255) NOT NULL,
         gym_street varchar(255) NOT NULL,
 		gym_city varchar(255) NOT NULL,
         gym_state varchar(255) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE profile
         secondary_training_type varchar(255) NOT NULL,
         level varchar(12) NOT NULL,
         time_preference varchar(12) NOT NULL,
-        photo varchar(255) NOT NULL,   
+        photo varchar(255) NOT NULL,
         PRIMARY KEY (id)
 );
 
@@ -58,6 +58,7 @@ CREATE TABLE gitfit_match
 	user_id varchar(255) NOT NULL,
 match_id varchar(255) NOT NULL,
 approved boolean DEFAULT false,
+type varchar (4) NOT NULL,
 block boolean DEFAULT false,
 	PRIMARY KEY (id)
 );
@@ -75,7 +76,3 @@ content varchar(255) NOT NULL,
 time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id)
 );
-
-
-
-
