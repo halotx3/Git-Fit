@@ -115,8 +115,7 @@ router.get('/profile/:id', function (req, res) {
       };
       console.log(hbsObject);
       res.render('profile', hbsObject);
-
-
+      
       console.log(result.length);
 
 
@@ -128,14 +127,6 @@ router.get('/profile/:id', function (req, res) {
 })
 
 // Create all our routes and set up logic within those routes where required.
-
-router.get('/', function (req, res) {
-
-  res.render('index');
-});
-
-module.exports = router;
-
 router.get('/', function(req, res) {
 
       res.render('index');

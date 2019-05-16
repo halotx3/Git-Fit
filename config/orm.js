@@ -103,7 +103,8 @@ const orm = {
             if (err) throw err
             cb(result)
         })
-    },
+    }
+    ,
     createProfile: function(table,cols,vals,cb){
         connection.query('INSERT INTO ?? (??) VALUES (?)',[table,cols,vals,function(err,result){
             if (err) throw err
