@@ -1,4 +1,4 @@
-<div class="card" style="width: 15rem;">
+<div class="card match123" style="width: 15rem;">
     {{#each profile}}
 
   <img class="card-img-top picformat" src="{{this.photo}}" alt="Card image cap">
@@ -6,11 +6,13 @@
     <h5 class="card-title">{{this.first_name}} {{this.last_name}}</h5>
     <p class="card-text">Match</p>
     {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
-         <button class="btn btn-success" data-profilematchid="{{this.id}}" data-pactivity="{{this.primary_training_type}}"
-            class="gitfit-match">Accept</button>
+         <button class="btn btn-success gitfit-accept" id="gitfit-accept" data-profilematchid="{{this.id}}" data-pactivity="{{this.primary_training_type}}"
+                        >Accept</button>
         <button class="btn btn-dark" data-profilematchid="{{this.id}}" data-pactivity="{{this.primary_training_type}}"
-            class="gitfit-match">Block</button>
+            class="gitfit-block">Block</button>
   </div> <br>
 
      {{/each}}
+
 </div>
+  {{>chat}}

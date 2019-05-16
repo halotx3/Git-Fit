@@ -5,11 +5,6 @@ const mysql = require('mysql');
 //Stores the DB connection Parameters
 let connection = mysql.createConnection({
 
-    // host:'localhost',
-    // port: 3306,
-    // user: 'root',
-    // password: 'MySQL2019!!',
-    // database: 'gitfit_db'
 
     // host: process.env.RDS_HOST,
     // port: process.env.RDS_PORT,
