@@ -6,11 +6,11 @@ const orm = require('../config/orm.js');
             cb(res);
         });
     },
-    eVerVal: function(cb){
-        orm.eVerVal('usercreds', vals, function(res){
-            cb(res)
-        })
-    },
+    // eVerVal: function(vals,cb){
+    //     orm.eVerVal('usercreds', vals, function(res){
+    //         cb(res)
+    //     })
+    // },
     eVerUpdate: function(vals,cb){
         orm.eVerUpdate('usercreds',vals, function(res){
             cb(res)

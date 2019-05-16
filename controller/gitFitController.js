@@ -80,9 +80,37 @@ router.get('/', function(req, res) {
     });
   });
 
+    router.get('/matches/:id', function(req, res) {
+      // matching.match(function(data) {
+      //   const hbsObject = {
+      //     profile: data
+      //   };
+      //   console.log(hbsObject);
+
+      const user_id1 = req.params.id;
+      // console.log(user_id1);
+
+      matching.findzip([user_id1], function(result) {
+
+        const zip = result[0].home_zip;
+        console.log(result);
+        console.log(zip);
+
+        matching.zipmatch([zip],[result[0].id], function(result) {
+          const hbsObject = {
+            profile: result
+          };
+          console.log(hbsObject);
+            res.render('matches', hbsObject);
+
+
+        });
 
 
 
+    });
+
+  });
     // POST method route*************************
   router.post('/loggedIn', function (req, res) {
   res.send('POST request to the homepage') //Must enter function here ********************

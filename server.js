@@ -28,8 +28,10 @@ app.set('views', __dirname + '/views');
 // Import routes and give the server access to them.
 
 const everRoutes = require('./controller/emailVerifyController.js');
-
 app.use(everRoutes);
+//Routes for Logging in
+const logonRoutes = require('./controller/loginController');
+app.use(logonRoutes);
 const mainroutes = require('./controller/gitFitController.js');
 const chatRoutes = require('./controller/chatController.js');
 app.use(chatRoutes);

@@ -11,8 +11,35 @@
             <!-- <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
                   Sign Up
                 </button> -->
+<<<<<<< HEAD
 
                 <a class="headerLinks" href="/index"> Login</a>
+=======
+              
+                <a class="headerLinks" data-toggle="modal" data-target="#loginmodal" href="/index"> Login</a>
+                {{!-- Modal for logging in to account --}}
+                <div class="modal" id="loginmodal" tabindex="1" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="loginTitle">Please Log In.</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="logEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                                <br>
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="logPass" placeholder="Password">
+                                <br>
+                                <input class="btn btn-primary" id="logData" type="submit" value="Submit" data-dismiss="modal">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+>>>>>>> 5e34ca8f21c49ff2e856d69889c3493da923470c
                 <a class="headerLinks" href="/register">Sign Up</a>
                 <!-- <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
                    Login
@@ -47,11 +74,11 @@
 
 
         <!-- Four photos in the main index page  -->
-        <img class="image1" src="./img/aerobic.jfif" alt="Aerobic" style="width:256px;height:150px;">
-        <img class="image2" src="./img/walking.jpg" alt="Walking" style="width:256px;height:150px;">
+        <img class="image1" src="assets/img/aerobic.jfif" alt="Aerobic" style="width:256px;height:150px;">
+        <img class="image2" src="assets/img/walking.jpg" alt="Walking" style="width:256px;height:150px;">
         <br>
-        <img class="image3" src="./img/weights.jpg" alt="Weight Lifting" style="width:256px;height:150px;">
-        <img class="image4" src="./img/spin.jpg" alt="Spin Class" style="width:256px;height:150px;">
+        <img class="image3" src="assets/img/weights.jpg" alt="Weight Lifting" style="width:256px;height:150px;">
+        <img class="image4" src="assets/img/spin.jpg" alt="Spin Class" style="width:256px;height:150px;">
 
 
 
