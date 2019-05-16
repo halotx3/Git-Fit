@@ -4,6 +4,7 @@ const router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
 const matching = require('../models/qryinfo.js');
+const chatMatch = require('../models/chatModel.js')
 
 // Create all our routes and set up logic within those routes where required.
 router.get('/profile', function (req, res) {
@@ -114,8 +115,14 @@ router.get('/profile/:id', function (req, res) {
       };
       console.log(hbsObject);
       res.render('profile', hbsObject);
+<<<<<<< HEAD
       
       console.log(result.length);
+=======
+
+
+
+>>>>>>> ef9f42787a9e377337f1c53159faca9920fc6d7d
 
     });
 
@@ -125,9 +132,79 @@ router.get('/profile/:id', function (req, res) {
 })
 
 // Create all our routes and set up logic within those routes where required.
+<<<<<<< HEAD
 router.get('/', function (req, res) {
 
   res.render('index');
 });
 
 module.exports = router;
+=======
+router.get('/', function(req, res) {
+
+      res.render('index');
+    });
+
+    router.get('/register', function(req, res) {
+
+      res.render('register', {title: "signup"});
+    });
+
+    router.get('/matches', function(req, res) {
+
+      chatMatch.showOnlineUsers(function(data){
+        const hbsObject = {
+            profile: data
+          };
+      res.render('matches', hbsObject);
+    });
+  });
+  router.get('/profile', function(req, res) {
+
+    chatMatch.showOnlineUsers(function(data){
+      console.log(data)
+    res.json(data);
+
+  });
+});
+
+    router.get('/matches/:id', function(req, res) {
+      // matching.match(function(data) {
+      //   const hbsObject = {
+      //     profile: data
+      //   };
+      //   console.log(hbsObject);
+
+      const user_id1 = req.params.id;
+      // console.log(user_id1);
+
+      matching.findzip([user_id1], function(result) {
+
+        const zip = result[0].home_zip;
+        console.log(result);
+        console.log(zip);
+
+        matching.zipmatch([zip],[result[0].id], function(result) {
+          const hbsObject = {
+            profile: result
+          };
+          console.log(hbsObject);
+            res.render('matches', hbsObject);
+
+
+        });
+
+
+
+    });
+
+  });
+    // POST method route*************************
+  router.post('/loggedIn', function (req, res) {
+  res.send('POST request to the homepage') //Must enter function here ********************
+
+res.render("register");// Enter the path that user will be redirected to******************
+})
+
+module.exports = router;
+>>>>>>> ef9f42787a9e377337f1c53159faca9920fc6d7d

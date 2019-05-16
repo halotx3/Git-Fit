@@ -9,12 +9,12 @@ const orm = {
         });
     },
     //This will be used for cross checking with the DB to confirm if the active status is true or false
-    eVerVal: function (table, id, cb) {
-        connection.query('SELECT * FROM ?? WHERE id = ?', [table, id], function (err, result) {
-            if (err) throw err
-            cb(result)
-        })
-    },
+    // eVerVal: function (table, id, cb) {
+    //     connection.query('SELECT * FROM ?? WHERE id = ?', [table, id], function (err, result) {
+    //         if (err) throw err
+    //         cb(result)
+    //     });
+    // },
     //Updates the active status in the DB to true
     eVerUpdate: function(table, id, cb){
         connection.query('UPDATE ?? SET active = 1 WHERE id = ?;',[table,id], function(err,result){
@@ -40,7 +40,7 @@ const orm = {
               cb(result);
         });
     },
-    
+
 
     zipmatch: function (tableInput, id, origin, cb) {
         connection.query('SELECT * FROM ?? where home_zip = ? and id <> ?', [tableInput, id, origin], function (err, result) {
@@ -51,6 +51,7 @@ const orm = {
               cb(result);
         });
     },
+<<<<<<< HEAD
     createMatch: function (tableInput, value, cb) {
         connection.query('INSERT INTO ?? (user_id, match_id, approved, type, block) VALUES (?)', [tableInput, value], function (err, result) {
             if (err) {
@@ -83,10 +84,30 @@ const orm = {
             if (err) throw err
             cb(result)
         });
+=======
+    showOnlineUsers: function(table, JoinTable, vals, cb){
+      connection.query('SELECT usercreds.email, profile.first_name, usercreds.logged FROM ?? LEFT JOIN ?? on profile.cred_id = usercreds.id WHERE usercreds.logged = ?', [table, JoinTable, vals], function (err, result) {
+        if (err){
+          throw err;
+        }
+          cb(result);
+      });
+    },
+    pullLogin: function(table,val1, cb){
+        connection.query('SELECT * FROM ?? WHERE email = ?',[table,val1], function(err, result){
+            if (err) throw err
+            cb(result)
+        })
+    },
+    activeLoginSession: function(table, id,cb){
+        connection.query('UPDATE ?? SET logged = 1 WHERE id = ?',[table,id],function(err,result){
+            if (err) throw err
+            cb(result)
+        })
+>>>>>>> ef9f42787a9e377337f1c53159faca9920fc6d7d
     }
 
 
 }
-
 
 module.exports = orm;
