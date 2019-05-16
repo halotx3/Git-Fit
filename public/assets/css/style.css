@@ -142,12 +142,12 @@ font-family: 'Concert One', cursive;
     margin-bottom: 20%;  
 }
 
-.card-body{
+/* .card-body{
     background-color: light rgb(235, 235, 235);
    color: black; 
    border-radius: 50px;
    margin-bottom:20px;    
-}
+} */
 
 
 /*************************** Register.html CSS Below ******************/
@@ -195,4 +195,13 @@ body {
   background-size: cover;
   text-align: center;
 }
+
+#txtcolor{
+  color:  white
+}
+
+#users{
+  border-radius: 20px;
+}
+
 /*

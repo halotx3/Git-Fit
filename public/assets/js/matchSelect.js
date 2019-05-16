@@ -1,5 +1,9 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
+
+
+
+
     $('.gitfit-accept').on('click', function(event){
         console.log("Yellow");
     })
@@ -21,7 +25,7 @@ $(function() {
       console.log(selected);
   
       // Send the PUT request.
-      $.ajax('/profile/' + "6", {
+      $.ajax('/buddies/' + "6", {
         type: 'PUT',
         data: selected
       }).then(
@@ -47,7 +51,7 @@ $(function() {
       console.log(selected);
   
       // Send the PUT request.
-      $.ajax('/profile/block' + id, {
+      $.ajax('/buddies/block' + id, {
         type: 'PUT',
         data: selected
       }).then(

@@ -25,6 +25,8 @@
 
       h4 {
         font-size: 100px;
+        color: white;
+
       }
       li {
        
@@ -95,14 +97,15 @@
         background-color:rgb(161, 156, 156);
       }
       .col-md-4 {
-        background-color: purple;
+        background-color: gray;
+        border-radius: 20px;
       }
       #users {
-        background-color: purple;
+        background-color: white;
       }
       #chatBody {
         height: 300px;
-        width: 550px;
+        width: 350px;
         border-radius: 5px solid black;
         border: 10px;
         background-color: white;
