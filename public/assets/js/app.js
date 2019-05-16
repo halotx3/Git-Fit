@@ -26,7 +26,8 @@ $(function() {
 
     console.log(data.activelist);
     console.log(data)
-    $chat.prepend(`<div id=${data.user} class="chatmsg">User:  ${data.msg}</div>`).prepend(now.toLocaleTimeString());
+    console.log(data)
+        $chat.prepend(`<div id=${data.user} class="chatmsg">${data.msg}</div>`).prepend(`User ${now.toLocaleTimeString()}`);
       if (data.activelist[0] == data.user) {
           $(`#${data.user}`).css('background-color', 'lightblue')
         }
@@ -54,7 +55,7 @@ $(function() {
     // let html = "";
       // console.log(data + '2')
       for (let i = 0; i < data.length; i++ ){
-      html += `<li class="list-group"> ${data[i]}</li>`;
+      html += `<li class="list-group strong"> ${data[i]}</li>`;
       $users.html(html);
     };
   });

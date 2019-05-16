@@ -1,0 +1,151 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="card">
+            <div class="photo1-profile space col-lg-12">
+                <div>
+                    <h1 style="text-align: center; padding-top: 5px;">GitFit Profile</h1>
+                    <h2 style="text-align: center;">Please enter your profile Information</h2>
+                    <h3 style="text-align: center;">To complete your profile information, please provide information
+                        below.</h3>
+                </div>
+            </div>
+        </div>
+        <br>
+        <form class="userInfo create-surveyform">
+
+            <table>
+                <div class="card-body">
+                    <tr>
+                        <h3>Personal Information</h3>
+                    </tr>
+                    <tr>
+                        <label for="idFirstName">First Name</label>
+                        <input type="firstName" name="FirstName" id="FirstName" placeholder="">
+                        <label for="idLastName">Last Name</label>
+                        <input type="LastName" id="LastName" placeholder="">
+                    </tr>
+                    <tr>
+                        <label for="gender">Gender</label>
+                        <input type="radio" id="idgenderMale" placeholder="Gender" value="1"> Male>
+                        <input type="radio" id="genderFemale" placeholder="Gender" value="0" checked> Female>
+                    </tr>
+                    <br />
+                    <br />
+                    <tr>
+                        <label for="idHomeStr">Home Street Address</label>
+                        <input type="text" id="HomeSteet" placeholder="">
+                        <label for="idHomeCity">Home City</label>
+                        <input type="text" id="HomeCity" placeholder="">
+                        <label for="idHomeState">Home State</label>
+                        <input type="text" id="HomeState" placeholder="GA">
+                    </tr>
+                    <br />
+                    <br />
+                    <tr>
+                        <label for="idHomeZip"> Home Zip</label>
+                        <input type="text" id="HomeZip" placeholder="">
+                        <label for="idMobilePh">Mobile Phone</label>
+                        <input type="text" id="Mobile" placeholder="">
+                    </tr>
+                    <br />
+                    <br />
+                </div>
+                <div>
+                    <tr>
+                        <!-- <td style="padding-top: 50px;">  -->
+                        <h3>Workout Information</h3>
+                    </tr>
+                    <tr>
+                        <label for="idGymStr">Gym Street Address</label>
+                        <input type="text" id="idGymStreet" placeholder="">
+                        <label for="idGymCity">Gym City</label>
+                        <input type="text" id="idGymCity" placeholder="">
+                        <label for="idGymState">Gym State</label>
+                        <input type="text" id="idGymState" placeholder="">
+                    </tr>
+                    <br />
+                    <br />
+                </div>
+                <div>
+                    <tr>
+                        <!-- <td style="padding-top: 50px;"> -->
+                        <h3>Training Information</h3>
+                    </tr>
+                    <tr>
+                        <div class="row">
+                            <div>
+                                <label for="PrExcer">Primary Excercise</label>
+                            </div>
+                            <div class="col-md-6">
+                                <select id="PrExcer" name="Primary Excercise">
+                                    <option value="nba">Basketball</option>
+                                    <option value="cardio">Cardio</option>
+                                    <option value="crfit">CrossFit</option>
+                                    <option value="pilates">Pilates</option>
+                                    <option value="run">Running</option>
+                                    <option value="spin">Spin</option>
+                                    <option value="swimming">Swimming</option>
+                                    <option value="tennis">Tennis</option>
+                                    <option value="walking">Walking</option>
+                                    <option value="wtraining">Weight Training</option>
+                                    <option value="yoga">Yoga</option>
+
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <select id="idprlevel" name="Primary Excercise Level">
+                                    <option value="beglevel">Beginner</option>
+                                    <option value="intlevel">Intermidiate</option>
+                                    <option value="adlevl">Advanced</option>
+                                </select>
+                            </div>
+                    </tr>
+                </div>
+                <br />
+                <tr>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="ScExcer">Secondary Excercise</label>
+                        </div>
+                        <div class="class=col-md-6">
+                            <select id="idScExcer" name="Secondary Excercise">
+                                <option value="nba">Basketball</option>
+                                <option value="cardio">Cardio</option>
+                                <option value="crfit">CrossFit</option>
+                                <option value="pilates">Pilates</option>
+                                <option value="run">Running</option>
+                                <option value="spin">Spin</option>
+                                <option value="swimming">Swimming</option>
+                                <option value="tennis">Tennis</option>
+                                <option value="walking">Walking</option>
+                                <option value="wtraining">Weight Training</option>
+                                <option value="yoga">Yoga</option>
+                            </select>
+                        </div>
+                        <div class="class=col-md-6">
+                            <select id="idsclevel" name="Second Excercise Level">
+                                <option value="beglevel">Beginner</option>
+                                <option value="intlevel">Intermidiate</option>
+                                <option value="adlevl">Advanced</option>
+                            </select>
+                        </div>
+                    </div>
+                </tr>
+
+                <br />
+                <br />
+
+                <div style="text-align: center; ">
+                    <button style="width:150px;" type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+
+            </table>
+        </form>
+    </div>
+</div>
+</div>
+</body>
+
+</html>

@@ -172,3 +172,27 @@ font-family: 'Concert One', cursive;
 #registrationProcess{
   text-align: center; 
 }
+
+/******************************* Survey.html CSS ****************************/
+
+.photo1-profile{
+  background: url(../assets/images/workout_partners-run.jpg) ;
+  height: 25em; 
+  width: 100%; 
+  text-align: center;
+  color: white;
+  padding-top: 70px;
+  text-align: center;
+  font-size: 25px; 
+  font-family: 'Permanent Marker', cursive;
+  font-family: 'Concert One', cursive;
+  
+}
+
+body {
+  padding-top: 5px;
+ 
+  background-size: cover;
+  text-align: center;
+}
+/*

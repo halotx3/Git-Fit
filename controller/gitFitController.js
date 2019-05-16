@@ -33,7 +33,7 @@ router.put('/profile/:id', function (req, res){
   let approved = true;
 
   matching.updateMatch(approved, user_id1, matchid, function (){
-    
+
     // res.json({ id: res.insertId});
     res.send(true)
     console.log("update happened");
@@ -107,7 +107,7 @@ router.get('/profile/:id', function (req, res) {
     const zip = result[0].home_zip;
     console.log(result);
     console.log(zip);
-    
+
 
     matching.zipmatch([zip], [result[0].id], function (result) {
       const hbsObject = {
@@ -115,8 +115,15 @@ router.get('/profile/:id', function (req, res) {
       };
       console.log(hbsObject);
       res.render('profile', hbsObject);
+<<<<<<< HEAD
       
       console.log(result.length);
+=======
+
+
+      console.log(result.length);
+
+>>>>>>> 0e5458d43636c380d51b485cebfdac9d02357139
 
     });
 
@@ -126,6 +133,17 @@ router.get('/profile/:id', function (req, res) {
 })
 
 // Create all our routes and set up logic within those routes where required.
+<<<<<<< HEAD
+=======
+
+router.get('/', function (req, res) {
+
+  res.render('index');
+});
+
+module.exports = router;
+
+>>>>>>> 0e5458d43636c380d51b485cebfdac9d02357139
 router.get('/', function(req, res) {
 
       res.render('index');
