@@ -109,6 +109,11 @@ const orm = {
             if (err) throw err
             cb(result)
         }])
+    },
+    createsurvey: function (){
+        connection.query('INSERT INTO ?? (??) VALUES (?)', [table,cols,vals],function(err,result){
+
+        })
     }
 
 

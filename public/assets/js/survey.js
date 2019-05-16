@@ -41,13 +41,17 @@ $(function(){
             secondaryexer: secondaryEx,
             primarylevel: primaryLvl,
             secondarylevel: secondaryLvl
-        }
+        };
         
         //If checkbox is ticked, sends the results to the server to be added to the database
-        $.ajax('/verify', {
-            type: 'PUT',
-            data: userProfile
-        }).then(function(data){
+        $.ajax('/create',{
+            type: 'POST',
+            data: profile
+        }).then(function(){
+            
             console.log(data)
-        })
+        });
+
+    })
+})
 
