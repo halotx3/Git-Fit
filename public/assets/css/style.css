@@ -176,7 +176,7 @@ font-family: 'Concert One', cursive;
 /******************************* Survey.html CSS ****************************/
 
 .photo1-profile{
-  background: url(../assets/images/workout_partners-run.jpg) ;
+  background: url(../img/workout_partners-run.jpg) ;
   height: 25em; 
   width: 100%; 
   text-align: center;
@@ -204,4 +204,5 @@ body {
   border-radius: 20px;
 }
 
+/* addding something so it will upload */
 /*
