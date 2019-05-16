@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
-const matching = require('../models/qryinfo.js');
+const matching = require('../models/qryInfo.js');
 const chatMatch = require('../models/chatModel.js')
 
 // Create all our routes and set up logic within those routes where required.
