@@ -58,6 +58,7 @@ CREATE TABLE gitfit_match
 	user_id varchar(255) NOT NULL,
 match_id varchar(255) NOT NULL,
 approved boolean DEFAULT false,
+type varchar (4) NOT NULL,
 block boolean DEFAULT false,
 	PRIMARY KEY (id)
 );

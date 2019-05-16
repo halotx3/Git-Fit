@@ -11,3 +11,12 @@ where id = 1;
 update gitfit_db.profile set photo =
 "http://68.media.tumblr.com/17d4c4c8834ef4315156f6f735c44037/tumblr_ogck3fnmk41qh6y6po1_1280.jpg"
 where id = 2;
+
+update gitfit_db.profile set photo =
+"https://www.mensjournal.com/wp-content/uploads/mf/1280-selfie.jpg"
+where id = 10;
+
+
+update gitfit_db.profile set photo =
+"http://68.media.tumblr.com/17d4c4c8834ef4315156f6f735c44037/tumblr_ogck3fnmk41qh6y6po1_1280.jpg"
+where id = 11;
