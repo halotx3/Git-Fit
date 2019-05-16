@@ -51,8 +51,8 @@ const orm = {
               cb(result);
         });
     },
-    pullLogin: function(table,val1, val2, cb){
-        connection.query('SELECT * FROM ?? WHERE email = ? AND password = ?',[table,val1,val2], function(err, result){
+    pullLogin: function(table,val1, cb){
+        connection.query('SELECT * FROM ?? WHERE email = ?',[table,val1], function(err, result){
             if (err) throw err
             cb(result)
         })

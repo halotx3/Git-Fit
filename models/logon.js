@@ -1,8 +1,8 @@
 const orm = require('../config/orm.js');
 
     const logORM = {
-        pullLogin: function(val1,val2,cb){
-            orm.pullLogin('usercreds',val1,val2,function(res){
+        pullLogin: function(val1,cb){
+            orm.pullLogin('usercreds',val1,function(res){
                 cb(res)
             })
         },
