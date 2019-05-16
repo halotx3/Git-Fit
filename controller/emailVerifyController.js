@@ -12,7 +12,7 @@ const emailVer = require('../models/emailVer.js');
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: process.env.GMAIL_USER,
+      user: process.env.GMAIL,
       pass: process.env.GMAIL_PASS,
     },
   });
@@ -20,7 +20,9 @@ const emailVer = require('../models/emailVer.js');
   const EMAIL_SECRET = randomstring.generate();
 
   router.post('/create', function(req, res){
-        emailVer.createUser([req.body.email, req.body.pass], function(result){
+    console.log(req.body.email);
+    console.log(req.body.password);
+    emailVer.createUser([req.body.email, req.body.password], function(result){
             //Sending some data back to validate
             res.json({ id: result.insertId });
             //Logic sending the email after the account is created
@@ -36,23 +38,27 @@ const emailVer = require('../models/emailVer.js');
 
             const verURL = `http://localhost:3000/confirm/${emailToken}`;
 
-            await transporter.sendMail({
+             transporter.sendMail({
               to: req.body.email,
               subject: 'Please Verify Your email to Complete Your Git Fit Registration',
               html: `Hello,<br>
               Please use the following link to complete your registration and activate your account:<a href="${verURL}">${verURL}</a>`,
+            },(error, result) => {
+              if (error) return console.error(error);
+              return console.log(result);
             });
-
-            if (err) throw err;
              
+            res.status(201).end;
         })
   });
 
-  router.put('/confirm/:token',function(req, res){
+  router.get('/confirm/:token',function(req, res){
     let id = jwt.verify(req.params.token, EMAIL_SECRET);
-    emailVer.eVerUpdate(id, function(result){
+    console.log(id)
+    console.log(id.id)
+    emailVer.eVerUpdate(id.id, function(result){
       console.log('Account has been updated');
-      res.redirect('/login');
+      res.redirect(`/profile/${id.id}`);
     });
   })
-
+  module.exports = router;
