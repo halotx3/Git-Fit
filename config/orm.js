@@ -68,6 +68,21 @@ const orm = {
             }
               cb(result);
         });
+    },
+    //Updates the active status in the DB to true
+    updateMatch: function (table, approved, userid, matchid, cb){
+        connection.query('UPDATE ?? SET approved = ? WHERE user_id = ? and match_id = ?',[table, approved, userid, matchid], function(err,result){
+            if (err) throw err
+            cb(result)
+        });
+    }
+    ,
+    //Updates the active status in the DB to true
+    updateBlock: function (table, block, userid, matchid, cb){
+        connection.query('UPDATE ?? SET block = ? WHERE user_id = ? and match_id = ?',[table, block, userid, matchid], function(err,result){
+            if (err) throw err
+            cb(result)
+        });
     }
 
 
