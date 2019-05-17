@@ -1,12 +1,22 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
 
+    var url = window.location.pathname;
+    console.log(url)
+    var id = url.substring(url.lastIndexOf('/') + 1);
+    console.log(id)
 
-
-
-    $('.gitfit-accept').on('click', function(event){
-        console.log("Yellow");
-    })
+    $.ajax('/profile/match/' + id, {
+        type: 'PUT',
+        data: id
+      }).then(
+        function() {
+          console.log('create the match', id);
+          // Reload the page to get the updated list
+          location.reload();
+ 
+        }
+      );
 
     $('#gitfit-accept').on('click', function(event) {
         // const user_id1 = req.params.id
