@@ -72,13 +72,13 @@ router.put('/profile/match/:id', function (req, res) {
       // res.render('profile', hbsObject);
       console.log(result2.length);
       for (let x = 0; x < result2.length; x++) {
-        console.log(result2[0].id);
-        console.log(result2[1].id);
-        console.log(user_id1);
+        // console.log(result2[0].id);
+        // console.log(result2[1].id);
+        // console.log(user_id1);
 
         matching.existMatch(user_id1, `${result2[x].id}`, "home", function (result, err) {
-          console.log(result);
-          console.log(err);
+          // console.log(result);
+          // console.log(err);
           if (result.length <= 0 ) {
             matching.createMatch([user_id1, `${result2[x].id}`, "false", "home", "false"], function () {
               console.log("Create match shows data!!")
