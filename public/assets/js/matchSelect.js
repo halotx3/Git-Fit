@@ -1,6 +1,9 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
 
+  $('#messageArea').hide();
+
+  // variables fro the URL with the ID
     var url = window.location.pathname;
     // console.log(url)
     var id = url.substring(url.lastIndexOf('/') + 1);
@@ -50,6 +53,10 @@ $(function() {
 
       );
     });
+
+    $('#gitfitMessage').on('click', function(){
+      $('#messageArea').show();
+    })
 
   
 
