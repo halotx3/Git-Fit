@@ -19,28 +19,15 @@ $(function() {
       );
 
     $('#gitfit-accept').on('click', function(event) {
-        // const user_id1 = req.params.id
-        // const id = $(this).data('burgerid');
-        console.log("hello");
-      const matchid = this.dataset.profilematchid;
-      
-      console.log(matchid);
 
-    // let pick = false
-  
-      const selected = {
-        // approved: pick,
-        profilematchid: matchid
-      };
-      console.log(selected);
   
       // Send the PUT request.
-      $.ajax('/profile/' + "6", {
+      $.ajax('/profile/' + id, {
         type: 'PUT',
-        data: selected
+        data: id
       }).then(
         function() {
-          console.log('changed accept', pick);
+          console.log('changed accept', id);
           // Reload the page to get the updated list
           location.reload();
         }
@@ -48,25 +35,14 @@ $(function() {
     });
   
     $('.gitfit-block').on('click', function(event) {
-        // const user_id1 = req.params.id
-
-      const matchid = $(this).data('profilematchid');
-      console.log(matchid);
-
-    let pick = false
-  
-      const selected = {
-        block: pick
-      };
-      console.log(selected);
   
       // Send the PUT request.
       $.ajax('/profile/block' + id, {
         type: 'PUT',
-        data: selected
+        data: id
       }).then(
         function() {
-          console.log('changed block', pick);
+          console.log('changed block', id);
           // Reload the page to get the updated list
           location.reload();
         }
