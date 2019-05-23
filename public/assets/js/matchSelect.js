@@ -11,7 +11,7 @@ $(function() {
 
     $.ajax('/profile/match/' + id, {
         type: 'PUT',
-        data: id
+        // data: id
       }).then(
         function() {
           console.log('create the match', id);
@@ -21,13 +21,17 @@ $(function() {
         }
       );
 
-      $('#gitfitAccept').on('click', function() {
+      $('.btn-success').on('click', function(event) {
         console.log("clicked on accept button")
-        console.log(url)
-        console.log(id)
-        $.ajax('/profile/' + id, {
+
+        // console.log(url)
+        // console.log(id)
+        const profilematchid = $(event.target).data('profilematchid')
+        // const profilematchid = $('.btn-success').data('profilematchid')
+        console.log(profilematchid)
+        $.ajax(`/profile/${id}`, {
           type:'PUT',
-          data: id
+          data: {profilematchid: profilematchid}
         }).then(
           function(){
             console.log('Accepted match', id);
@@ -38,12 +42,14 @@ $(function() {
       });
     
   
-    $('#gitfitBlock').on('click', function(event) {
+    $('.btn-dark').on('click', function(event) {
       console.log("clicked on block button")
       // Send the PUT request.
-      $.ajax('/profile/block/' + id, {
+      const profilematchid = $(event.target).data('profilematchid')
+      console.log(profilematchid)
+      $.ajax(`/profile/block/${id}`, {
         type: 'PUT',
-        data: id
+        data: {profilematchid: profilematchid}
       }).then(
         function() {
           console.log('Match block', id);
