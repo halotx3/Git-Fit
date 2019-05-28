@@ -1,5 +1,6 @@
 $(function(){
     $('#submitData').on('click', function(event){
+        console.log ('  Test survey.js')
         let fName = $('#idFirstName').val().trim()
         let lName = $('#idLastName').val().trim()
         let genderM = $('#idgenderMale').val().trim();
@@ -44,9 +45,9 @@ $(function(){
         };
         
         //If checkbox is ticked, sends the results to the server to be added to the database
-        $.ajax('/create',{
+        $.ajax('/survey',{
             type: 'POST',
-            data: profile
+            data: userProfile
         }).then(function(){
             
             console.log(data)

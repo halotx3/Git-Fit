@@ -20,32 +20,32 @@
                     </tr>
                     <tr>
                         <label for="idFirstName">First Name</label>
-                        <input type="firstName" name="FirstName" id="FirstName" placeholder="">
+                        <input class="form-control" type="firstName" name="FirstName" id="FirstName" placeholder="">
                         <label for="idLastName">Last Name</label>
-                        <input type="LastName" id="LastName" placeholder="">
+                        <input class="form-control" type="LastName" id="LastName" placeholder="">
                     </tr>
                     <tr>
                         <label for="gender">Gender</label>
-                        <input type="radio" id="idgenderMale" placeholder="Gender" value="1"> Male>
-                        <input type="radio" id="genderFemale" placeholder="Gender" value="0" checked> Female>
+                        <input class="form-control" type="radio" id="idgenderMale" placeholder="Gender" value="1"> Male>
+                        <input class="form-control" type="radio" id="idgenderFemale" placeholder="Gender" value="0" checked> Female>
                     </tr>
                     <br />
                     <br />
                     <tr>
                         <label for="idHomeStr">Home Street Address</label>
-                        <input type="text" id="HomeSteet" placeholder="">
+                        <input class="form-control" type="text" id="HomeSteet" placeholder="">
                         <label for="idHomeCity">Home City</label>
-                        <input type="text" id="HomeCity" placeholder="">
+                        <input class="form-control" type="text" id="HomeCity" placeholder="">
                         <label for="idHomeState">Home State</label>
-                        <input type="text" id="HomeState" placeholder="GA">
+                        <input class="form-control" type="text" id="HomeState" placeholder="GA">
                     </tr>
                     <br />
                     <br />
                     <tr>
                         <label for="idHomeZip"> Home Zip</label>
-                        <input type="text" id="HomeZip" placeholder="">
+                        <input class="form-control" type="text" id="HomeZip" placeholder="">
                         <label for="idMobilePh">Mobile Phone</label>
-                        <input type="text" id="Mobile" placeholder="">
+                        <input class="form-control" type="text" id="Mobile" placeholder="">
                     </tr>
                     <br />
                     <br />
@@ -57,11 +57,11 @@
                     </tr>
                     <tr>
                         <label for="idGymStr">Gym Street Address</label>
-                        <input type="text" id="idGymStreet" placeholder="">
+                        <input class="form-control" type="text" id="idGymStreet" placeholder="">
                         <label for="idGymCity">Gym City</label>
-                        <input type="text" id="idGymCity" placeholder="">
+                        <input class="form-control" type="text" id="idGymCity" placeholder="">
                         <label for="idGymState">Gym State</label>
-                        <input type="text" id="idGymState" placeholder="">
+                        <input class="form-control" type="text" id="idGymState" placeholder="">
                     </tr>
                     <br />
                     <br />
@@ -77,7 +77,7 @@
                                 <label for="PrExcer">Primary Excercise</label>
                             </div>
                             <div class="col-md-6">
-                                <select id="PrExcer" name="Primary Excercise">
+                                <select class="form-control" id="PrExcer" name="Primary Excercise">
                                     <option value="nba">Basketball</option>
                                     <option value="cardio">Cardio</option>
                                     <option value="crfit">CrossFit</option>
@@ -91,10 +91,10 @@
                                     <option value="yoga">Yoga</option>
 
                                 </select>
-                            </div>
+                            {{!-- </div>
 
-                            <div class="col-md-6">
-                                <select id="idprlevel" name="Primary Excercise Level">
+                            <div class="col-md-6"> --}}
+                                <select class="form-control" id="idprlevel" name="Primary Excercise Level">
                                     <option value="beglevel">Beginner</option>
                                     <option value="intlevel">Intermidiate</option>
                                     <option value="adlevl">Advanced</option>
@@ -109,7 +109,7 @@
                             <label for="ScExcer">Secondary Excercise</label>
                         </div>
                         <div class="class=col-md-6">
-                            <select id="idScExcer" name="Secondary Excercise">
+                            <select class="form-control" id="idScExcer" name="Secondary Excercise">
                                 <option value="nba">Basketball</option>
                                 <option value="cardio">Cardio</option>
                                 <option value="crfit">CrossFit</option>
@@ -122,9 +122,9 @@
                                 <option value="wtraining">Weight Training</option>
                                 <option value="yoga">Yoga</option>
                             </select>
-                        </div>
-                        <div class="class=col-md-6">
-                            <select id="idsclevel" name="Second Excercise Level">
+                        {{!-- </div>
+                        <div class="class=col-md-6"> --}}
+                            <select class="form-control" id="idsclevel" name="Second Excercise Level">
                                 <option value="beglevel">Beginner</option>
                                 <option value="intlevel">Intermidiate</option>
                                 <option value="adlevl">Advanced</option>
@@ -137,7 +137,7 @@
                 <br />
 
                 <div style="text-align: center; ">
-                    <button style="width:150px;" type="submit" class="btn btn-primary">Submit</button>
+                    <button  id="submitData" style="width:150px;" type="submit" class="btn btn-primary">Submit</button>
                 </div>
 
 

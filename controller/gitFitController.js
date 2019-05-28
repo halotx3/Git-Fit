@@ -25,78 +25,78 @@ router.get('/profile', function (req, res) {
 });
 
 router.put('/profile/:id', function (req, res) {
-  console.log(req.params.id);
-  const user_id1 = req.params.id;
-  const matchid = req.body.profilematchid
-  console.log(matchid)
-  console.log(user_id1)
-  let approved = true;
+//   console.log(req.params.id);
+//   const user_id1 = req.params.id;
+//   const matchid = req.body.profilematchid
+//   console.log(matchid)
+//   console.log(user_id1)
+//   let approved = true;
 
-  matching.updateMatch(approved, user_id1, matchid, function () {
+//   matching.updateMatch(approved, user_id1, matchid, function () {
 
-    // res.json({ id: res.insertId});
-    res.send(true)
-    console.log("update happened");
-  })
-});
+//     // res.json({ id: res.insertId});
+//     res.send(true)
+//     console.log("update happened");
+//   })
+// });
 
-router.put('/profile/block/:id', function (req, res) {
-  console.log(req.params.id);
-  const user_id1 = req.params.id;
-  const matchid = req.body.profilematchid
-  // console.log(matchid)
-  // console.log(user_id1)
-  let block = true;
+// router.put('/profile/block/:id', function (req, res) {
+//   console.log(req.params.id);
+//   const user_id1 = req.params.id;
+//   const matchid = req.body.profilematchid
+//   // console.log(matchid)
+//   // console.log(user_id1)
+//   let block = true;
 
-  matching.updateBlock(block, user_id1, matchid, function () {
-    console.log(block, matchid, user_id1)
+//   matching.updateBlock(block, user_id1, matchid, function () {
+//     console.log(block, matchid, user_id1)
 
-    // res.json({ id: res.insertId});
-    res.send(false)
-    console.log("BLOCKED USER MATCH");
-  })
-});
+//     // res.json({ id: res.insertId});
+//     res.send(false)
+//     console.log("BLOCKED USER MATCH");
+//   })
+// });
 
-router.put('/profile/match/:id', function (req, res) {
-  // console.log(req.params.id);
-  const user_id1 = req.params.id;
-  matching.findzip([user_id1], function (result1) {
-    const zip = result1[0].home_zip;
-    // console.log(result);
-    // console.log(zip);
-    matching.zipmatch([zip], [result1[0].id], function (result2) {
-      const hbsObject = {
-        profile: result2
-      };
-      console.log(hbsObject);
-      // res.render('profile', hbsObject);
-      console.log(result2.length);
-      for (let x = 0; x < result2.length; x++) {
-        // console.log(result2[0].id);
-        // console.log(result2[1].id);
-        // console.log(user_id1);
+// router.put('/profile/match/:id', function (req, res) {
+//   // console.log(req.params.id);
+//   const user_id1 = req.params.id;
+//   matching.findzip([user_id1], function (result1) {
+//     const zip = result1[0].homezip; // add _ to homezip
+//     // console.log(result);
+//     // console.log(zip);
+//     matching.zipmatch([zip], [result1[0].id], function (result2) {
+//       const hbsObject = {
+//         profile: result2
+//       };
+//       console.log(hbsObject);
+//       // res.render('profile', hbsObject);
+//       console.log(result2.length);
+//       for (let x = 0; x < result2.length; x++) {
+//         // console.log(result2[0].id);
+//         // console.log(result2[1].id);
+//         // console.log(user_id1);
 
-        matching.existMatch(user_id1, `${result2[x].id}`, "home", function (result, err) {
-          // console.log(result);
-          // console.log(err);
-          if (result.length <= 0 ) {
-            matching.createMatch([user_id1, `${result2[x].id}`, "false", "home", "false"], function () {
-              console.log("Create match shows data!!")
-            }); //creatematch  
+//         matching.existMatch(user_id1, `${result2[x].id}`, "home", function (result, err) {
+//           // console.log(result);
+//           // console.log(err);
+//           if (result.length <= 0 ) {
+//             matching.createMatch([user_id1, `${result2[x].id}`, "false", "home", "false"], function () {
+//               console.log("Create match shows data!!")
+//             }); //creatematch  
             
-          }else{
-            console.log("Already exists!!")  
-          } 
+//           }else{
+//             console.log("Already exists!!")  
+//           } 
 
-        })
-
-
+//         })
 
 
-      }//forloop
 
-    }) //zipmatch
-  }) //findzip
+
+//       }//forloop
+
+//     }) //zipmatch
+//   }) //findzip
 }); //put
 
 
