@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card match123 d-inline-block" style="width: 12rem;">
+      {{#each profile}}
+      {{!-- <div class="row" >
+  <div class="col-sm-6"> --}}
+      <div class="d-inline-block">
+        {{!-- style= "display-inline: auto" --}}
+        <img class="card-img-top picformat" src="{{this.photo}}" alt="Card image cap">
+        <div class="card-body" style="margin-bottom: 5%">
+          <h5 class="card-title">{{this.first_name}} {{this.last_name}}</h5>
+          <p class="card-text">Match</p>
+          {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+          <button class="btn btn-success" id="gitfitAccept" data-profilematchid="{{this.id}}"
+            data-pactivity="{{this.primary_training_type}}">Accept</button>
+          <button class="btn btn-dark" id="gitfitBlock" data-profilematchid="{{this.id}}" 
+          data-pactivity="{{this.primary_training_type}}">Block</button>
+          <button class="btn btn-info" id="gitfitMessage" data-profilematchid="{{this.id}}" 
+          data-pactivity="{{this.primary_training_type}}">Chat</button>
+
+        </div>
+        {{!-- <br> --}}
+      </div>
+      {{!-- </div>
+      </div> --}}
+
+      {{/each}}
+
+      {{!-- </div> --}}
+    </div>
+
+  </div>
+
+  <div class="col-sm-6" id="messageChat">
+    {{>chat}}
+  </div>
+</div>
