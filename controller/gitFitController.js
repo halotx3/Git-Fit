@@ -54,6 +54,7 @@ router.put('/profile/block/:id', function (req, res) {
     // res.json({ id: res.insertId});
     res.send(false)
     console.log("BLOCKED USER MATCH");
+    // all working
   })
 });
 
