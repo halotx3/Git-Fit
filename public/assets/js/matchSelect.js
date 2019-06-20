@@ -64,7 +64,7 @@ $(function() {
 
       );
     });
-
+// Hiding the message item
     $('#gitfitMessage').on('click', function(){
       $('#messageArea').show();
     })
