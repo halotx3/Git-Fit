@@ -7,19 +7,24 @@ $(function() {
     var url = window.location.pathname;
     // console.log(url)
     var id = url.substring(url.lastIndexOf('/') + 1);
+    
     // console.log(id)
-
+    // Adding if statement so that it does not keep reloading the screen on homepage
+  if(url = '/profile/' +id){
+    console.log(`Looking at this site ${url}`)
     $.ajax('/profile/match/' + id, {
-        type: 'PUT',
-        // data: id
-      }).then(
-        function() {
-          console.log('create the match', id);
-          // Reload the page to get the updated list
-          location.reload();
- 
-        }
-      );
+      type: 'PUT',
+      // data: id
+    }).then(
+      function() {
+        console.log('create the match', id);
+        // Reload the page to get the updated list
+        location.reload();
+
+      }
+    );
+
+  }
 
       $('.btn-success').on('click', function(event) {
         console.log("clicked on accept button")
