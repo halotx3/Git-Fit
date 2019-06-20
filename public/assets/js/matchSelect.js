@@ -11,7 +11,7 @@ $(function() {
     // console.log(id)
     // Adding if statement so that it does not keep reloading the screen on homepage
   if(url = '/profile/' +id){
-    console.log(`Show where it is looking ${url}`)
+    console.log(`Looking at this site ${url}`)
     $.ajax('/profile/match/' + id, {
       type: 'PUT',
       // data: id

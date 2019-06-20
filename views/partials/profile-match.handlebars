@@ -1,7 +1,9 @@
+<div class="container">
 <div class="row">
-  <div class="col-sm-4">
-    <div class="card match123 d-inline-block" style="width: 12rem;">
       {{#each profile}}
+  <div class="col">
+    <div class="card match123 d-inline-block" style="width: 12rem;">
+  
       {{!-- <div class="row" >
   <div class="col-sm-6"> --}}
       <div class="d-inline-block">
@@ -9,7 +11,7 @@
         <img class="card-img-top picformat" src="{{this.photo}}" alt="Card image cap">
         <div class="card-body" style="margin-bottom: 5%">
           <h5 class="card-title">{{this.first_name}} {{this.last_name}}</h5>
-          <p class="card-text">Match</p>
+          <p class="card-text"></p>
           {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
           <button class="btn btn-success" id="gitfitAccept" data-profilematchid="{{this.id}}"
             data-pactivity="{{this.primary_training_type}}">Accept</button>
@@ -19,19 +21,22 @@
           data-pactivity="{{this.primary_training_type}}">Chat</button>
 
         </div>
-        {{!-- <br> --}}
+
       </div>
-      {{!-- </div>
-      </div> --}}
 
-      {{/each}}
+    {{!-- </div> --}}
+ 
 
-      {{!-- </div> --}}
-    </div>
+  {{!-- </div> --}}
+   
 
-  </div>
 
+</div> {{! end of card }}
+</div> {{! end of col }}
+   {{/each}}
+</div>{{! end of row }}
   <div class="col-sm-6" id="messageChat">
     {{>chat}}
   </div>
-</div>
+
+</div> {{! end of container }}
