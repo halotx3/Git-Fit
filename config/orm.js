@@ -117,6 +117,15 @@ const orm = {
             cb(result);
         });
     }
+    // ,
+    // matchLimit: function (tableInput, id, type, cb) {
+    //     connection.query('SELECT * FROM ?? where id = ? and type = ? limit 5 and block = "0"', [tableInput, id, type], function (err, result) {
+    //         if (err) {
+    //             throw err;
+    //         }
+    //           cb(result);
+    //     });
+    // }
 
 
 }
