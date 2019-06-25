@@ -46,6 +46,12 @@ const match = {
         console.log(block, userid, matchid);
         cb(res);
       });
+    },
+    matchLimit: function(userid, type, cb){
+      orm.matchLimit('gitfit_match',userid, type, function (res){ 
+        console.log(userid, type);
+        cb(res);
+      })
     }
 }
   
