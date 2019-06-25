@@ -46,10 +46,12 @@ const match = {
         console.log(block, userid, matchid);
         cb(res);
       });
+    },
+    latNlong: function(cols, vals, cb){
+      orm.latNlong('profile', cols, vals, function(req, res){
+        cb(res);
+      });
     }
 }
-  
+
   module.exports = match;
-
-
-

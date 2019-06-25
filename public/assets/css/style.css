@@ -1,11 +1,11 @@
 /************************ Media Queries for Wide Screen***********************/
 /* @media only screen and (max-width: 900px) { */
 /* .headerLinks{
-   color:black; 
+   color:black;
    font-weight: bold;
    padding-right: 10px;
    margin-top: 10px;
-      
+
       } */
 
 h1{
@@ -18,84 +18,84 @@ h1{
 
 body {
   padding-top: 5px;
- 
+
   background-size: cover;
   text-align: center;
 }
 
 .photo1{
   background: url(../img/cleargym2.jpg) no-repeat center;
-  height: 25em; 
-  width: 100%; 
-  position: fixed; 
-  z-index: -1; 
+  height: 25em;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
   background-size: cover;
-  
+
 }
 
 #whyWorkoutalone {
-  opacity: 1; 
-  transform: translateY(0px); 
+  opacity: 1;
+  transform: translateY(0px);
   color: white;
   text-align: center;
-  font-size: 75px; 
+  font-size: 75px;
   /* font-weight: bolder; */
   /* font-family: 'Raleway', sans-serif; */
   font-family: 'Permanent Marker', cursive;
 font-family: 'Concert One', cursive;
-  padding-top: 70px; 
-  text-decoration: underline;    
+  padding-top: 70px;
+  text-decoration: underline;
 }
 
 #dontSlip{
   font-family: cursive;
-  font-size: 24px; 
-  opacity: 1; 
-  text-align: center; 
-  padding-top: 220px; 
-  
+  font-size: 24px;
+  opacity: 1;
+  text-align: center;
+  padding-top: 220px;
+
 }
 
 .newInnovative{
-  opacity: 1; 
-  transform: translateY(0px); 
-  color: rgb(230, 13, 13); 
+  opacity: 1;
+  transform: translateY(0px);
+  color: rgb(230, 13, 13);
   text-align: center;
-  font-size: 25px; 
+  font-size: 25px;
   /* font-weight: bolder; */
   font-family: 'Raleway', sans-serif;
   /* padding-top: 5%;  */
-  font-weight: bold; 
-  
- 
+  font-weight: bold;
+
+
 }
 
 .fourPhotos {
   position: relative;
   top: 0;
   left: 0;
-   
+
 }
-  
+
 .image1 {
   position: relative;
   top: 0;
   left: 0;
-  margin-left: 45px; 
-  border-radius: 50px; 
-  width: 165px; 
-  height: 105px; 
-  
+  margin-left: 45px;
+  border-radius: 50px;
+  width: 165px;
+  height: 105px;
+
  }
 
 .image2 {
   position: relative;
   top: 0;
-  left:100px; 
-  border-radius: 50px; 
-  width: 165px; 
-  height: 105px;  
-   
+  left:100px;
+  border-radius: 50px;
+  width: 165px;
+  height: 105px;
+
  }
 
 .image3 {
@@ -104,19 +104,19 @@ font-family: 'Concert One', cursive;
   left: 0;
   margin-left: 45px;
   border-radius: 50px;
-  width: 165px; 
-  height: 105px; 
- 
-} 
+  width: 165px;
+  height: 105px;
+
+}
 .image4 {
   position: relative;
   top: 50px;
   left: 100px;
   border-radius: 50px;
-  width: 165px; 
-  height: 105px; 
+  width: 165px;
+  height: 105px;
 
-} 
+}
 
 #header {
   font-weight: bold;
@@ -134,64 +134,64 @@ font-family: 'Concert One', cursive;
 
 #login{
     /* padding-bottom: 50px;  */
-    padding-bottom: 15%; 
-    font-weight: bold; 
-    text-align: right; 
-    color: white; 
+    padding-bottom: 15%;
+    font-weight: bold;
+    text-align: right;
+    color: white;
     font-size: 1.3em;
-    margin-bottom: 20%;  
+    margin-bottom: 20%;
 }
 
 /* .card-body{
     background-color: light rgb(235, 235, 235);
-   color: black; 
+   color: black;
    border-radius: 50px;
-   margin-bottom:20px;    
+   margin-bottom:20px;
 } */
 
 
 /*************************** Register.html CSS Below ******************/
 .form-group {
-  opacity: 1; 
-  transform: translatey(6px); 
+  opacity: 1;
+  transform: translatey(6px);
   color: black;
   /* background-color: white;  */
-  font-size: 15px; 
- box-sizing: border-box;  
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-  padding: 10px; 
-  
-   
+  font-size: 15px;
+ box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 10px;
+
+
 }
 
 #createYouraccount{
-  text-align: center; 
-  margin-top: 5px; 
+  text-align: center;
+  margin-top: 5px;
 }
 
 #registrationProcess{
-  text-align: center; 
+  text-align: center;
 }
 
 /******************************* Survey.html CSS ****************************/
 
 .photo1-profile{
   background: url(../img/workout_partners-run.jpg) ;
-  height: 25em; 
-  width: 100%; 
+  height: 25em;
+  width: 100%;
   text-align: center;
   color: white;
   padding-top: 70px;
   text-align: center;
-  font-size: 25px; 
+  font-size: 25px;
   font-family: 'Permanent Marker', cursive;
   font-family: 'Concert One', cursive;
-  
+
 }
 
 body {
   padding-top: 5px;
- 
+
   background-size: cover;
   text-align: center;
 }

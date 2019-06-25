@@ -31,6 +31,7 @@ router.put('/profile/:id', function (req, res) {
   console.log(matchid)
   console.log(user_id1)
   let approved = true;
+  console.log(`{Profile Object:]   :::::::${req}`)
 
   matching.updateMatch(approved, user_id1, matchid, function () {
 
@@ -59,19 +60,19 @@ router.put('/profile/block/:id', function (req, res) {
 });
 
 router.put('/profile/match/:id', function (req, res) {
-  // console.log(req.params.id);
+
   const user_id1 = req.params.id;
   matching.findzip([user_id1], function (result1) {
-    const zip = result1[0].home_zip;
+    // const zip = result1[0].home_zip;
     // console.log(result);
     // console.log(zip);
-    matching.zipmatch([zip], [result1[0].id], function (result2) {
+    matching.zipmatch([ [result1[0].id], function (result2) {
       const hbsObject = {
         profile: result2
       };
       console.log(hbsObject);
       // res.render('profile', hbsObject);
-      console.log(result2.length);
+      // console.log(result2.length);
       for (let x = 0; x < result2.length; x++) {
         // console.log(result2[0].id);
         // console.log(result2[1].id);
@@ -83,21 +84,18 @@ router.put('/profile/match/:id', function (req, res) {
           if (result.length <= 0 ) {
             matching.createMatch([user_id1, `${result2[x].id}`, "false", "home", "false"], function () {
               console.log("Create match shows data!!")
-            }); //creatematch  
-            
+            }); //creatematch
+
           }else{
-            console.log("Already exists!!")  
-          } 
+            console.log("Already exists!!")
+          }
 
         })
 
-
-
-
       }//forloop
 
-    }) //zipmatch
-  }) //findzip
+    }])//zipmatch
+ })//findzip
 }); //put
 
 
@@ -105,7 +103,7 @@ router.put('/profile/match/:id', function (req, res) {
 
 router.get('/profile/:id', function (req, res) {
   console.log(req.params.id);
-  const user_id1 = req.params.id;
+   const user_id1 = req.params.id;
 
   // const userObj = {
   //   person: user_id1

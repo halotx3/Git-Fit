@@ -1,33 +1,32 @@
-
-
 $(function() {
   let socket = io.connect();
   let $messageForm = $('#messageForm');
   let $message = $('#message');
-  let $chat = $('#chat');
+  let $chat = $('#chatBody');
   let $messageArea = $('#messageArea');
   let $userFormArea = $('#userFormArea');
   let $userForm = $('#userForm');
   let $users = $('#users');
   let $username = $('#username');
-  let now = new Date()
   let username = '';
   let html = "";
+  let now = moment().fromNow();
 
 
   $messageForm.submit(function(e) {
     e.preventDefault();
-
     console.log(now)
+
     socket.emit('send message', $message.val());
     $message.val('');
   });
   socket.on('new message',  function(data) {
 
     console.log(data.activelist);
-    console.log(data)
-    console.log(data)
-        $chat.prepend(`<div id=${data.user} class="chatmsg">${data.msg}</div>`).prepend(`User ${now.toLocaleTimeString()}`);
+
+        $chat.append(`User: ${now}`);
+        $chat.append(`<div id=${data.user} class="chatmsg">${data.msg}</div>`);
+
       if (data.activelist[0] == data.user) {
           $(`#${data.user}`).css('background-color', 'lightblue')
         }

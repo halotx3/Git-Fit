@@ -43,7 +43,7 @@ const orm = {
 
 
     zipmatch: function (tableInput, id, origin, cb) {
-        connection.query('SELECT * FROM ?? where home_zip = ? and id <> ?', [tableInput, id, origin], function (err, result) {
+        connection.query('SELECT * FROM ?? where home_zip = ? and id = ?', [tableInput, id, origin], function (err, result) {
             if (err) {
                 throw err;
             }
@@ -115,9 +115,14 @@ const orm = {
         connection.query('INSERT INTO ?? (??) VALUES (?)', [table,cols,vals],function(err,result){
 
         })
+    },
+    latNlong: function(table, cols, vals, cb){
+      connection.query('UPDATE ??  SET hlatitude = ?, hlongitude = ? WHERE id = ?',[table, cols, val], function (err, result){
+        if (err) throw err
+        cb(result)
+      })
     }
 
 
 }
-
 module.exports = orm;

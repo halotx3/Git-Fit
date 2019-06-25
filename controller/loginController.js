@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const logon = require('../models/logon.js');
 
-router.post('/api/verify', function(req, res){   
+router.post('/api/verify', function(req, res){
     let password = req.body.password;
     let email = req.body.email;
-    
+     console.log(`email: ${email}`)
     console.log(password)
-    
+
     logon.pullLogin(req.body.email,function(result){
         console.log(result[0]);
         if (result[0].email == email){
@@ -40,7 +40,7 @@ router.post('/api/verify', function(req, res){
             //     "success": "Email does not exist!"
             // });
         };
-        
+
     })
 });
 module.exports = router;

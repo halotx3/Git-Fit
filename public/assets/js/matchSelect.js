@@ -7,7 +7,7 @@ $(function() {
     var url = window.location.pathname;
     // console.log(url)
     var id = url.substring(url.lastIndexOf('/') + 1);
-    
+
     // console.log(id)
     // Adding if statement so that it does not keep reloading the screen on homepage
   if(url = '/profile/' +id){
@@ -19,7 +19,7 @@ $(function() {
       function() {
         console.log('create the match', id);
         // Reload the page to get the updated list
-        location.reload();
+        //location.reload();
 
       }
     );
@@ -41,12 +41,12 @@ $(function() {
           function(){
             console.log('Accepted match', id);
             location.reload();
-          }        
-        )    
-    
+          }
+        )
+
       });
-    
-  
+
+
     $('.btn-dark').on('click', function(event) {
       console.log("clicked on block button")
       // Send the PUT request.
@@ -69,8 +69,6 @@ $(function() {
       $('#messageArea').show();
     })
 
-  
+
 
   });
-
-

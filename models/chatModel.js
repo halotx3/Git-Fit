@@ -11,4 +11,3 @@ const chat = {
 };
 
 module.exports = chat;
-// ('../config/orm.js');

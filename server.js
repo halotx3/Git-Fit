@@ -2,8 +2,7 @@ const express = require('express');
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io').listen(server);
-const time = require('date-and-time');
-
+const moment = require('moment');
 // const connection = require('./config/connection.js');
 
 

@@ -29,7 +29,7 @@
 
       }
       li {
-       
+
       }
 
       .block{
@@ -105,12 +105,15 @@
       }
       #chatBody {
         height: 300px;
-        width: 350px;
+        width: 600px;
         border-radius: 5px solid black;
         margin-right:20px;
         border: solid 2px lightgray;
         background-color: white;
-      
+
+      }
+      #message {
+        width: 600px;
       }
       #pmatch{
         margin: 20%;
