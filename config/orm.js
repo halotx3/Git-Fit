@@ -72,16 +72,16 @@ const orm = {
     //Updates the active status in the DB to true
     updateMatch: function (table, approved, userid, matchid, cb){
         connection.query('UPDATE ?? SET approved = ? WHERE user_id = ? and match_id = ?',[table, approved, userid, matchid], function(err,result){
-            if (err) throw err
-            cb(result)
+            if (err) throw err;
+            cb(result);
         });
     }
     ,
     //Updates the active status in the DB to true
     updateBlock: function (table, block, userid, matchid, cb){
         connection.query('UPDATE ?? SET block = ? WHERE user_id = ? and match_id = ?',[table, block, userid, matchid], function(err,result){
-            if (err) throw err
-            cb(result)
+            if (err) throw err;
+            cb(result);
         });
     },
     showOnlineUsers: function(table, JoinTable, vals, cb){
@@ -94,27 +94,28 @@ const orm = {
     },
     pullLogin: function(table,val1, cb){
         connection.query('SELECT * FROM ?? WHERE email = ?',[table,val1], function(err, result){
-            if (err) throw err
-            cb(result)
-        })
+            if (err) throw err;
+            cb(result);
+        });
     },
     activeLoginSession: function(table, id,cb){
         connection.query('UPDATE ?? SET logged = 1 WHERE id = ?',[table,id],function(err,result){
-            if (err) throw err
-            cb(result)
-        })
+            if (err) throw err;
+            cb(result);
+        });
     }
     ,
     createProfile: function(table,cols,vals,cb){
         connection.query('INSERT INTO ?? (??) VALUES (?)',[table,cols,vals,function(err,result){
-            if (err) throw err
-            cb(result)
-        }])
+            if (err) throw err;
+            cb(result);
+        }]);
     },
-    createsurvey: function (){
+    createsurvey: function (table,cols,vals, cb) {
         connection.query('INSERT INTO ?? (??) VALUES (?)', [table,cols,vals],function(err,result){
-
-        })
+            if (err) throw err;
+            cb(result);
+        });
     }
 
 
