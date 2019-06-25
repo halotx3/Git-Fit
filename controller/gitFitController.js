@@ -13,13 +13,8 @@ router.get('/profile', function (req, res) {
       profile: data
     };
     console.log(hbsObject);
-
-    // if (err) {
-    //     return res.status(500).end();
-    //   }
-    // console.log(data);
     res.render('profile', hbsObject);
-    // res.render('index', { burger: data });
+
 
   });
 });
@@ -31,7 +26,7 @@ router.put('/profile/:id', function (req, res) {
   console.log(matchid)
   console.log(user_id1)
   let approved = true;
-  console.log(`{Profile Object:]   :::::::${req}`)
+  
 
   matching.updateMatch(approved, user_id1, matchid, function () {
 
@@ -63,10 +58,10 @@ router.put('/profile/match/:id', function (req, res) {
 
   const user_id1 = req.params.id;
   matching.findzip([user_id1], function (result1) {
-    // const zip = result1[0].home_zip;
+    const zip = result1[0].home_zip;
     // console.log(result);
     // console.log(zip);
-    matching.zipmatch([ [result1[0].id], function (result2) {
+    matching.zipmatch([zip], [result1[0].id], function (result2) {
       const hbsObject = {
         profile: result2
       };
@@ -94,7 +89,7 @@ router.put('/profile/match/:id', function (req, res) {
 
       }//forloop
 
-    }])//zipmatch
+    })//zipmatch
  })//findzip
 }); //put
 
@@ -106,12 +101,23 @@ router.get('/profile/:id', function (req, res) {
    const user_id1 = req.params.id;
 
   // const userObj = {
-  //   person: user_id1
+  //   provi: user_id1
   // };
-
-
+  //
+  //
   // res.render('profile', userObj)
   // console.log(user_id1);
+  //
+  // matching.matchLimit(user_id1, "home", function (result, err) {
+  //     const hbsObject = {
+  //       gitfit_match: result
+  //     };
+  //
+  //       res.render('gitfit_match', hbsObject);
+  //
+  //     console.log(result.length);
+  //
+  // })
 
   matching.findzip([user_id1], function (result) {
     // Send back the ID of the new quote
@@ -138,7 +144,7 @@ router.get('/profile/:id', function (req, res) {
 
   });
 
-})
+}) //End of matching.findzip results
 
 // Create all our routes and set up logic within those routes where required.
 router.get('/', function (req, res) {
