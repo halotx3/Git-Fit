@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const logon = require('../models/logon.js');
+const bcrypt = require('bcrypt');
 
 router.post('/api/verify', function(req, res){   
     let password = req.body.password;

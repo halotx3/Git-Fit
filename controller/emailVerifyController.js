@@ -1,4 +1,5 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
 //Packages for email verifcation
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
