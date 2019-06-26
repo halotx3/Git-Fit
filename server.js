@@ -4,6 +4,8 @@ const server = require('http').createServer(app);
 const io = require('socket.io').listen(server);
 const time = require('date-and-time');
 const session = require('express-session');
+const passport = require('passport');
+const helmet = require('helmet')
 
 // const connection = require('./config/connection.js');
 
@@ -14,7 +16,14 @@ require('./sockets/socket')(io);
 
 // Serve static content for the app from the 'public' directory in the application directory.
 app.use(express.static("public"));
-
+//Intended for Express Sessions
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
+//Additional Securities
+app.use(helmet());
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -25,7 +34,6 @@ const exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
-
 // Import routes and give the server access to them.
 
 const everRoutes = require('./controller/emailVerifyController.js');

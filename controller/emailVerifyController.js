@@ -1,4 +1,5 @@
 const express = require('express');
+//Package for encryption
 const bcrypt = require('bcrypt');
 //Packages for email verifcation
 const jwt = require('jsonwebtoken');
@@ -23,34 +24,38 @@ const emailVer = require('../models/emailVer.js');
   router.post('/create', function(req, res){
     console.log(req.body.email);
     console.log(req.body.password);
-    emailVer.createUser([req.body.email, req.body.password], function(result){
-            //Sending some data back to validate
-            res.json({ id: result.insertId });
-            //Logic sending the email after the account is created
-            const emailToken = jwt.sign(
-              {
-                id: result.insertId
-              },
-              EMAIL_SECRET,
-              {
-                expiresIn:'2h'
-              },
-            );
+    bcrypt.hash(req.body.password,10, function (err,hash){
+      emailVer.createUser([req.body.email, hash], function(result){
+        //Sending some data back to validate
+        res.json({ id: result.insertId });
+        //Logic sending the email after the account is created
+        const emailToken = jwt.sign(
+          {
+            id: result.insertId
+          },
+          EMAIL_SECRET,
+          {
+            expiresIn:'2h'
+          },
+        );
 
-            const verURL = `http://localhost:3000/confirm/${emailToken}`;
+        const verURL = `http://localhost:3000/confirm/${emailToken}`;
 
-             transporter.sendMail({
-              to: req.body.email,
-              subject: 'Please Verify Your email to Complete Your Git Fit Registration',
-              html: `Hello,<br>
-              Please use the following link to complete your registration and activate your account:<a href="${verURL}">${verURL}</a>`,
-            },(error, result) => {
-              if (error) return console.error(error);
-              return console.log(result);
-            });
-             
-            res.status(201).end;
-        })
+         transporter.sendMail({
+          to: req.body.email,
+          subject: 'Please Verify Your email to Complete Your Git Fit Registration',
+          html: `Hello,<br>
+          Please use the following link to complete your registration and activate your account:<a href="${verURL}">${verURL}</a>`,
+        },(error, result) => {
+          if (error) return console.error(error);
+          return console.log(result);
+        });
+         
+        res.status(201).end;
+      });
+    });
+    //password will be encypted here
+
   });
 
   router.get('/confirm/:token',function(req, res){

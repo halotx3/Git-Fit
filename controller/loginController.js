@@ -1,7 +1,10 @@
 const express = require('express');
+const session = require('express-session');
 const router = express.Router();
 const logon = require('../models/logon.js');
 const bcrypt = require('bcrypt');
+const passport = require(('passport'))
+
 
 router.post('/api/verify', function(req, res){   
     let password = req.body.password;
@@ -13,34 +16,17 @@ router.post('/api/verify', function(req, res){
         console.log(result[0]);
         if (result[0].email == email){
             let id = result[0].id;
-            if (result[0].password == password){
-                // res.send({
-                //     "id": id,
-                //     "success":"Match! Now Logging In"
-                // });
-                if (result[0].active == 1){
-                logon.activeLogon(id,function(result){
-                    // if (err) throw err
-                    res.json(
-                        {id: id,}
-                    )
-                });
-            }else{
-                console.log('This account has not yet been activated')
-            }
+            bcrypt.compare(req.body.password,result[0].password, function(err,res){
+                if(res) {
+                    console.log('Log in attempt successful')
+                    req.session.id = id
 
-            }else{
-                // res.send({
-                //     "code":204,
-                //     "success":"Email and password do not match"
-                // })
-            }
-        }else{
-            // res.send({
-            //     "code":204,
-            //     "success": "Email does not exist!"
-            // });
-        };
+                }else {
+                    //password does not match
+              
+                }
+            })
+        }
         
     })
 });

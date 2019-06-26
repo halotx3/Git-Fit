@@ -12,9 +12,6 @@ $(function(){
             firstname: fName,
             lastname: lName
         }
-        
-        //If checkbox is ticked, sends the results to the server to be added to the database
-        if($('#exampleCheck1').is(':checked')){
         $.ajax('/create',{
             type: 'POST',
             data: userCreds
@@ -22,9 +19,20 @@ $(function(){
             function(){
                 console.log('Account has been created');
                 location.reload();
-            }
-        )}else {
-            alert('Before proceeding you need to accept the TOS.')
-        }
+            })
+        
+        // //If checkbox is ticked, sends the results to the server to be added to the database
+        // if($('#exampleCheck1').is(':checked')){
+        // $.ajax('/create',{
+        //     type: 'POST',
+        //     data: userCreds
+        // }).then(
+        //     function(){
+        //         console.log('Account has been created');
+        //         location.reload();
+        //     }
+        // )}else {
+        //     alert('Before proceeding you need to accept the TOS.')
+        // }
     })
 })
