@@ -10,15 +10,18 @@ $(function(){
         $.ajax('/api/verify', {
             type: 'POST',
             data: updateData,
-            success: function (data){
-                let useID =data.id
-                console.log(data);
-                window.location.assign(`/profile/${useID}`)
-            },
-            complete: function(data){
-                console.log('please comrade')
-            }
+            dataType: 'json',
+            // success: function (data){
+            //     let useID = data.id
+            //     console.log(data);
+            //     window.location.assign(`/profile/${useID}`)
+            // },
+            // complete: function(data){
+            //     console.log('please comrade')
+            // }
 
+        }).done(function(result){
+            console.log(results);
         })
     })
 });

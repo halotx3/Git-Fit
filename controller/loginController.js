@@ -21,6 +21,7 @@ router.post('/api/verify', function(req, res){
                     console.log('Log in attempt successful')
                     req.session.id = id
                     console.log(id)
+                    // mRes.redirect(`/profile/${id}`)
                 }else {
                     //password does not match
                     console.log('Incorrect Username/Password!')
