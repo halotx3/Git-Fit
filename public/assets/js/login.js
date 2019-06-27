@@ -9,11 +9,16 @@ $(function(){
         console.log(updateData)
         $.ajax('/api/verify', {
             type: 'POST',
-            data: updateData
-        }).then(function(data){
-            let useID =data.id
-            console.log(data);
-            window.location.assign(`/profile/${useID}`)
+            data: updateData,
+            success: function (data){
+                let useID =data.id
+                console.log(data);
+                window.location.assign(`/profile/${useID}`)
+            },
+            complete: function(data){
+                console.log('please comrade')
+            }
+
         })
     })
 });

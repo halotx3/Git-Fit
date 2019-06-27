@@ -9,7 +9,7 @@ const passport = require(('passport'))
 router.post('/api/verify', function(req, res){   
     let password = req.body.password;
     let email = req.body.email;
-    
+    let mRes = res;
     console.log(password)
     
     logon.pullLogin(req.body.email,function(result){
@@ -20,14 +20,21 @@ router.post('/api/verify', function(req, res){
                 if(res) {
                     console.log('Log in attempt successful')
                     req.session.id = id
-
+                    console.log(id)
                 }else {
                     //password does not match
-              
+                    console.log('Incorrect Username/Password!')
+                    mRes.status(403);
                 }
             })
         }
         
     })
 });
+
+//Logout functionality
+router.get('/signout',function(req,res){
+    req.session.destroy()
+    res.send('User has been signed out.');
+})
 module.exports = router;
