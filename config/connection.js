@@ -10,7 +10,7 @@ let connection = mysql.createConnection({
     port: process.env.RDS_PORT,
     user: process.env.RDS_USER,
     password: process.env.RDS_PASS,
-    database: process.env.RDS_DB   
+    database: process.env.RDS_DB 
   
 })
 

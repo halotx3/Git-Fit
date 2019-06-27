@@ -20,7 +20,7 @@ $(function() {
       function() {
         console.log('create the match', id);
         // Reload the page to get the updated list
-        location.reload();
+        // location.reload();
 
       }
     );
