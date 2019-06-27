@@ -1,3 +1,5 @@
+
+
 $(function() {
   let socket = io.connect();
   let $messageForm = $('#messageForm');
@@ -51,7 +53,7 @@ $(function() {
   };
   socket.on('get users', function(data) {
 
-    // let html = "";
+     let html = "";
       // console.log(data + '2')
       for (let i = 0; i < data.length; i++ ){
       html += `<li class="list-group strong"> ${data[i]}</li>`;
@@ -61,5 +63,5 @@ $(function() {
 
   // load();
 
-  console.log(html);
+  //console.log(html);
 });

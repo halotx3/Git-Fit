@@ -47,8 +47,13 @@ const match = {
         cb(res);
       });
     },
-    latNlong: function(cols, vals, cb){
-      orm.latNlong('profile', cols, vals, function(req, res){
+    latNlong: function( vals, cb){
+      orm.latNlong('profile', vals, function(req, res){
+        cb(res);
+      });
+    },
+    gymLatnLong: function( vals, cb){
+      orm.gymLatnLong('profile', vals, function(req, res){
         cb(res);
       });
     }

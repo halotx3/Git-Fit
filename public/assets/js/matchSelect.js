@@ -10,7 +10,7 @@ $(function() {
 
     // console.log(id)
     // Adding if statement so that it does not keep reloading the screen on homepage
-  if(url = '/profile/' +id){
+  if(url === '/profile/' +id && id != ""){
     console.log(`Looking at this site ${url}`)
     $.ajax('/profile/match/' + id, {
       type: 'PUT',
@@ -19,7 +19,7 @@ $(function() {
       function() {
         console.log('create the match', id);
         // Reload the page to get the updated list
-        //location.reload();
+        location.reload();
 
       }
     );
