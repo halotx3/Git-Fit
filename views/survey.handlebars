@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <div class="container">
     <div class="row">
         <div class="card">
@@ -12,74 +14,74 @@
         </div>
         <br>
         <form class="create-surveyform">
-
             <table>
                 <div>
-                    <tr>
-                        <h3>Personal Information</h3>
-                    </tr>
-                    <tr>
-                        <label for="idFirstName">First Name</label>
-                        <input class="form-control" type="firstName" name="FirstName" id="FirstName" placeholder="">
-                        <label for="idLastName">Last Name</label>
-                        <input class="form-control" type="LastName" id="LastName" placeholder="">
-                    </tr>
-                    <tr>
-                        <label for="gender">Gender</label>
-                        <input class="form-control" type="radio" id="idgenderMale" placeholder="Gender" value="1"> Male>
-                        <input class="form-control" type="radio" id="idgenderFemale" placeholder="Gender" value="0" checked> Female>
+                    <div>
+                        <tr>
+                            <h3>Personal Information</h3>
+                        </tr>
+                        <tr>
+                            <label for="idFirstName">First Name</label>
+                            <input class="form-control" type="firstName" name="FirstName" id="FirstName" placeholder="">
+                            <label for="idLastName">Last Name</label>
+                            <input class="form-control" type="LastName" id="LastName" placeholder="">
+                        </tr>
+                        <tr>
+                            <label for="gender">Gender</label>
+                            <input type="radio" id="idgender" value="male"> Male<br>
+                            <input type="radio" id="idgender" value="female"> Female<br>
 
-                        {{!-- <input class="form-control" type="radio" id="idgenderMale" placeholder="Gender" value="1"> Male>
-                        <input class="form-control" type="radio" id="idgenderMale" placeholder="Gender" value="1"> Male> --}}
-                    </tr>
-                    <br />
-                    <br />
-                    <tr>
-                        <label for="idHomeStr">Home Street Address</label>
-                        <input class="form-control" type="text" id="HomeStr" placeholder="">
-                        <label for="idHomeCity">Home City</label>
-                        <input class="form-control" type="text" id="HomeCity" placeholder="">
-                        <label for="idHomeState">Home State</label>
-                        <input class="form-control" type="text" id="HomeState" placeholder="GA">
-                    </tr>
-                    <br />
-                    <br />
-                    <tr>
-                        <label for="idHomeZip"> Home Zip</label>
-                        <input class="form-control" type="text" id="HomeZip" placeholder="">
-                        <label for="idMobilePh">Mobile Phone</label>
-                        <input class="form-control" type="text" id="Mobile" placeholder="">
-                    </tr>
-                    <br />
-                    <br />
-                </div>
-                <div>
-                    <tr>
-                        <!-- <td style="padding-top: 50px;">  -->
-                        <h3>Workout Information</h3>
-                    </tr>
-                    <tr>
-                        <label for="idGymName">Gym Name</label>
-                        <input class="form-control" type="text" id="idGymName" placeholder="">
-                        <label for="idGymStr">Gym Street Address</label>
-                        <input class="form-control" type="text" id="idGymStreet" placeholder="">
-                        <label for="idGymCity">Gym City</label>
-                        <input class="form-control" type="text" id="idGymCity" placeholder="">
-                        <label for="idGymState">Gym State</label>
-                        <input class="form-control" type="text" id="idGymState" placeholder="">
-                        <label for="idGymZip">Gym Zip</label>
-                        <input class="form-control" type="text" id="idGymZip" placeholder="">
-                    </tr>
-                    <br />
-                    <br />
-                </div>
-                <div>
-                    <tr>
-                        <!-- <td style="padding-top: 50px;"> -->
-                        <h3>Training Information</h3>
-                    </tr>
-                    <tr>
-                        <div class="row">
+                            {{!-- <input class="form-control" type="radio" id="idgenderMale" placeholder="Gender" value="1"> Male>
+                                  <input class="form-control" type="radio" id="idgenderMale" placeholder="Gender" value="1"> Male> --}}
+                        </tr>
+                        <br />
+                        <br />
+                        <tr>
+                            <label for="idHomeStr">Home Street Address</label>
+                            <input class="form-control" type="text" id="HomeStr" placeholder="">
+                            <label for="idHomeCity">Home City</label>
+                            <input class="form-control" type="text" id="HomeCity" placeholder="">
+                            <label for="idHomeState">Home State</label>
+                            <input class="form-control" type="text" id="HomeState" placeholder="GA">
+                        </tr>
+                        <br />
+                        <br />
+                        <tr>
+                            <label for="idHomeZip"> Home Zip</label>
+                            <input class="form-control" type="text" id="HomeZip" placeholder="">
+                            <label for="idMobilePh">Mobile Phone</label>
+                            <input class="form-control" type="text" id="Mobile" placeholder="">
+                        </tr>
+                        <br />
+                        <br />
+                    </div>
+                    <div>
+                        <tr>
+                            <h3>Workout Information</h3>
+                        </tr>
+                        <tr>
+                            <label for="idGymName">Gym Name</label>
+                            <input class="form-control" type="text" id="idGymName" placeholder="">
+                            <label for="idGymStr">Gym Street Address</label>
+                            <input class="form-control" type="text" id="idGymStreet" placeholder="">
+                            <label for="idGymCity">Gym City</label>
+                            <input class="form-control" type="text" id="idGymCity" placeholder="">
+                            <label for="idGymState">Gym State</label>
+                            <input class="form-control" type="text" id="idGymState" placeholder="">
+                            <label for="idGymZip">Gym Zip</label>
+                            <input class="form-control" type="text" id="idGymZip" placeholder="">
+                        </tr>
+                        <br />
+                        <br />
+                    </div>
+                    <div>
+                        <div>
+                            <tr>
+                                <h3>Training Information</h3>
+                            </tr>
+                        </div>
+
+                        <div>
                             <div>
                                 <label for="PrExcer">Primary Excercise</label>
                             </div>
@@ -96,66 +98,55 @@
                                     <option value="walking">Walking</option>
                                     <option value="wtraining">Weight Training</option>
                                     <option value="yoga">Yoga</option>
-
                                 </select>
-                            {{!-- </div>
-
-                            <div class="col-md-6"> --}}
+                            </div>
+                            <div class="col-md-6">
                                 <select class="form-control" id="idprlevel" name="Primary Excercise Level">
                                     <option value="beglevel">Beginner</option>
                                     <option value="intlevel">Intermidiate</option>
                                     <option value="adlevl">Advanced</option>
                                 </select>
                             </div>
-                    </tr>
-                </div>
-                <br />
-                <tr>
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="idScExcer">Secondary Excercise</label>
                         </div>
-                        <div class="class=col-md-6">
-                            <select class="form-control" id="idScExcer" name="Secondary Excercise">
-                                <option value="nba">Basketball</option>
-                                <option value="cardio">Cardio</option>
-                                <option value="crfit">CrossFit</option>
-                                <option value="pilates">Pilates</option>
-                                <option value="run">Running</option>
-                                <option value="spin">Spin</option>
-                                <option value="swimming">Swimming</option>
-                                <option value="tennis">Tennis</option>
-                                <option value="walking">Walking</option>
-                                <option value="wtraining">Weight Training</option>
-                                <option value="yoga">Yoga</option>
-                            </select>
-                        {{!-- </div>
-                        <div class="class=col-md-6"> --}}
-                            <select class="form-control" id="idsclevel" name="Second Excercise Level">
-                                <option value="beglevel">Beginner</option>
-                                <option value="intlevel">Intermidiate</option>
-                                <option value="adlevl">Advanced</option>
-                            </select>
-                        </div>
+                        <tr>
+                            <div>
+                                <div>
+                                    <label for="PrExcer">Secondary Excercise</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control" id="idScExcer" name="Secondary Excercise">
+                                        <option value="nba">Basketball</option>
+                                        <option value="cardio">Cardio</option>
+                                        <option value="crfit">CrossFit</option>
+                                        <option value="pilates">Pilates</option>
+                                        <option value="run">Running</option>
+                                        <option value="spin">Spin</option>
+                                        <option value="swimming">Swimming</option>
+                                        <option value="tennis">Tennis</option>
+                                        <option value="walking">Walking</option>
+                                        <option value="wtraining">Weight Training</option>
+                                        <option value="yoga">Yoga</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control" id="idsclevel" name="Secondary Excercise Level">
+                                        <option value="beglevel">Beginner</option>
+                                        <option value="intlevel">Intermidiate</option>
+                                        <option value="adlevl">Advanced</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </tr>
                     </div>
-                </tr>
-
-                <br />
-                <br />
-
-                <div style="text-align: center; ">
-                    {{!-- <button  id="submitData" style="width:150px;" type="submit" class="btn btn-primary">Submit</button> --}}
-                          <button type="submit" class="btn btn-primary" id="submit-survey">Submit</button>
                 </div>
-
-
             </table>
+            <br />
+            <br />
+            <div style="text-align: center; ">
+                <button type="submit" class="btn btn-primary" id="submit-survey">Submit</button>
+                {{!-- <button id="submitData" style="width:150px;" type="submit" class="btn btn-primary">Submit</button> --}}
+            </div>
         </form>
     </div>
 </div>
-</div>
-        {{!-- <button id="yay">Hello</button> --}}
-
-</body>
-
 </html>

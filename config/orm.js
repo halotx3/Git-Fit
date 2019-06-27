@@ -75,8 +75,7 @@ const orm = {
             if (err) throw err;
             cb(result);
         });
-    }
-    ,
+    },
     //Updates the active status in the DB to true
     updateBlock: function (table, block, userid, matchid, cb){
         connection.query('UPDATE ?? SET block = ? WHERE user_id = ? and match_id = ?',[table, block, userid, matchid], function(err,result){
@@ -105,12 +104,12 @@ const orm = {
         });
     }
     ,
-    createProfile: function(table,cols,vals,cb){
-        connection.query('INSERT INTO ?? (??) VALUES (?)',[table,cols,vals,function(err,result){
-            if (err) throw err;
-            cb(result);
-        }]);
-    },
+    // createProfile: function(table,cols,vals,cb){
+    //     connection.query('INSERT INTO ?? (??) VALUES (?)',[table,cols,vals,function(err,result){
+    //         if (err) throw err;
+    //         cb(result);
+    //     }]);
+    // },
     createsurvey: function (table,cols,vals, cb) {
         connection.query('INSERT INTO ?? (??) VALUES (?)', [table,cols,vals],function(err,result){
             if (err) throw err;
