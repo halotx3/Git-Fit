@@ -48,7 +48,7 @@ const match = {
       });
     },
     latNlong: function( vals, cb){
-      orm.latNlong('profile', vals, function(req, res){
+      orm.latNlong('profile', vals, function(res){
         cb(res);
       });
     },
@@ -56,6 +56,12 @@ const match = {
       orm.gymLatnLong('profile', vals, function(req, res){
         cb(res);
       });
+    },
+    matchLimit: function(userid, type, cb){
+      orm.matchLimit('gitfit_match',userid, type, function (res){
+        console.log(userid, type);
+        cb(res);
+      })
     }
 }
 

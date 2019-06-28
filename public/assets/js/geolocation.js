@@ -9,15 +9,22 @@ $('.btn').on('click', function (e){
   const id = this.id;
 
 
-  console.log(id);
+  // console.log(`HERKJELK ${id}`);
 
-  $.get(`/profile/${id}`, function (response){
-
+  $.get(`/api/profile/${id}`, function (response){
+    console.log(`${response}`)
+    console.log(response[0].hlatitude)
     // JSON.stringify(response)
-    let matchedUserLat = response[0].hlatitude
-    let matchedUserLong = response[0].hlongitude
+    matchedUserLat = response[0].hlatitude
+    matchedUserLong = response[0].hlongitude
+
     console.log(matchedUserLat)
     console.log(matchedUserLong)
+    for (let i = 0; i < response.length; i++){
+      if (response[i].id == 11){
+        console.log(`Found ${response[i].id}`)
+      }
+    }
 
   })
 

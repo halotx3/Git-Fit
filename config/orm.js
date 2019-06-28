@@ -129,15 +129,15 @@ const orm = {
         cb(result)
       })
     }
-    // ,
-    // matchLimit: function (tableInput, id, type, cb) {
-    //     connection.query('SELECT * FROM ?? where id = ? and type = ? limit 5 and block = "0"', [tableInput, id, type], function (err, result) {
-    //         if (err) {
-    //             throw err;
-    //         }
-    //           cb(result);
-    //     });
-    // }
+    ,
+    matchLimit: function (tableInput, id, type, cb) {
+        connection.query('SELECT * FROM ?? a inner join profile b on a.match_id = b.id where user_id = ? and type = ? and block = "0" limit 3 ', [tableInput, id, type], function (err, result) {
+            if (err) {
+                throw err;
+            }
+              cb(result);
+        });
+    }
 
 
 }

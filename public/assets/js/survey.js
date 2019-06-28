@@ -24,6 +24,10 @@ $(function(){
         let primaryLvl = $('#idprlevel').val().trim()
         let secondaryLvl = $('#idsclevel').val().trim()
 
+        let homeLat = '';
+        let homeLong = '';
+        let gymLat = '';
+        let gymLong = '';
 
 
         let userProfile = {
@@ -34,6 +38,10 @@ $(function(){
             homecity: homeCity,
             homestate: homeState,
             homezip: homeZip,
+            hlatitude: homeLat,
+            hlong: homeLong,
+            gym_latitude: gymLat,
+            gym_longitude: gymLong,
             mobile: mPhone,
 
             gymname: gymName,
@@ -48,21 +56,28 @@ $(function(){
             secondarylevel: secondaryLvl
         };
 
-        console.log ('userProfile', userProfile )
+        // console.log("ghvjughguhigvjkhjgvj")
+        //
+        // $.post('/survey', {data: userProfile
+        // }).then(function(){console.log("273gfbjda7u")});
+        //
+        //
+        // console.log ('userProfile', userProfile )
 
         // $.post('/survey', userProfile)
         //     .then(function(data) {
         //     console.log(data)
         // });
-        $.put(`/profileMatch/${id}`, {
-          latitude: 76,
-          longitude: 67
-        }).then(function(){
-          console.log("Updatd")
-        })
-        $.ajax('/survey',{
-          Type: 'POST',
-        }).then(function(){
+        // $.get(`/survey/`, (response)=>{
+        //
+        //   console.log(response)
+        // }).then(function(){
+        //   console.log("Updatd")
+        // })
+        $.post('/survey',{
+          data: userProfile
+        }).then(function(userProfile){
+          console.log(userProfile);
           console.log("HELJADLFKJALKAJLKJL")
         })
       })

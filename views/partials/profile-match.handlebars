@@ -1,6 +1,6 @@
 <div class="container">
 <div class="row">
-      {{#each profile}}
+      {{#each matchLimit}}
   <div class="col">
     <div class="card match123 d-inline-block" style="width: 12rem;">
 
@@ -13,7 +13,7 @@
           <h5 class="card-title">{{this.first_name}} {{this.last_name}}</h5>
           <p class="card-text"></p>
           {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
-          <button class="btn btn-success" id="gitfitAccept" data-profilematchid="{{this.id}}"
+          <button class="btn btn-success" id="gitfitAccept" data-profilematchid="{{this.match_id}}"
             data-pactivity="{{this.primary_training_type}}">Accept</button>
           <button class="btn btn-dark" id="gitfitBlock" data-profilematchid="{{this.id}}"
           data-pactivity="{{this.primary_training_type}}">Block</button>
