@@ -37,8 +37,9 @@ const chatRoutes = require('./controller/chatController.js');
 app.use(chatRoutes);
 
 app.use('/', mainroutes);
-app.use('/register', mainroutes);
+app.use('/register', logonRoutes);
 app.use('/matches', mainroutes);
+app.use('/login1', mainroutes);
 // app.use('/loggedIn', mainroutes); // Enter the correct file handlebar name here *********
 
 server.listen(PORT, function() {

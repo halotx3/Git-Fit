@@ -1,0 +1,201 @@
+/* @import url('https://fonts.googleapis.com/css?family=Oswald:600'); */
+
+#indexBody{
+    margin: 0; 
+    padding: 0; 
+    /* background: #262626; */
+    /* font-family: 'Oswald', sans-serif;  */
+    /* font-family: "Myriad Pro", "myriad-pro", sans-serif;
+    font-style: normal;
+    font-weight: 300; */
+}
+ 
+#A1{
+    position: absolute; 
+    top: 70%; 
+    left:50%;
+    /* transform: translate(-50%, -50%) skewY(-8deg); 
+    display: flex; 
+    margin: 0; 
+    padding:0; 
+    background: #f00; 
+    box-shadow: 0 0 10px 10px #fff;  */
+}
+
+.A2{
+    display: block; 
+    list-style: none; 
+    color: #fff; 
+    padding: 0 10px; 
+    font-size: 4em; 
+    text-transform: uppercase; 
+    animation: animate 8s linear infinite; 
+    font-family: 'Permanent Marker', cursive;
+}
+
+@keyframes animate
+{
+
+    0%
+    {
+        transform: translateY(-100px) rotate(0deg); 
+    }
+    100%
+    {
+        transform: translateY(100px) rotate(360deg); 
+    }
+
+
+}
+
+
+
+
+
+#logo{
+    font-family: 'Permanent Marker', cursive;
+    /* font-family: 'Permanent Marker', cursive;
+    font-family: 'Archivo Black', sans-serif; */
+    font-weight: bolder; 
+    color: whitesmoke;  
+    font-size: 130px; 
+    font-weight: bolder; 
+    margin: 0 auto; 
+    margin-top: 90px; 
+    padding-top: 15px; 
+    padding-left: 55px; 
+    left:50%;
+    transform: translate(-50%, -50%) skewY(-8deg); 
+    display: flex; 
+    margin: 0; 
+    padding:0; 
+    background: #f00; 
+     box-shadow: 0px 0px 10px 20px #fff; 
+    text-align: center; 
+}
+
+#whiteText {
+    font-size: 50px;
+    font-weight: bolder; 
+    color: white; 
+    text-shadow: 2px 2px 5px #FF0000;
+
+}
+
+body.html {
+    margin: 0; 
+    padding:0;
+}
+
+#home {
+    background-color: azure; 
+    background-image: url(../img/cleargym2.jpg); 
+   
+    background-position: bottom center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shawdow 0.3s;  
+    z-index: 2; 
+    height: 100vh; 
+    
+}
+
+.welcome-text{
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Archivo Black', sans-serif;
+    width: 80%; 
+    margin: 0 10%; 
+    height:70%;
+    font-size: 100%; 
+    
+}
+
+#buddy{
+    color: white; 
+}
+.welcome-text .welcome{
+margin: 0 auto;  
+}
+
+#about {
+height: 100vh; 
+background-image: linear-gradient(
+    rgba(255, 255, 255, 0.3), 
+    rgba(255, 255, 255, 0.3)
+), url(../img/mandF.png);
+background-position: right 15px center; 
+background-size: auto 100%;
+background-repeat: no-repeat; 
+background-blend-mode: lighten; 
+
+}
+
+section.black{
+    padding-top:25px; 
+}
+
+.section-intro{
+    margin-top: 5em; 
+}
+
+.carousel-item p{
+    padding:2em;
+}
+
+#some{
+    height: 100hv; 
+    background-image: url(../img/background1.png);
+    background-position: top 15px center; 
+    background-size: auto 100%; 
+    background-repeat: none;
+    }
+
+#some button, #about button {
+    background-color: ff1744; 
+    }
+
+#some button:hover, #about button:hover{
+    background: black;
+}
+
+.cards button a {
+    text-decoration: none !important;
+    color: #f6f7f7;
+}
+
+.cards .card {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.cards button {
+    padding: 1em;
+    width: 100%; 
+    background: #ff1744; 
+    border: 0;
+    border: 0;
+    border-bottom-left-radius: 20px; 
+    border-bottom-right-radius: 20px; 
+     
+}
+
+footer ul {
+    font-size: 30px; 
+    margin:0 auto;
+}
+
+footer ul li {
+    display: inline; 
+    margin: 0 10px; 
+}
+
+/* Media query for mobile devices */
+@media(max-width:993px){
+    #some {
+        background: #ff1744;
+    }
+}
+
+#foot{
+    font-family: 'Permanent Marker', cursive; 
+}

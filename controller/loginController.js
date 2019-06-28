@@ -2,6 +2,24 @@ const express = require('express');
 const router = express.Router();
 const logon = require('../models/logon.js');
 
+// Route for login page on index
+router.get('/login1', function(req, res){
+    res.render('login1');
+});
+
+// Route for index page on index
+router.get('/', function(req, res){
+    res.render('index');
+});
+
+// Route for register page on index
+router.get('/register', function(req, res){
+    res.render('register');
+});
+
+
+
+
 router.post('/api/verify', function(req, res){   
     let password = req.body.password;
     let email = req.body.email;
