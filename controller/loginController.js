@@ -2,19 +2,24 @@ const express = require('express');
 const router = express.Router();
 const logon = require('../models/logon.js');
 
-// Route for login page on index
+// Route for login page 
 router.get('/login1', function(req, res){
     res.render('login1');
 });
 
-// Route for index page on index
+// Route for index page 
 router.get('/', function(req, res){
     res.render('index');
 });
 
-// Route for register page on index
+// Route for register page 
 router.get('/register', function(req, res){
     res.render('register');
+});
+
+// Route for profile-match page 
+router.get('/profile-match', function(req, res){
+    res.render('profile-match');
 });
 
 
