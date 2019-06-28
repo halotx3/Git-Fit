@@ -1,7 +1,49 @@
-$(function(){
-    $('#submit-survey').on('click', function(event){
+$(function () {
+    // Image Upload
+    let url = ""
+
+    function previewFile() {
+        var preview = document.querySelector('img');
+        var file = document.querySelector('input[type=file]').files[0];
+        var reader = new FileReader();
+
+        // reader.addEventListener("load", function () {
+        reader.addEventListener("load", function () {
+            preview.src = reader.result;
+        }, false);
+
+        // reader.onload = function(event){
+
+        // }
+
+        if (file) {
+            reader.readAsDataURL(file);
+            url = document.getElementById("pre").src
+            console.log(url)
+            
+            // attr.src
+        }
+    }
+
+      $('#pic').on("change",previewFile);
+
+    
+
+    
+    // var reader = new FileReader();
+    // console.log(reader.readAsDataURL());
+
+    // var data = canvas.toDataURL('/assets/img/spin.jpg');
+    // $('.pic').fileupload('option', 'formData').file = data;
+    // $('.pic').fileupload('add', { files: [data] });
+    // console.log()
+
+    // End Image Uplaod
+
+
+    $('#submit-survey').on('click', function (event) {
         event.preventDefault();
-        console.log ('  Test survey.js');
+        console.log('  Test survey.js');
         let fName = $('#FirstName').val().trim();
         let lName = $('#LastName').val().trim();
         let gendermf = $('#idgender').val().trim();
@@ -10,7 +52,7 @@ $(function(){
         let homeState = $('#HomeState').val().trim();
         let homeZip = $('#HomeZip').val().trim();
         let mPhone = $('#Mobile').val().trim();
-        
+
         let gymName = $('#idGymName').val().trim();
         let gymStreet = $('#idGymStreet').val().trim();
         let gymCity = $('#idGymCity').val().trim();
@@ -23,8 +65,11 @@ $(function(){
         let primaryLvl = $('#idprlevel').val().trim();
         let secondaryLvl = $('#idsclevel').val().trim();
 
-
+        // if(!url){
+        //     url = document.getElementById("pre").src
+        // }
         
+
         let userProfile = {
             firstname: fName,
             lastname: lName,
@@ -35,26 +80,31 @@ $(function(){
             homestate: homeState,
             homezip: homeZip,
             mobile: mPhone,
-            
+
             gymname: gymName,
             gymstreet: gymStreet,
             gymcity: gymCity,
             gymstate: gymState,
             gymzip: gymZip,
-            
+
             primaryexcer: primaryEx,
             secondaryexer: secondaryEx,
             primarylevel: primaryLvl,
-            secondarylevel: secondaryLvl
-        };
-        
-        console.log ('userProfile', userProfile )
-        
-        $.post('/survey', userProfile)
-            .then(function(data) {
-            console.log(data)
-        });
+            secondarylevel: secondaryLvl,
+            // photo:url
+            photo:url
 
-     })
+        };
+        console.log(userProfile)
+      
+
+        console.log('userProfile', userProfile)
+
+        $.post('/survey', userProfile)
+            .then(function (data) {
+                // console.log(data)
+            });
+
+    })
 })
 
