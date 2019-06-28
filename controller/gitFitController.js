@@ -58,8 +58,10 @@ router.put('/profile/match/:id', function (req, res) {
   const user_id1 = req.params.id;
   matching.findzip([user_id1], function (result1) {
     const zip = result1[0].home_zip;
+
     // console.log(result1);
     // console.log(zip);
+
     matching.zipmatch([zip], [result1[0].id], function (result2) {
       const hbsObject = {
         profile: result2
