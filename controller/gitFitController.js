@@ -58,16 +58,15 @@ router.put('/profile/match/:id', function (req, res) {
   const user_id1 = req.params.id;
   matching.findzip([user_id1], function (result1) {
     const zip = result1[0].home_zip;
-    // const zip = result1[0].home_zip;
-    // console.log(result);
-    console.log(zip);
+    // console.log(result1);
+    // console.log(zip);
     matching.zipmatch([zip], [result1[0].id], function (result2) {
       const hbsObject = {
         profile: result2
       };
-      console.log(hbsObject);
+      // console.log(hbsObject);
       // res.render('profile', hbsObject);
-      console.log(result2.length);
+      // console.log(result2.length);
       for (let x = 0; x < result2.length; x++) {
         // console.log(result2[0].id);
         // console.log(result2[1].id);
@@ -103,49 +102,25 @@ router.get('/profile/:id', function (req, res) {
   console.log(req.params.id);
   const user_id1 = req.params.id;
 
-  // const userObj = {
-  //   provi: user_id1
-  // };
-
-
+ 
   // res.render('profile', userObj)
-  // console.log(user_id1);
+  console.log(`Show the matching of the user ${user_id1}`);
 
-  // matching.matchLimit(user_id1, "home", function (result, err) {
-  //     const hbsObject = {
-  //       gitfit_match: result
-  //     };
-
-  //       res.render('gitfit_match', hbsObject);
-
-  //     console.log(result.length);
-
-  // })
-
-  matching.findzip([user_id1], function (result) {
-    // Send back the ID of the new quote
-    // res.json({ id: result.insertId });
-    // res.render('profile', user_id1);
-
-    const zip = result[0].home_zip;
-    console.log(result);
-    console.log(zip);
-
-
-    matching.zipmatch([zip], [result[0].id], function (result) {
+  matching.matchLimit(user_id1, "home", function (result) {
       const hbsObject = {
-        profile: result
+        matchLimit: result
       };
-      console.log(hbsObject);
-      res.render('profile', hbsObject);
+      
+      console.log(result)
+      // console.log(hbsObject);
+        res.render('profile', hbsObject);
 
-      console.log(result.length);
+      // console.log(result.length);
+      // console.log(result)
+
+  })
 
 
-    });
-
-
-  });
 
 }) //End of matching.findzip results
 
@@ -178,37 +153,7 @@ router.get('/profile', function (req, res) {
   });
 });
 
-router.get('/matches/:id', function (req, res) {
-  // matching.match(function(data) {
-  //   const hbsObject = {
-  //     profile: data
-  //   };
-  //   console.log(hbsObject);
 
-  const user_id1 = req.params.id;
-  // console.log(user_id1);
-
-  matching.findzip([user_id1], function (result) {
-
-    const zip = result[0].home_zip;
-    console.log(result);
-    console.log(zip);
-
-    matching.zipmatch([zip], [result[0].id], function (result) {
-      const hbsObject = {
-        profile: result
-      };
-      console.log(hbsObject);
-      res.render('matches', hbsObject);
-
-
-    });
-
-
-
-  });
-
-});
 // POST method route*************************
 router.post('/loggedIn', function (req, res) {
   res.send('POST request to the homepage') //Must enter function here ********************

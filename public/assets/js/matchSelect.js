@@ -1,4 +1,5 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
+// const axios = require('axios');
 $(function() {
 
   $('#messageArea').hide();
@@ -8,7 +9,7 @@ $(function() {
     // console.log(url)
     var id = url.substring(url.lastIndexOf('/') + 1);
     
-    // console.log(id)
+    console.log(id)
     // Adding if statement so that it does not keep reloading the screen on homepage
   if(url === '/profile/' + id && id != ""){
     console.log(`Looking at this site ${url}`)
@@ -23,6 +24,17 @@ $(function() {
 
       }
     );
+
+      
+
+      $.ajax({
+        method: 'GET',
+        url: '/profile/' + id
+      }).then(function(data){
+        // render(data);
+        // console.log(data, );
+      })
+
 
   }
 
