@@ -17,3 +17,47 @@
  <br> 
 </div>
 {{>chat}}
+{{!-- Ralph's new stuff above, original is below(comments dont work in handlebars) --}}
+
+<div class="container">
+<div class="row">
+      {{#each matchLimit}}
+  <div class="col">
+    <div class="card match123 d-inline-block" style="width: 12rem;">
+  
+      {{!-- <div class="row" >
+  <div class="col-sm-6"> --}}
+      <div class="d-inline-block">
+        {{!-- style= "display-inline: auto" --}}
+        <img class="card-img-top picformat" src="{{this.photo}}" alt="Card image cap">
+        <div class="card-body" style="margin-bottom: 5%">
+          <h5 class="card-title">{{this.first_name}} {{this.last_name}}</h5>
+          <p class="card-text"></p>
+          {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+          <button class="btn btn-success" id="gitfitAccept" data-profilematchid="{{this.match_id}}"
+            data-pactivity="{{this.primary_training_type}}">Accept</button>
+          <button class="btn btn-dark" id="gitfitBlock" data-profilematchid="{{this.match_id}}" 
+          data-pactivity="{{this.primary_training_type}}">Block</button>
+          <button class="btn btn-info" id="gitfitMessage" data-profilematchid="{{this.match_id}}" 
+          data-pactivity="{{this.primary_training_type}}">Chat</button>
+
+        </div>
+
+      </div>
+
+    {{!-- </div> --}}
+ 
+
+  {{!-- </div> --}}
+   
+
+
+</div> {{! end of card }}
+</div> {{! end of col }}
+   {{/each}}
+</div>{{! end of row }}
+  <div class="col-sm-6" id="messageChat">
+    {{>chat}}
+  </div>
+
+</div> {{! end of container }}

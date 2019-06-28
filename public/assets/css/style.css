@@ -142,12 +142,12 @@ font-family: 'Concert One', cursive;
     margin-bottom: 20%;  
 }
 
-.card-body{
+/* .card-body{
     background-color: light rgb(235, 235, 235);
    color: black; 
    border-radius: 50px;
    margin-bottom:20px;    
-}
+} */
 
 
 /*************************** Register.html CSS Below ******************/
@@ -172,3 +172,37 @@ font-family: 'Concert One', cursive;
 #registrationProcess{
   text-align: center; 
 }
+
+/******************************* Survey.html CSS ****************************/
+
+.photo1-profile{
+  background: url(../img/workout_partners-run.jpg) ;
+  height: 25em; 
+  width: 100%; 
+  text-align: center;
+  color: white;
+  padding-top: 70px;
+  text-align: center;
+  font-size: 25px; 
+  font-family: 'Permanent Marker', cursive;
+  font-family: 'Concert One', cursive;
+  
+}
+
+body {
+  padding-top: 5px;
+ 
+  background-size: cover;
+  text-align: center;
+}
+
+#txtcolor{
+  color: white;
+}
+
+#users{
+  border-radius: 20px;
+}
+
+/* addding something so it will upload */
+/*

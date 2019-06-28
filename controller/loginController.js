@@ -35,10 +35,16 @@ router.post('/api/verify', function(req, res){
                 //     "id": id,
                 //     "success":"Match! Now Logging In"
                 // });
+                if (result[0].active == 1){
                 logon.activeLogon(id,function(result){
                     // if (err) throw err
-                    res.redirect(`/profile/${id}`);
+                    res.json(
+                        {id: id,}
+                    )
                 });
+            }else{
+                console.log('This account has not yet been activated')
+            }
 
             }else{
                 // res.send({

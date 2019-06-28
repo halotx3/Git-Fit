@@ -1,22 +1,10 @@
-<!-- <div class="card" style="width: 15rem;">
-    {{#each profile}}
 
-  <img class="card-img-top picformat" src="{{this.photo}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{this.first_name}}</h5>
-    <p class="card-text">Match</p>
-    {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
-
-  </div> <br>
-
-     {{/each}}
-</div> -->
 
 <div id="messageArea">
     <div class="row">
       <div class="col-md-4">
         <div class="well onlineUsers">
-          <h4>Online Users</h4>
+          <h4 id="txtcolor">Online Users</h4>
           <ul class="list-group-item" id="users">
             {{#each profile}}
              <li>{{first_name}}</li>
@@ -30,8 +18,8 @@
           <form id="messageForm">
             <div id="chatBody"></div>
           <div class="form-group">
-            <label>Enter a Message</label>
-            <input type="text" class="form-control" id="message">
+            <!-- <label>Enter a Message</label> -->
+            <input type="text" class="form-control" id="message" placeholder="Start Message">
             <br>
             <input type="submit" class="btn btn-primary" value="Send Message">
           </div>

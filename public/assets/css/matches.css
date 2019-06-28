@@ -23,6 +23,14 @@
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
       }
 
+      h4 {
+        font-size: 100px;
+        color: white;
+
+      }
+      li {
+       
+      }
 
       .block{
         display: block;
@@ -65,8 +73,10 @@
         padding-right: 10px;
         float: right;
         margin-right: 25px;
-
-
+      }
+      .list-group-item {
+        font-weight: bold;
+        background-color: purple;
       }
 
       hr{
@@ -76,6 +86,7 @@
         border:10px;
         height: 40%;
       }
+
 
       .video{
         width: 200%;
@@ -87,12 +98,21 @@
         /* background-color:rgb(161, 156, 156); */
       background-color: white; 
       }
+      .col-md-4 {
+        background-color: gray;
+        border-radius: 20px;
+      }
+      #users {
+        background-color: white;
+      }
       #chatBody {
-        height: 200px;
-        width: 100%;
-        border-radius: 2px solid darkgrey;
-        border: 10px;
-        background-color: ivory;
+        height: 300px;
+        width: 350px;
+        border-radius: 5px solid black;
+        margin-right:20px;
+        border: solid 2px lightgray;
+        background-color: white;
+      
       }
       #pmatch{
         margin: 20%;

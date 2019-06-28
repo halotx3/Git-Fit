@@ -17,7 +17,9 @@ $(function(){
             type: 'POST',
             data: updateData
         }).then(function(data){
-            console.log(data)
+            let useID =data.id
+            console.log(data);
+            window.location.assign(`/profile/${useID}`)
         })
     })
 });
