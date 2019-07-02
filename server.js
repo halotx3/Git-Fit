@@ -5,10 +5,8 @@ const io = require('socket.io').listen(server);
 const time = require('date-and-time');
 const session = require('express-session');
 const passport = require('passport');
-const helmet = require('helmet')
-
-// const connection = require('./config/connection.js');
-
+const helmet = require('helmet');
+const randomstring = require("randomstring");
 
 const PORT = process.env.PORT || 3000;
 
@@ -16,12 +14,8 @@ require('./sockets/socket')(io);
 
 // Serve static content for the app from the 'public' directory in the application directory.
 app.use(express.static("public"));
-//Intended for Express Sessions
-app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true
-}));
+
+
 //Additional Securities
 app.use(helmet());
 // Parse request body as JSON

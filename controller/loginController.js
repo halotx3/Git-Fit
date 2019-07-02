@@ -4,6 +4,8 @@ const router = express.Router();
 const logon = require('../models/logon.js');
 const bcrypt = require('bcrypt');
 const passport = require(('passport'))
+const cookieParser = require('cookie-parser')
+// const cookieSession = require('cookie-session');
 
 
 router.post('/api/verify', function(req, res){   
@@ -16,16 +18,16 @@ router.post('/api/verify', function(req, res){
         console.log(result[0]);
         if (result[0].email == email){
             let id = result[0].id;
-            bcrypt.compare(req.body.password,result[0].password, function(err,res){
-                if(res) {
+            bcrypt.compare(req.body.password,result[0].password, function(err, result){
+                if(result) {
                     console.log('Log in attempt successful')
-                    req.session.id = id
-                    console.log(id)
-                    // mRes.redirect(`/profile/${id}`)
+                    req.session.user = {'id': id}
+                    console.log(req.session.user)
+                    res.json({profile: id})
                 }else {
                     //password does not match
                     console.log('Incorrect Username/Password!')
-                    mRes.status(403);
+                    res.status(403);
                 }
             })
         }

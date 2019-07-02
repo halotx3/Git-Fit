@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 const randomstring = require("randomstring");
-
 const router = express.Router();
 //Importing the emailVer model which has the specific ORM code
 const emailVer = require('../models/emailVer.js');
@@ -38,8 +37,13 @@ const emailVer = require('../models/emailVer.js');
             expiresIn:'2h'
           },
         );
+        
+        //Query to send ID to the profile table
+        // emailVer.eProfile([req.body.firstname, req.body.lastname, result.insertId], function(result){
 
-        const verURL = `http://localhost:3000/confirm/${emailToken}`;
+        // })
+
+        const verURL = req.body.hostname + '/confirm/' + emailToken
 
          transporter.sendMail({
           to: req.body.email,
@@ -47,8 +51,10 @@ const emailVer = require('../models/emailVer.js');
           html: `Hello,<br>
           Please use the following link to complete your registration and activate your account:<a href="${verURL}">${verURL}</a>`,
         },(error, result) => {
-          if (error) return console.error(error);
-          return console.log(result);
+          if (error) console.error(error);
+          console.log(result);
+          console.log(window.location.hostname);
+          return
         });
          
         res.status(201).end;
@@ -64,7 +70,7 @@ const emailVer = require('../models/emailVer.js');
     console.log(id.id)
     emailVer.eVerUpdate(id.id, function(result){
       console.log('Account has been updated');
-      res.redirect(`/profile/${id.id}`);
+      res.redirect(`/survey/${id.id}`);
     });
   })
   module.exports = router;

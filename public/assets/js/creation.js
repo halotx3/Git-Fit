@@ -10,8 +10,10 @@ $(function(){
             email: userMail,
             password: userPass,
             firstname: fName,
-            lastname: lName
+            lastname: lName,
+            hostname: window.location.host
         }
+        console
         $.ajax('/create',{
             type: 'POST',
             data: userCreds
