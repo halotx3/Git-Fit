@@ -5,7 +5,18 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "clean": "rm -rf node_modules",
+    "build": "npm i",
+    "clean-build": "npm run clean && npm run build",
+    "printinfo": "echo $npm_package_description",
+    "winprintinfo": "echo %npm_package_description%",
+    "audit": "npm audit",
+    "watch": "npx nodemon server.js",
+    "node4": "npx node@4 server.js",
+    "node6": "npx node@6 server.js",
+    "node8": "npx node@8 server.js",
+    "prod": "npm run clean-build && npm audit && npm run start"
   },
   "repository": {
     "type": "git",
@@ -19,8 +30,8 @@
   },
   "homepage": "https://github.com/halotx3/Git-Fit#readme",
   "dependencies": {
-    "ajax": "0.0.4",
     "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
     "date-and-time": "^0.6.3",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",

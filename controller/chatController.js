@@ -21,7 +21,7 @@ const chatMatch = require('../models/chatModel.js')
 //   })
 // })
 
-router.get('/api/profile', function(req, res){
+router.get('/api/profile/:id', function(req, res){
 
 //   res.send({"hello":"world"})
 // //   // const id = req.params.id;

@@ -2,21 +2,24 @@ const express = require('express');
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io').listen(server);
+const time = require('date-and-time');
+const bodyparser = require('body-parser');
 require('moment');
-
 // const connection = require('./config/connection.js');
 
 
 const PORT = process.env.PORT || 3000;
 
-require('./sockets/socket')(io);
+
 
 // Serve static content for the app from the 'public' directory in the application directory.
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
+
 
 // Parse request body as JSON
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true, limit:"50mb", parameterLimit:50000 }));
+app.use(express.json({limit:"50mb"}));
+
 
 // Set Handlebars.
 const exphbs = require('express-handlebars');
@@ -39,6 +42,8 @@ app.use(chatRoutes);
 app.use(surveyRoutes);
 
 app.use('/', mainroutes);
+// app.use(express.limit(100000000));
+// app.use(express.bodyParser({limit:"50mb"}));
 
 app.use('/survey', mainroutes);
 app.use('/register', mainroutes);

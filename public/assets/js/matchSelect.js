@@ -2,7 +2,7 @@
 // const axios = require('axios');
 $(function() {
 
-  $('#messageArea').hide();
+  //$('#messageArea').hide();
 
   // variables fro the URL with the ID
     var url = window.location.pathname;
@@ -20,7 +20,7 @@ $(function() {
       function() {
         console.log('create the match', id);
         // Reload the page to get the updated list
-        location.reload();
+        // location.reload();
 
       }
     );

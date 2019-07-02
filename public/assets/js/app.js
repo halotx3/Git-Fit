@@ -1,5 +1,3 @@
-
-
 $(function() {
   let socket = io.connect();
   let $messageForm = $('#messageForm');
@@ -14,17 +12,16 @@ $(function() {
   let html = "";
   let now = moment().fromNow();
 
-
   $messageForm.submit(function(e) {
     e.preventDefault();
-    console.log(now)
+
 
     socket.emit('send message', $message.val());
     $message.val('');
   });
   socket.on('new message',  function(data) {
 
-    console.log(data.activelist);
+    console.log(`ZZzzzzzzz!!!:${data}`);
 
         $chat.append(`User: ${now}`);
         $chat.append(`<div id=${data.user} class="chatmsg">${data.msg}</div>`);
@@ -41,6 +38,7 @@ $(function() {
   const load = function(e) {
     // e.preventDefault();
     socket.emit('new user', function(data) {
+      console.log(data)
       // if (data) {
       //   // $username.val('');
       //   $userFormArea.hide();
@@ -53,7 +51,7 @@ $(function() {
   };
   socket.on('get users', function(data) {
 
-     let html = "";
+    // let html = "";
       // console.log(data + '2')
       for (let i = 0; i < data.length; i++ ){
       html += `<li class="list-group strong"> ${data[i]}</li>`;
@@ -61,7 +59,7 @@ $(function() {
     };
   });
 
-  // load();
+   load();
 
   //console.log(html);
 });

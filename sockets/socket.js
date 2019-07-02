@@ -8,6 +8,7 @@ module.exports = function (io) {
 io.sockets.on('connection', function(socket){
 
   connections.push(socket);
+  console.log("kdjakjalkjfakjadflkjfdk")
   console.log("Connected: %s socket Connected", connections.length);
 
   //Disconnect
@@ -20,7 +21,7 @@ io.sockets.on('connection', function(socket){
    })
    // Send Message
   socket.on('send message', function(data){
-    
+
     io.sockets.emit('new message', {activelist: users, msg: data});
 
 
