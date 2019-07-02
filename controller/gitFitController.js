@@ -6,19 +6,7 @@ const router = express.Router();
 const matching = require('../models/qryInfo.js');
 const chatMatch = require('../models/chatModel.js')
 
-// Create all our routes and set up logic within those routes where required.
-router.get('/profile', function (req, res) {
-  matching.match(function (data) {
-    const hbsObject = {
-      profile: data
-    };
-    console.log(hbsObject);
-    res.render('profile', hbsObject);
-
-
-  });
-});
-
+// Approving a match
 router.put('/profile/:id', function (req, res) {
   console.log(req.params.id);
   const user_id1 = req.params.id;
@@ -35,12 +23,12 @@ router.put('/profile/:id', function (req, res) {
   })
 });
 
+// Blocking the match
 router.put('/profile/block/:id', function (req, res) {
   console.log(req.params.id);
   const user_id1 = req.params.id;
   const matchid = req.body.profilematchid
-  // console.log(matchid)
-  // console.log(user_id1)
+
   let block = true;
 
   matching.updateBlock(block, user_id1, matchid, function () {
@@ -99,7 +87,7 @@ router.put('/profile/match/:id', function (req, res) {
 
 
 
-
+// display the match on the page
 router.get('/profile/:id', function (req, res) {
   console.log(req.params.id);
   const user_id1 = req.params.id;

@@ -33,7 +33,7 @@ const orm = {
     },
 
     findzip: function (tableInput, id, cb) {
-        connection.query('SELECT * FROM ?? where id = ?', [tableInput, id], function (err, result) {
+        connection.query('SELECT * FROM ?? where cred_id = ?', [tableInput, id], function (err, result) {
             if (err) {
                 throw err;
             }
@@ -43,7 +43,7 @@ const orm = {
 
 
     zipmatch: function (tableInput, id, origin, cb) {
-        connection.query('SELECT * FROM ?? where home_zip = ? and id <> ?', [tableInput, id, origin], function (err, result) {
+        connection.query('SELECT * FROM ?? where home_zip = ? and cred_id <> ?', [tableInput, id, origin], function (err, result) {
             if (err) {
                 throw err;
             }

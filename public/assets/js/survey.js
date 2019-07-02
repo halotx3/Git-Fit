@@ -13,7 +13,6 @@ $(function () {
         }, false);
 
         // reader.onload = function(event){
-
         // }
 
         if (file) {
@@ -27,23 +26,19 @@ $(function () {
 
       $('#pic').on("change",previewFile);
 
-    
-
-    
-    // var reader = new FileReader();
-    // console.log(reader.readAsDataURL());
-
-    // var data = canvas.toDataURL('/assets/img/spin.jpg');
-    // $('.pic').fileupload('option', 'formData').file = data;
-    // $('.pic').fileupload('add', { files: [data] });
-    // console.log()
-
     // End Image Uplaod
+
+    // var id = url.substring(url.lastIndexOf('/') + 1);
 
 
     $('#submit-survey').on('click', function (event) {
+        var url = window.location.pathname;
+        var idProfile = url.substring(url.lastIndexOf('/') + 1);
+        
         event.preventDefault();
-        console.log('  Test survey.js');
+        console.log('******Test survey.js*****');
+        console.log(idProfile);
+
         let fName = $('#FirstName').val().trim();
         let lName = $('#LastName').val().trim();
         let gendermf = $('#idgender').val().trim();
@@ -91,18 +86,20 @@ $(function () {
             secondaryexer: secondaryEx,
             primarylevel: primaryLvl,
             secondarylevel: secondaryLvl,
-            // photo:url
-            photo:url
+         
+            photo:url,
+            cred_id:idProfile
 
         };
         console.log(userProfile)
       
 
-        console.log('userProfile', userProfile)
+        // console.log('userProfile', userProfile)
 
-        $.post('/survey', userProfile)
+        $.post(`/survey/${idProfile}`, userProfile)
             .then(function (data) {
                 // console.log(data)
+                console.log('create profile for', idProfile)
             });
 
     })
