@@ -44,7 +44,7 @@ app.use('/', mainroutes);
 // app.use(express.limit(100000000));
 // app.use(express.bodyParser({limit:"50mb"}));
 
-// app.use('/survey', mainroutes);
+app.use('/survey', mainroutes);
 app.use('/register', mainroutes);
 app.use('/matches', mainroutes);
 // app.use('/loggedIn', mainroutes); // Enter the correct file handlebar name here *********

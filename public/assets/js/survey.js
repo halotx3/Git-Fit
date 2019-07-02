@@ -3,6 +3,9 @@ $(function () {
     let url = ""
 
     function previewFile() {
+
+        var url = window.location.pathname;
+        var idProfile = url.substring(url.lastIndexOf('/') + 1);
         var preview = document.querySelector('img');
         var file = document.querySelector('input[type=file]').files[0];
         var reader = new FileReader();
@@ -19,12 +22,29 @@ $(function () {
             reader.readAsDataURL(file);
             url = document.getElementById("pre").src
             console.log(url)
-            
+
+            // var idProfile = url.substring(url.lastIndexOf('/') + 1);
+            if (url === `http://localhost:3000/survey/${idProfile}`){
+                console.log("Reselect picture")
+                //  let imgNew = $('#pre').attr('src') + date.getTime();
+                // previewFile();
+                reader.addEventListener("reload", function () {
+                    preview.src = reader.result;
+                }, false);
+                reader.readAsDataURL(file);
+                
+                imgNew = document.getElementById("pre").src
+                console.log(`The correct image is: ${imgNew}`);
+                // location.reload();
+                // url = document.getElementById("pre").src
+                // console.log(`The correct image is: ${url}`)
+            }
+
             // attr.src
         }
     }
 
-      $('#pic').on("change",previewFile);
+    $('#pic').on("change", previewFile);
 
     // End Image Uplaod
 
@@ -34,7 +54,7 @@ $(function () {
     $('#submit-survey').on('click', function (event) {
         var url = window.location.pathname;
         var idProfile = url.substring(url.lastIndexOf('/') + 1);
-        
+
         event.preventDefault();
         console.log('******Test survey.js*****');
         console.log(idProfile);
@@ -63,7 +83,7 @@ $(function () {
         // if(!url){
         //     url = document.getElementById("pre").src
         // }
-        
+
 
         let userProfile = {
             firstname: fName,
@@ -86,13 +106,13 @@ $(function () {
             secondaryexer: secondaryEx,
             primarylevel: primaryLvl,
             secondarylevel: secondaryLvl,
-         
-            photo:url,
-            cred_id:idProfile
+
+            photo: url,
+            cred_id: idProfile
 
         };
         console.log(userProfile)
-      
+
 
         // console.log('userProfile', userProfile)
 
