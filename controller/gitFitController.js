@@ -6,19 +6,7 @@ const router = express.Router();
 const matching = require('../models/qryInfo.js');
 const chatMatch = require('../models/chatModel.js')
 
-// Create all our routes and set up logic within those routes where required.
-router.get('/profile', function (req, res) {
-  matching.match(function (data) {
-    const hbsObject = {
-      profile: data
-    };
-    console.log(hbsObject);
-    res.render('profile', hbsObject);
-
-
-  });
-});
-
+// Approving a match
 router.put('/profile/:id', function (req, res) {
   console.log(req.params.id);
   const user_id1 = req.params.id;
@@ -35,12 +23,12 @@ router.put('/profile/:id', function (req, res) {
   })
 });
 
+// Blocking the match
 router.put('/profile/block/:id', function (req, res) {
   console.log(req.params.id);
   const user_id1 = req.params.id;
   const matchid = req.body.profilematchid
-  // console.log(matchid)
-  // console.log(user_id1)
+
   let block = true;
 
   matching.updateBlock(block, user_id1, matchid, function () {
@@ -62,7 +50,7 @@ router.put('/profile/match/:id', function (req, res) {
     // console.log(result1);
     // console.log(zip);
 
-    matching.zipmatch([zip], [result1[0].id], function (result2) {
+    matching.zipmatch([zip], [result1[0].cred_id], function (result2) {
       const hbsObject = {
         profile: result2
       };
@@ -74,11 +62,11 @@ router.put('/profile/match/:id', function (req, res) {
         // console.log(result2[1].id);
         // console.log(user_id1);
 
-        matching.existMatch(user_id1, `${result2[x].id}`, "home", function (result, err) {
+        matching.existMatch(user_id1, `${result2[x].cred_id}`, "home", function (result, err) {
           // console.log(result);
           // console.log(err);
           if (result.length <= 0 ) {
-            matching.createMatch([user_id1, `${result2[x].id}`, "false", "home", "false"], function () {
+            matching.createMatch([user_id1, `${result2[x].cred_id}`, "false", "home", "false"], function () {
               console.log("Create match shows data!!")
             }); //creatematch  
             
@@ -99,7 +87,7 @@ router.put('/profile/match/:id', function (req, res) {
 
 
 
-
+// display the match on the page
 router.get('/profile/:id', function (req, res) {
   console.log(req.params.id);
   const user_id1 = req.params.id;
