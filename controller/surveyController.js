@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const survey = require('../models/surveyroute.js');
+const cookieParser = require('cookie-parser')
+
 
 //Importing the surveyOrm. model which has the specific ORM code
 // html routes
 router.get('/survey/:id', function (req, res){
     
     res.render('survey', {title: "survey"});
-    
 });
 
 // Posting Survey(Profile) info to db
