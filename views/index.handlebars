@@ -1,109 +1,425 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="space col-lg-10">
+ <!-- Navigation bar-->
+   <div id="indexBody">
+    <header id="homeIndex" style="padding-left: 0px; ">
+        <nav class="transparent">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">
+                    <!--<img src="./img/logo.png" alt="logo" height="64" width="64"> -->
+                </a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu </i></a>
+                <ul class="left hide-on-med-and-down">
+                    <!-- <li> <a href="#">Home</a></li> -->
+                    <li> <a href="/register">Sign Up</a></li>
+                    <li> <a href="/login1">Login</a></li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    {{!-- <li> <a href="#">Profile</a></li> --}}
+                    <li> <a href="/logoff">Logoff</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--Sidebar -->
+        <ul class="sidenav" id="mobile-demo">
+            <!-- <li><a href="#">Home</a></li> -->
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="/login1">Login</a></li>
+           
+            <!-- Need to initialize the sidenav in index.js file-->
+        </ul>
+        <!-- Welcome Text-->
+        <div class="welcome-text valign-wrapper">
+            <div class="red-text center-align welcome">
+                <h1 id="logo" style="width:390px; margin-left:50%; margin-top: 100px; ">GitFit </h1>
+                <h3 id="whiteText">WHY WORKOUT ALONE??</h3>
+                <p class="text-darken-5">
+                  
 
-            <!-- blank space on first line to push buttons over -->
+                </p>
+
+            </div>
         </div>
 
+    </header>
 
-        <div class="headerLinks col-lg-2">
+    <!-- About section -->
+    <section id="about" class="valign-wrapper">
+        <div class="container black-text text-lighten-4">
+            <div class="row">
+                <div class="col s12 m9 pull-l2">
+                    <div class="left-align">
+                        <!-- <p class="grey-text">Who is GitFit ABOUT PAGE</p> -->
+                        <h4 style="font-weight: bold"> WHO IS GITFIT </h4>
+                        <P>
+                            <span style="font-weight:800">GitFit helps you find a workout buddy to motivate you to excercise.  Go workout together at the gym,
+                                 Take classes like spinning, yoga,  zumba, Play sports like basketball, football, Take a walk in the park with your buddy. Users find the perfect training partner,
+                                whether it's a short term partner if you are travelling or a long term partner to train with from
+                                your home location where you reside. <br><br>
+                                 If you are a personal trainer or gym facility GitFit is your solution to a stress
+                                    free booking system. Simply sign up, manage your schedule,
+                                    add classes, take bookings, and take all your payments using our pocket sized app.
+                                <br> WE'RE CONFIDENT YOU'LL BE SATISFIED WITH THE APP <br>
+                                <br> 
+                                Now there is no excuse..GO WORKOUT TODAY!!!! . Get your body lean and strong as you <u> GITFIT</u> at your convenience. SIGNUP TODAY!!!
+                        </P>
+                        <!-- <button class="btn waves-effect waves-light" type +"button style="border-radius:50px;">View
+                            More</button> -->
+                        </P>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-                  Sign Up
-                </button> -->
+    <!--Clip arts section-->
+    <section class="black center-align valign-wrapper">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col l2 m12 s12" style="width: 34px; height:34px; "> <img src="./img/spin-bike1.png">
+                </div>
+                <div class="col l2 m12 s12" style="width: 64px; height:64px; "> <img src="./img/yoga2.png"> -->
+                </div>
+                <!-- <div class="col l2 m12 s12"> <img src="./img/spin.jpg">
+                </div>
+                <div class="col l2 m12 s12"> <img src="./img/spin.jpg">
+                </div>
+                <div class="col l2 m12 s12"> <img src="./img/spin.jpg">
+                </div>
+                <div class="col l2 m12 s12"> <img src="./img/spin.jpg">
+                </div> -->
 
-                <a class="headerLinks" data-toggle="modal" data-target="#loginmodal" href="/index"> Login</a>
-                {{!-- Modal for logging in to account --}}
-                <div class="modal" id="loginmodal" tabindex="1" role="dialog">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="loginTitle">Please Log In.</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-intro center">
+            <!-- <p class="red-text"> WHAT CAN WE DO? </p> -->
+            <h4 style="font-weight: bold"> SERVICES</h4>
+            <p style="margin: 20px; font-weight: bold;">
+                    GITFIT IS A NEW INNOVATIVE FITNESS APP WHICH HELPS YOU LOCATE THE BEST POSSIBLE WORKOUT BUDDY MATCHES CLOSEST TO YOUR PROXIMITY  BY RUNNING A QUERY 
+                    IN OUR DATABASE. THE SEARCHES INCLUDES DISTANCE, WORKOUT LEVEL, AND FITNESS TYPE OF MEMBERS TO FIND THE MATCH. ALL YOU NEED TO DO IS REGISTER AND 
+                    LET GITFIT DO THE REST.  
+            </p>
+        </div>
+        <!-- Cards-->
+        <div class="cards">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m6 l4">
+                        <div class="card small">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="/assets/img/loginPic2.jpg" style="height: 194.67px; width:327.22px;">
                             </div>
-                            <div class="modal-body">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="logEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                                <br>
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="logPass" placeholder="Password">
-                                <br>
-                                <input class="btn btn-primary" id="logData" type="submit" value="Submit" data-dismiss="modal">
+                            <div class="card-content">
+                                <h4 class="card-title activator grey-text text-darken-4">SPINNING <i
+                                        class="material-icons right"> more_vert</i></h4>
+                            </div>
+                            <div class="card-reveal">
+                                <h4 class="card-title grey-text text-darken-4">SPINNING <i
+                                        class="material-icons right">CLOSE</i></h4>
+                                <p>  Indoor cycling can be a high-energy, addictive way to torch calories -- 400 to 600 in a 40 minute class. 
+                                        Spin classes can be super intimidating, but it's not as bad if you do it with a BUDDY.  
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="card small">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="/assets/img/match.png " style="height: 194.67px; width:327.22px;">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title activator grey-text text-darken-4">MATCHES<i
+                                        class="material-icons right"> more_vert</i></h4>
+                            </div>
+                            <div class="card-reveal">
+                                <h4 class="card-title grey-text text-darken-4">MATCHES <i
+                                        class="material-icons right">CLOSE</i></h4>
+                                <p> Make Your Move and become a member of <u> GitFIt </u> and Boost your motivation to workout Worldwide fitness Matching website...
+                                     Excercise is KEY and should be a part of everyone's lives to sustain great health. Signup Today and find yourself a MATCH!!!
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="card small">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="/assets/img/spotter.jfif" style="height: 194.67px; width:327.22px;">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title activator grey-text text-darken-4">WEIGHTS <i
+                                        class="material-icons right"> more_vert</i></h4>
+                            </div>
+                            <div class="card-reveal">
+                                <h4 class="card-title grey-text text-darken-4">WEIGHTS<i
+                                        class="material-icons right">CLOSE</i></h4>
+                                <p> A guide to safe and effective spotting when lifting weights ... 
+                                    in case of an emergency, a weight trainer should always lift with someone at their aid. ... If you're doing chest and
+                                     get caught short, you have a BUDDY there to assist ...
+                                     It's important to find a good spotter who you can rely on regularly and learn to trust.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="card small">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="/assets/img/basketball.jfif" style="height: 194.67px; width:327.22px;">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title activator grey-text text-darken-4">SPORTS <i
+                                        class="material-icons right"> more_vert</i></h4>
+                            </div>
+                            <div class="card-reveal">
+                                <h4 class="card-title grey-text text-darken-4">SPORTS <i
+                                        class="material-icons right">CLOSE</i></h4>
+                                <p> The positive, direct effects of engaging in regular physical activity are particularly 
+                                    apparent in the prevention of several chronic diseases, including: cardiovascular disease, 
+                                    diabetes, cancer, hypertension, obesity, depression and osteoporosis.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="card small">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="/assets/img/WALKING.jfif" style="height: 194.67px; width:327.22px;">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title activator grey-text text-darken-4">WALKING <i
+                                        class="material-icons right"> more_vert</i></h4>
+                            </div>
+                            <div class="card-reveal">
+                                <h4 class="card-title grey-text text-darken-4">WALKING <i
+                                        class="material-icons right">CLOSE</i></h4>
+                                <p> Just walking 30 minutes every day can increase cardiovascular fitness, strengthen bones, 
+                                    reduce excess body fat, and boost muscle power and endurance.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="card small">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="/assets/img/globe.png" style="height: 194.67px; width:327.22px;">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title activator grey-text text-darken-4">GLOBAL <i
+                                        class="material-icons right"> more_vert</i></h4>
+                            </div>
+                            <div class="card-reveal">
+                                <h4 class="card-title grey-text text-darken-4">GLOBAL <i
+                                        class="material-icons right">CLOSE</i></h4>
+                                <p>Members are located globally. Signup Today, find your match and begin working out together. 
+                                    Good Health is Wealth!!
+                                </p>
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <a class="headerLinks" href="/register">Sign Up</a>
-                <!-- <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-                   Login
-                  </button> -->
-
+            </div>
         </div>
-    </div>
-    <br>
-    <br>
-
-
-    <div class="row">
-        <div class="photo1 space col-lg-12">
-            <p id="whyWorkoutalone"> WHY WORKOUT ALONE?</p>
-            <!-- <p class="newInnovative"> New innovative way of finding a workout buddy </p>
-           <p class="newInnovative">and reaching your workout goals </p>
-           <p class="newInnovative">from anywhere!!!!</p> -->
-            <!-- <p>"Training has given me the know-how to enter the gym with confidence! I now know how to use the equipment and maximize a workout with confidence!”" </p>              -->
-            <!-- blank space on first line to push buttons over -->
+    </section>
+    <!-- Carousel Images-->
+    <section>
+        <div class="carousel" style="margin-top:30px;">
+            <a href="" class="carousel-item" href="#one!" center><img src="/assets/img/personal-training.jpg" style="height: 194.67px; width:327.22px;"></a>
+            <a href="" class="carousel-item" href="#two!" center><img src="/assets/img/walking.jpg" style="height: 194.67px; width:327.22px;"></a>
+            <a href="" class="carousel-item" href="#three!"><img src="/assets/img/spin.jpg" style="height: 194.67px; width:327.22px;"></a>
+            <a href="" class="carousel-item" href="#four!"><img src="/assets/img/weights.jpg" style="height: 194.67px; width:327.22px;"></a>
+            <a href="" class="carousel-item" href="#five!"><img src="/assets/img/bball.jpg" style="height: 194.67px; width:327.22px;"></a>
+            <a href="" class="carousel-item" href="#six!"><img src="/assets/img/yoga.jfif" style="height: 194.67px; width:327.22px;"></a>
         </div>
 
+        <div class="center margin-top: -80px;">
+            <!-- <P class="red-text">WHAT DO PEOPLE SAY?</P> -->
+            <h4 style="font-weight: bold"> OUR SATISFIED MEMBERS</h4>
+            <p style=" margin: 20px;">
+                GITFIT IS A WORLDWIDE FITNESS BUDDY MATCHING WEBSITE.  
+            </p>
+        </div><br> 
 
+        <div class="container">
+            <div class="row center">
+                <div class="col s12 l12">
+                    <div class="carousel carousel-slider center" data-indiacators="true">
+                        <div class="carousel-item black-text" href="#one">
+                            <h2> John Doe</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ipsum dolor veritatis
+                                soluta corrupti ducimus optio reprehenderit, consectetur voluptatum. Veniam voluptas
+                                ratione sint corporis exercitationem odio quia beatae, excepturi ex?</p>
+                        </div>
+                        <div class="carousel-item black-text" href="#two">
+                            <h2>John Doe2</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa placeat nam similique,
+                                aut sunt eos autem? Iste ad odio, dolorum voluptates fuga illo esse dolor aliquid magni
+                                modi reprehenderit incidunt.
+                            </p>
+                        </div>
+                        <div class="carousel-item black-text" href="#three">
+                            <h2> John Doe3</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum consequatur magni
+                                fugiat distinctio libero ut recusandae rerum? Ab quasi itaque molestias ut assumenda
+                                laboriosam nobis, perspiciatis autem nam? Veritatis, magni.
+                            </p>
+                        </div>
+                        <div class="carousel-item black-text" href="#four">
+                            <h2>
+                                John Doe4
+                            </h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut odit dicta odio nesciunt
+                                culpa, nostrum eligendi error, saepe explicabo itaque quidem in, ullam porro. Hic ipsum
+                                cumque officia praesentium quibusdam.
+                            </p>
+                        </div>
 
-    </div>
-</div>
-<br>
-<br>
-<br>
-<!-- Left space 2 columns on main page -->
-<div class="row">
-    <div class="fourPhotos col-lg-5">
-
-
-        <!-- Four photos in the main index page  -->
-        <img class="image1" src="assets/img/aerobic.jfif" alt="Aerobic" style="width:256px;height:150px;">
-        <img class="image2" src="assets/img/walking.jpg" alt="Walking" style="width:256px;height:150px;">
-        <br>
-        <img class="image3" src="assets/img/weights.jpg" alt="Weight Lifting" style="width:256px;height:150px;">
-        <img class="image4" src="assets/img/spin.jpg" alt="Spin Class" style="width:256px;height:150px;">
-
-
-
-
-    </div>
-
-
-
-    <div class="col-lg-6">
-
-           <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">GitFit Workout Buddy</h5>
-                <p class="card-text">Introducing GitFit...the newest innovative  website to hit the fitness industry.
-
-                    GitFit helps gym users find the perfect training partner, whether it's a short term partner if you are travelling or a long term partner to train with from your home location. </p>
-                    <br>
-                    <p>
-                    If you are a personal trainer or gym facility GitFit is your solution to a stress free booking system. Simply sign up, manage your schedule, add classes, take bookings, and take all your payments using our pocket sized app.
-                    </p>
-                    <br>
-                    <p> Now there is no excuse... Get your body lean and strong as GitFit at your convenience</p>
-                <a href="/register" class="btn btn-primary">Sign Up Today</a>
-              </div>
+                        <div class="carousel-item black-text" href="#five">
+                            <h2>
+                                John Doe5
+                            </h2>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo veniam vitae,
+                                consectetur suscipit natus fugit nemo dicta a repellendus aut quisquam accusamus at
+                                perspiciatis blanditiis minus commodi? Ducimus, sunt harum.
+                            </p>
+                        </div>
+                        <div class="carousel-item black-text" href="#six">
+                            <h2>
+                                John Doe6
+                            </h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nobis sed tempora,
+                                corporis temporibus mollitia distinctio voluptatum voluptates autem odio quam id,
+                                cupiditate nisi quisquam ducimus quae, inventore vitae? Earum?
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-      <!-- Right space on 2 columns main page -->
-      <div class="col-lg-3"></div>
+    </section>
+
+    <!-- <section id="some" class="valign-wrapper black-text">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m8 push-l5">
+                    <div>
+                        <p class="class black-text"> WHERE ARE WE??</p>
+                        <h4 style="font-weight:bold">WE ARE GLOBAL</h4>
+                        <span style="font-weight: 800"> SOLUFIX ISN'T THE GUY OFFERING HOME REPAIR SERVICES FROM THE
+                            BACK OF HIS
+                            PICKUP TRUCK. </span><br>
+                        <p>
+                            REPIFIX, WE BELIEVE IN EXCEPTIONAL SERVICE AND QUALITY WORKMANSHIP, WHICH IS WHY WE BACK
+                            EVERY JOB WE
+                            WITH OUR "DONE RIGHT GUARANTEE. YOU CAN RELAX KNOWING WE GUARANTEE OUR WORKMANSHIP AND
+                            PRODUCTS WE
+                            PURCHASE.
+                            <br><br>
+                            IF THERE IS A PROBLEM WITH THE WORKMANSHIP PERFORMED BY A REPIFIX TECHNICIAN OR WITH A
+                            PRODUCT PURCHASED
+                            BY REIFIX, JUST GIVE US A CALL AND WE'LL SEND SOMEONE OUT TO MAKEIT RIGHT.
+                        </p><br><br>
+                        <button class="btn waves-effect waves-light" type +"button style="border-radius:50px;">View More
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Blog Section-->
+    <!-- <section id="blogs">
+        <div class="center">
+            <p class="red-text"> WHAT IS NEW?</p>
+            <h4 style="font-weight: bold"> BLOG AND NEWS</h4>
+            <P style="margin: 20px;">
+                Mr. Handyman is your personal home improvement consultant and a trusted,<br> knowledgeable resource that
+                is
+                part os a leading national service franchise.
+            </P>
+        </div><br><br>
+        <div class="cards">
+            <div class="row">
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="./img/walking.jpg" alt="walking">
+                            <span class="card-titlered-text">
+                                <h4>DOES MY HOUSE REALLY NEED?</h4>
+                            </span>
+                        </div>
+                        <div class="card-content center">
+                            <span class="red-text">
+                                APRIL 18, 2017
+                            </span>
+                            <p>IF YOU BOUGHT A HOUSE, YOU MAY BE SHOCKED TO DISCOVER IT DOESN'T HAVE GUTTERS. HOW DID
+                                YOU
+                                OVERLOOK THIS DURING THE INSPECTION?</p><br>
+                            <button><a href="#">READ MORE</a></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section> -->
+
+
+    <!-- Footer Section -->
+    <footer class="black white-text center" style="padding-left:0; ">
+        <div style="padding:20px 0 20px 0;">
+            <h3 id="foot">GitFit</h3>
+            <!-- Font Awesome Icons-->
+            <ul>
+                <li><i class="fa fa-facebook"></i></li>
+                <li><i class="fa fa-instagram"></i></li>
+                <li><i class="fa fa-twitter"></i></li>
+                <li><i class="fa fa-youtube"></i></li>
+                <li><i class="fa fa-linkedin"></i></li>
+            </ul>
+        </div>
+        <div class="grey darken-2" style="padding: 30px 0;">
+            &COPY; GitFit Est 2019 . All Rights Reservered
+        </div>
+    </footer>
+</div>
 
 
 
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

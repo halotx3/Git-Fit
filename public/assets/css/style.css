@@ -8,201 +8,201 @@
       
       } */
 
-h1{
-  padding-bottom: 100px;
-  padding-left: 40px;
-  font-size: 3.5em;
-  font-weight: bold;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-body {
-  padding-top: 5px;
- 
-  background-size: cover;
-  text-align: center;
-}
-
-.photo1{
-  background: url(../img/cleargym2.jpg) no-repeat center;
-  height: 25em; 
-  width: 100%; 
-  position: fixed; 
-  z-index: -1; 
-  background-size: cover;
-  
-}
-
-#whyWorkoutalone {
-  opacity: 1; 
-  transform: translateY(0px); 
-  color: white;
-  text-align: center;
-  font-size: 75px; 
-  /* font-weight: bolder; */
-  /* font-family: 'Raleway', sans-serif; */
-  font-family: 'Permanent Marker', cursive;
-font-family: 'Concert One', cursive;
-  padding-top: 70px; 
-  text-decoration: underline;    
-}
-
-#dontSlip{
-  font-family: cursive;
-  font-size: 24px; 
-  opacity: 1; 
-  text-align: center; 
-  padding-top: 220px; 
-  
-}
-
-.newInnovative{
-  opacity: 1; 
-  transform: translateY(0px); 
-  color: rgb(230, 13, 13); 
-  text-align: center;
-  font-size: 25px; 
-  /* font-weight: bolder; */
-  font-family: 'Raleway', sans-serif;
-  /* padding-top: 5%;  */
-  font-weight: bold; 
-  
- 
-}
-
-.fourPhotos {
-  position: relative;
-  top: 0;
-  left: 0;
-   
-}
-  
-.image1 {
-  position: relative;
-  top: 0;
-  left: 0;
-  margin-left: 45px; 
-  border-radius: 50px; 
-  width: 165px; 
-  height: 105px; 
-  
- }
-
-.image2 {
-  position: relative;
-  top: 0;
-  left:100px; 
-  border-radius: 50px; 
-  width: 165px; 
-  height: 105px;  
-   
- }
-
-.image3 {
-  position: relative;
-  top: 50px;
-  left: 0;
-  margin-left: 45px;
-  border-radius: 50px;
-  width: 165px; 
-  height: 105px; 
- 
-} 
-.image4 {
-  position: relative;
-  top: 50px;
-  left: 100px;
-  border-radius: 50px;
-  width: 165px; 
-  height: 105px; 
-
-} 
-
-#header {
-  font-weight: bold;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 3.5em;
-  border: 3px black solid;
-  width: 3.8em;
-  height: 2em;
-  text-align: center;
-  padding: 10px;
-  margin-left: 15px;
-  border-radius: 30px;
-}
-
-#login{
-    /* padding-bottom: 50px;  */
-    padding-bottom: 15%; 
-    font-weight: bold; 
-    text-align: right; 
-    color: white; 
-    font-size: 1.3em;
-    margin-bottom: 20%;  
-}
-
-/* .card-body{
-    background-color: light rgb(235, 235, 235);
-   color: black; 
-   border-radius: 50px;
-   margin-bottom:20px;    
-} */
-
-
-/*************************** Register.html CSS Below ******************/
-.form-group {
-  opacity: 1; 
-  transform: translatey(6px); 
-  color: black;
-  /* background-color: white;  */
-  font-size: 15px; 
- box-sizing: border-box;  
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-  padding: 10px; 
-  
-   
-}
-
-#createYouraccount{
-  text-align: center; 
-  margin-top: 5px; 
-}
-
-#registrationProcess{
-  text-align: center; 
-}
-
-/******************************* Survey.html CSS ****************************/
-
-.photo1-profile{
-  background: url(../img/workout_partners-run.jpg) ;
-  height: 25em; 
-  width: 100%; 
-  text-align: center;
-  color: white;
-  padding-top: 70px;
-  text-align: center;
-  font-size: 25px; 
-  font-family: 'Permanent Marker', cursive;
-  font-family: 'Concert One', cursive;
-  
-}
-
-body {
-  padding-top: 5px;
- 
-  background-size: cover;
-  text-align: center;
-}
-
-#txtcolor{
-  color: white;
-}
-
-#users{
-  border-radius: 20px;
-}
-
-/* addding something so it will upload */
-/*
+      h1{
+        padding-bottom: 100px;
+        padding-left: 40px;
+        font-size: 3.5em;
+        font-weight: bold;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      
+      body {
+        padding-top: 5px;
+       
+        background-size: cover;
+        text-align: center;
+      }
+      
+      .photo1{
+        background: url(../img/cleargym2.jpg) no-repeat center;
+        height: 25em; 
+        width: 100%; 
+        position: fixed; 
+        z-index: -1; 
+        background-size: cover;
+        
+      }
+      
+      #whyWorkoutalone {
+        opacity: 1; 
+        transform: translateY(0px); 
+        color: white;
+        text-align: center;
+        font-size: 75px; 
+        /* font-weight: bolder; */
+        /* font-family: 'Raleway', sans-serif; */
+        font-family: 'Permanent Marker', cursive;
+      font-family: 'Concert One', cursive;
+        padding-top: 70px; 
+        text-decoration: underline;    
+      }
+      
+      #dontSlip{
+        font-family: cursive;
+        font-size: 24px; 
+        opacity: 1; 
+        text-align: center; 
+        padding-top: 220px; 
+        
+      }
+      
+      .newInnovative{
+        opacity: 1; 
+        transform: translateY(0px); 
+        color: rgb(230, 13, 13); 
+        text-align: center;
+        font-size: 25px; 
+        /* font-weight: bolder; */
+        font-family: 'Raleway', sans-serif;
+        /* padding-top: 5%;  */
+        font-weight: bold; 
+        
+       
+      }
+      
+      .fourPhotos {
+        position: relative;
+        top: 0;
+        left: 0;
+         
+      }
+        
+      .image1 {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-left: 45px; 
+        border-radius: 50px; 
+        width: 165px; 
+        height: 105px; 
+        
+       }
+      
+      .image2 {
+        position: relative;
+        top: 0;
+        left:100px; 
+        border-radius: 50px; 
+        width: 165px; 
+        height: 105px;  
+         
+       }
+      
+      .image3 {
+        position: relative;
+        top: 50px;
+        left: 0;
+        margin-left: 45px;
+        border-radius: 50px;
+        width: 165px; 
+        height: 105px; 
+       
+      } 
+      .image4 {
+        position: relative;
+        top: 50px;
+        left: 100px;
+        border-radius: 50px;
+        width: 165px; 
+        height: 105px; 
+      
+      } 
+      
+      #header {
+        font-weight: bold;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+          Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 3.5em;
+        border: 3px black solid;
+        width: 3.8em;
+        height: 2em;
+        text-align: center;
+        padding: 10px;
+        margin-left: 15px;
+        border-radius: 30px;
+      }
+      
+      #login{
+          /* padding-bottom: 50px;  */
+          padding-bottom: 15%; 
+          font-weight: bold; 
+          text-align: right; 
+          color: white; 
+          font-size: 1.3em;
+          margin-bottom: 20%;  
+      }
+      
+      /* .card-body{
+          background-color: light rgb(235, 235, 235);
+         color: black; 
+         border-radius: 50px;
+         margin-bottom:20px;    
+      } */
+      
+      
+      /*************************** Register.html CSS Below ******************/
+      .form-group {
+        opacity: 1; 
+        transform: translatey(6px); 
+        color: black;
+        /* background-color: white;  */
+        font-size: 15px; 
+       box-sizing: border-box;  
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+        padding: 10px; 
+        
+         
+      }
+      
+      #createYouraccount{
+        text-align: center; 
+        margin-top: 5px; 
+      }
+      
+      #registrationProcess{
+        text-align: center; 
+      }
+      
+      /******************************* Survey.html CSS ****************************/
+      
+      .photo1-profile{
+        background: url(../img/workout_partners-run.jpg) ;
+        height: 25em; 
+        width: 100%; 
+        text-align: center;
+        color: white;
+        padding-top: 70px;
+        text-align: center;
+        font-size: 25px; 
+        font-family: 'Permanent Marker', cursive;
+        font-family: 'Concert One', cursive;
+        
+      }
+      
+      body {
+        padding-top: 5px;
+       
+        background-size: cover;
+        text-align: center;
+      }
+      
+      #txtcolor{
+        color: white;
+      }
+      
+      #users{
+        border-radius: 20px;
+      }
+      
+      /* addding something so it will upload */
+      /*

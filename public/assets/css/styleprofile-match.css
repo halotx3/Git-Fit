@@ -1,0 +1,137 @@
+header,
+.main,
+/* footer {
+    padding-left: 300px;
+} */
+
+@media only screen and (max-width : 992px) {
+
+    header,
+    .main,
+    footer {
+        padding-left: 0;
+    }
+}
+
+#logoPro{
+    font-family: 'Permanent Marker', cursive;
+    /* font-family: 'Permanent Marker', cursive;
+    font-family: 'Archivo Black', sans-serif; */
+    font-weight: bolder; 
+    color: whitesmoke;  
+    font-size: 90px; 
+    font-weight: bolder; 
+    margin: 30 auto; 
+    margin-top: 90px; 
+    padding-top: 15px; 
+    padding-left: 55px; 
+    /* left: 50%; */
+    transform: translate(-50%, -50%) skewY(-8deg); 
+    display: flex; 
+    margin: 20; 
+    padding:0; 
+    background:grey; 
+     box-shadow: 0px 0px 10px 20px #fff; 
+    text-align: center; 
+}
+
+#namePro #emailPro{
+color: black; 
+font-weight: bolder;
+}
+
+
+
+
+
+.bodyPro{
+background-color: grey; 
+background-image: linear-gradient(
+    rgba(235, 241, 241, 0.897), 
+    rgba(255, 255, 255, 0.815)
+), url();
+}
+
+.menuPro{
+    color: grey;
+    }
+
+#titlePro{
+    color:rgb(214, 214, 214);
+    margin:0;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Permanent Marker', cursive; 
+}
+
+
+
+/* ************ Card Icons**************** */
+#match1_picPro{
+    width: 150px;
+    height:150px;
+    border-radius: 50px;   
+}
+
+#match2_picPro{
+    width: 150px;
+    height:150px;
+    border-radius: 50px;   
+}
+#match3_picPro{
+    width: 150px;
+    height:150px;
+    border-radius: 50px;   
+}
+.match_iconsPro{
+    display: inline-block; 
+    margin-left: auto; 
+    margin-right:auto;
+    text-align: center;
+    padding-right: 15px;
+}
+
+.forum{
+
+
+}
+
+.declineText{
+    display: block; 
+    color: red; 
+    font-weight: bolder;
+         
+}
+
+
+.messageText{
+    display: block; 
+    color:blue; 
+    font-weight: bolder;
+         
+}
+
+.acceptText{
+    display: block; 
+    color:green; 
+    font-weight: bolder;
+         
+}
+
+
+/* ************ Card Icons**************** */
+
+#foot{
+    font-family: 'Permanent Marker', cursive; 
+}
+
+
+ footer ul {
+    font-size: 30px; 
+    margin:0 auto;
+}
+
+footer ul li {
+    display: inline; 
+    margin: 0 10px; 
+} 
