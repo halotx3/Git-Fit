@@ -9,11 +9,10 @@ $(function(){
         console.log(updateData)
         $.ajax('/api/verify', {
             type: 'POST',
-            data: updateData
-        }).then(function(data){
-            let useID =data.id
-            console.log(data);
-            window.location.assign(`/profile/${useID}`)
+            data: updateData,
+            dataType: 'json' 
+        }).done(function(response){
+            window.location.assign('/profile/' + response.profile)
         })
     })
 });

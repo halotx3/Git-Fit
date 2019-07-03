@@ -3,6 +3,9 @@ $(function () {
     let url = ""
 
     function previewFile() {
+
+        var url = window.location.pathname;
+        var idProfile = url.substring(url.lastIndexOf('/') + 1);
         var preview = document.querySelector('img');
         var file = document.querySelector('input[type=file]').files[0];
         var reader = new FileReader();
@@ -13,37 +16,49 @@ $(function () {
         }, false);
 
         // reader.onload = function(event){
-
         // }
 
         if (file) {
             reader.readAsDataURL(file);
             url = document.getElementById("pre").src
             console.log(url)
-            
+
+            // var idProfile = url.substring(url.lastIndexOf('/') + 1);
+            if (url === `http://localhost:3000/survey/${idProfile}`){
+                console.log("Reselect picture")
+                //  let imgNew = $('#pre').attr('src') + date.getTime();
+                // previewFile();
+                reader.addEventListener("reload", function () {
+                    preview.src = reader.result;
+                }, false);
+                reader.readAsDataURL(file);
+                
+                imgNew = document.getElementById("pre").src
+                console.log(`The correct image is: ${imgNew}`);
+                // location.reload();
+                // url = document.getElementById("pre").src
+                // console.log(`The correct image is: ${url}`)
+            }
+
             // attr.src
         }
     }
 
-      $('#pic').on("change",previewFile);
-
-    
-
-    
-    // var reader = new FileReader();
-    // console.log(reader.readAsDataURL());
-
-    // var data = canvas.toDataURL('/assets/img/spin.jpg');
-    // $('.pic').fileupload('option', 'formData').file = data;
-    // $('.pic').fileupload('add', { files: [data] });
-    // console.log()
+    $('#pic').on("change", previewFile);
 
     // End Image Uplaod
 
+    // var id = url.substring(url.lastIndexOf('/') + 1);
+
 
     $('#submit-survey').on('click', function (event) {
+        var url = window.location.pathname;
+        var idProfile = url.substring(url.lastIndexOf('/') + 1);
+
         event.preventDefault();
-        console.log('  Test survey.js');
+        console.log('******Test survey.js*****');
+        console.log(idProfile);
+
         let fName = $('#FirstName').val().trim();
         let lName = $('#LastName').val().trim();
         let gendermf = $('#idgender').val().trim();
@@ -68,7 +83,7 @@ $(function () {
         // if(!url){
         //     url = document.getElementById("pre").src
         // }
-        
+
 
         let userProfile = {
             firstname: fName,
@@ -91,18 +106,20 @@ $(function () {
             secondaryexer: secondaryEx,
             primarylevel: primaryLvl,
             secondarylevel: secondaryLvl,
-            // photo:url
-            photo:url
+
+            photo: url,
+            cred_id: idProfile
 
         };
         console.log(userProfile)
-      
 
-        console.log('userProfile', userProfile)
 
-        $.post('/survey', userProfile)
+        // console.log('userProfile', userProfile)
+
+        $.post(`/survey/${idProfile}`, userProfile)
             .then(function (data) {
                 // console.log(data)
+                console.log('create profile for', idProfile)
             });
 
     })
