@@ -44,7 +44,7 @@ font-weight: bolder;
 
 
 
-bodyPro{
+.bodyPro{
 background-color: grey; 
 background-image: linear-gradient(
     rgba(235, 241, 241, 0.897), 
@@ -126,8 +126,7 @@ background-image: linear-gradient(
 }
 
 
-
-footer ul {
+ footer ul {
     font-size: 30px; 
     margin:0 auto;
 }
@@ -135,4 +134,4 @@ footer ul {
 footer ul li {
     display: inline; 
     margin: 0 10px; 
-}
+} 
