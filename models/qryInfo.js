@@ -34,9 +34,15 @@ const match = {
     });
   }
   ,
+  updateDistance: function(distance, user_id, match_id, cb){
+    orm.updateDistance('gitfit_match', distance, user_id, match_id, function (res){
+      cb(res);
+    });
+  }
+  ,
   updateMatch: function (approved, userid, matchid, cb) {
     orm.updateMatch('gitfit_match', approved, userid, matchid, function (res) {
-      console.log(approved, userid, matchid);
+      console.log(approved,  userid, matchid);
       cb(res);
     });
     }

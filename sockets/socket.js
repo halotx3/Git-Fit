@@ -1,49 +1,67 @@
 const axios = require('axios');
-let users = [];
 const connection = require('../config/connection.js');
 let connections = [];
+let currentUser = "";
 
-module.exports = function (io) {
-  // Connect
-io.sockets.on('connection', function(socket){
 
-  connections.push(socket);
-  console.log("kdjakjalkjfakjadflkjfdk")
+
+var userCount = 0;
+module.exports = function(io) {
+
+// Connect
+io.sockets.on('connection', function(socket) {
+  const id = socket.id;
+  console.log(`This  my socket ID: ######${id}`)
+  userCount++;
+  socket.on('connectedUser', (users) => {
+    socket.name = users;
+    io.sockets.emit('userCount', {
+      userCount: userCount
+    });
+    io.sockets.emit('connectedUser', {
+      users: users
+    });
+    console.log(users + ' has joined the chat.');
+
+  });
+  // io.socket.emit('new player', {
+  //   users: users
+  // })
+
+
+  socket.on('send message', function(data){
+    console.log(data)
+    io.emit('new message', {
+    // io.in(`${currentUser}`).emit('new message', {
+      id: id,
+      msg: data
+    });
+  });
+
+  socket.on('new player', function(user) {
+    currentUser = user
+    socket.join(user)
+  })
+
+  //connections.push(socket);
   console.log("Connected: %s socket Connected", connections.length);
 
+
+  socket.on('get user', function(data, callback) {
+    callback(data)
+    console.log(data)
+  })
+
   //Disconnect
-  socket.on('disconnect', function(data){
-    users.splice(users.indexOf(socket.username), 1);
-    //updateUsernames();
-    connections.splice(connections.indexOf(socket), 1);
-
-    console.log('disconnect %s socket Connected', connections.length);
-   })
-   // Send Message
-  socket.on('send message', function(data){
-
-    io.sockets.emit('new message', {activelist: users, msg: data});
+  socket.on('disconnect', (user) => {
+    userCount--;
+    io.sockets.emit('userCount', {
+      userCount: userCount
+    });
+    io.emit('disconnect', user);
+    console.log(socket + ' has left the chat.');
+  });
+})
 
 
-
-   // io.sockets.emit('new message', {activelist: users, msg: data, user: socket.username});
-  })
-  // New Users
-  // socket.on('new user', function(data, callback){
-  //   callback(data);
-  //
-  //   socket.username = result;
-  //   users.push(socket.username);
-  //   console.log(`${users} HELLO`)
-  //   // updateUsernames();
-  //
-  // })
-  socket.on('new users', function (data, callback){
-      callback(data);
-      // connection.query('SELECT usercreds.email, profile.first_name, usercreds.logged FROM gitfit_db.profile LEFT JOIN gitfit_db.usercreds  on profile.cred_id = usercreds.id WHERE usercreds.logged = 1;', function (err, result) {
-        io.sockets.emit('get users', data);
-        console.log("alkdjaflkfjlaksjfdlakja;");
-    // })
-  })
-});
 }

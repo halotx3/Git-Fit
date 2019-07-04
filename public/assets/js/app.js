@@ -16,24 +16,24 @@ $(function() {
     e.preventDefault();
 
 
+   console.log(now)
     socket.emit('send message', $message.val());
     $message.val('');
-  });
+
   socket.on('new message',  function(data) {
 
-    console.log(`ZZzzzzzzz!!!:${data}`);
+    console.log(JSON.parse(JSON.stringify(data)));
 
-        $chat.append(`User: ${now}`);
-        $chat.append(`<div id=${data.user} class="chatmsg">${data.msg}</div>`);
 
-      if (data.activelist[0] == data.user) {
-          $(`#${data.user}`).css('background-color', 'lightblue')
-        }
-        // } else {
-        // $('.chatmsg').css('background-color' ,'red')
-        // }
+        $chat.html(`${$username}: ${now}`);
+        $chat.html(`<div id=${data.id} class="chatmsg">${data.msg}</div>`);
 
   });
+
+  socket.emit('new player', {
+  username: $username
+
+  })
 
   const load = function(e) {
     // e.preventDefault();
@@ -49,17 +49,20 @@ $(function() {
     });
     $username.val('');
   };
-  socket.on('get users', function(data) {
+  socket.on('get user', function(data) {
+    $.ajax(`/profile/${id}`, {
+      type:'GET'
+    }).then(
+      function(){
+        console.log(id);
 
-    // let html = "";
-      // console.log(data + '2')
-      for (let i = 0; i < data.length; i++ ){
-      html += `<li class="list-group strong"> ${data[i]}</li>`;
-      $users.html(html);
-    };
-  });
+      })
 
-   load();
+  })
 
-  //console.log(html);
-});
+
+  // load();
+
+  // console.log(html);
+})
+})

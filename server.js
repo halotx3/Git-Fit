@@ -5,6 +5,7 @@ const io = require('socket.io').listen(server);
 const time = require('date-and-time');
 const bodyparser = require('body-parser');
 require('moment');
+require('./sockets/socket')(io);
 // const connection = require('./config/connection.js');
 
 

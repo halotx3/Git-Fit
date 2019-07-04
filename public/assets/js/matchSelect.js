@@ -34,7 +34,12 @@ $(function() {
         // render(data);
         // console.log(data, );
       })
-
+      $.ajax({
+        method: 'PUT',
+        url: '/profile/distance/' + id
+      }).then(function(data){
+        
+      })
 
   }
 
