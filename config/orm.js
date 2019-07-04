@@ -84,7 +84,7 @@ const orm = {
         });
     },
     showOnlineUsers: function(table, JoinTable, vals, cb){
-      connection.query('SELECT usercreds.email, profile.first_name, usercreds.logged FROM ?? LEFT JOIN ?? on profile.cred_id = usercreds.id WHERE usercreds.logged = ?', [table, JoinTable, vals], function (err, result) {
+      connection.query('SELECT usercreds.email, profile.first_name, usercreds.active FROM ?? LEFT JOIN ?? on profile.cred_id = usercreds.id WHERE usercreds.active = ?', [table, JoinTable, vals], function (err, result) {
         if (err){
           throw err;
         }

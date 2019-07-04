@@ -101,7 +101,7 @@ router.get('/profile/:id', function (req, res) {
         matchLimit: result
       };
       
-      console.log(result)
+      // console.log(result)
       // console.log(hbsObject);
         res.render('profile', hbsObject);
 
@@ -112,7 +112,28 @@ router.get('/profile/:id', function (req, res) {
 
 
 
-}) //End of matching.findzip results
+}) //End of matching.Limit results route to display the matches
+
+// Show the current user on the page
+router.get('/profile/current/:id', function (req, res){
+  console.log(req.params.id);
+  const user_id3 = req.params.id;
+ 
+  
+  matching.findzip([user_id3], function (result3){
+    const hbsObject1 = {
+      currentUser: result3
+    };
+    console.log("***********Current User info************")
+    let name = result3[0].first_name
+    console.log(`Here is the first name ${name}`)
+    // console.log(result3)
+    // console.log(hbsObject);
+      res.render('profile', hbsObject1);
+
+  });
+
+}) //End of current user profile information
 
 // Create all our routes and set up logic within those routes where required.
 router.get('/', function (req, res) {
@@ -134,14 +155,14 @@ router.get('/matches', function (req, res) {
     res.render('matches', hbsObject);
   });
 });
-router.get('/profile', function (req, res) {
+// router.get('/profile', function (req, res) {
 
-  chatMatch.showOnlineUsers(function (data) {
-    console.log(data)
-    res.json(data);
+//   chatMatch.showOnlineUsers(function (data) {
+//     console.log(data)
+//     res.json(data);
 
-  });
-});
+//   });
+// });
 
 
 // POST method route*************************
