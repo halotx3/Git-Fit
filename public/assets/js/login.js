@@ -1,3 +1,9 @@
+//Modal functionality for Login Page 
+$(document).ready(function(){
+    $('.modal').modal();
+});
+
+
 $(function(){
     $('#logData').on('click', function(event){
         let logMail = $('#logEmail').val().trim();
@@ -16,3 +22,4 @@ $(function(){
         })
     })
 });
+
