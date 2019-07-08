@@ -6,11 +6,17 @@ const mysql = require('mysql');
 let connection = mysql.createConnection({
 
 
-    host: process.env.RDS_HOST,
-    port: process.env.RDS_PORT,
-    user: process.env.RDS_USER,
-    password: process.env.RDS_PASS,
-    database: process.env.RDS_DB 
+    // host: process.env.RDS_HOST,
+    // port: process.env.RDS_PORT,
+    // user: process.env.RDS_USER,
+    // password: process.env.RDS_PASS,
+    // database: process.env.RDS_DB 
+
+    host: 'gitfit-db.c5jajtp8jxmj.us-east-2.rds.amazonaws.com',
+    port: 3306,
+    user: 'root',
+    password: 'starroot',
+    database: 'gitfit_db'
   
 })
 
