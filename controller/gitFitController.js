@@ -122,12 +122,15 @@ router.get('/profile/current/:id', function (req, res){
   
   matching.findzip([user_id3], function (result3){
     const hbsObject1 = {
-      currentUser: result3
+      currentUser: result3,
+      name:result3[0].first_name
     };
     console.log("***********Current User info************")
     let name = result3[0].first_name
     console.log(`Here is the first name ${name}`)
-    // console.log(result3)
+    console.log(result3)
+    console.log("***********testing************")
+    console.log(hbsObject1)
     // console.log(hbsObject);
       res.render('profile', hbsObject1);
 
