@@ -1,4 +1,3 @@
-
 $(function(){
     $('#logData').on('click', function(event){
         let logMail = $('#logEmail').val().trim();
@@ -16,5 +15,4 @@ $(function(){
             window.location.assign('/profile/' + response.profile)
         })
     })
-});
-
+})

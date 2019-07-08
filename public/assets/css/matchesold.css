@@ -1,7 +1,6 @@
-
 .logo{
-    width: 7%;
-    length: 7%;
+    width: 10%;
+    length: 10%;
     position: relative;
     margin-left: 60px;
     margin-top: 60px;
@@ -9,7 +8,7 @@
 }
 
 .headerLinks2{
-  color:black;
+  color: white;
     font-weight: bold;
     padding-right: 10px;
     margin-top: 10px;
@@ -29,7 +28,9 @@
         color: white;
 
       }
-
+      li {
+       
+      }
 
       .block{
         display: block;
@@ -88,14 +89,12 @@
 
 
       .video{
-        width: 200%;
+        width: 30%;
         margin-right: 10%;
-        background-color: white; 
       }
 
       .back{
-        /* background-color:rgb(161, 156, 156); */
-      background-color: white; 
+        background-color:rgb(161, 156, 156);
       }
       .col-md-4 {
         background-color: gray;

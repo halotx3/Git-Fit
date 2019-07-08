@@ -7,36 +7,18 @@ const passport = require(('passport'))
 const cookieParser = require('cookie-parser')
 // const cookieSession = require('cookie-session');
 
-
 // Route for login page 
 router.get('/login', function(req, res){
     res.render('login1');
 });
 
-// Route for index page 
-router.get('/', function(req, res){
-    res.render('index');
-});
 
-// Route for register page 
-router.get('/register', function(req, res){
-    res.render('register');
-});
-
-// Route for profile-match page 
-router.get('/profile-match', function(req, res){
-    res.render('profile-match');
-});
-
-
-
-
-router.post('/api/verify', function(req, res){   
+router.post('/api/verify', function(req, res){
     let password = req.body.password;
     let email = req.body.email;
     let mRes = res;
     console.log(password)
-    
+
     logon.pullLogin(req.body.email,function(result){
         console.log(result[0]);
         if (result[0].email == email){
@@ -44,8 +26,6 @@ router.post('/api/verify', function(req, res){
             bcrypt.compare(req.body.password,result[0].password, function(err, result){
                 if(result) {
                     console.log('Log in attempt successful')
-                    req.session.user = {'id': id}
-                    console.log(req.session.user)
                     res.json({profile: id})
                 }else {
                     //password does not match
