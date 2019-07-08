@@ -6,16 +6,18 @@ const time = require('date-and-time');
 const helmet = require('helmet');
 const randomstring = require("randomstring");
 const bodyparser = require('body-parser');
-
+require('moment');
+require('./sockets/socket')(io);
 // const connection = require('./config/connection.js');
 
 
 const PORT = process.env.PORT || 3000;
 
-require('./sockets/socket')(io);
+
 
 // Serve static content for the app from the 'public' directory in the application directory.
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
+
 
 
 //Additional Securities

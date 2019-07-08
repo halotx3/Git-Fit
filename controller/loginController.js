@@ -7,13 +7,18 @@ const passport = require(('passport'))
 const cookieParser = require('cookie-parser')
 // const cookieSession = require('cookie-session');
 
+// Route for login page 
+router.get('/login1', function(req, res){
+    res.render('login1');
+});
 
-router.post('/api/verify', function(req, res){   
+
+router.post('/api/verify', function(req, res){
     let password = req.body.password;
     let email = req.body.email;
     let mRes = res;
     console.log(password)
-    
+
     logon.pullLogin(req.body.email,function(result){
         console.log(result[0]);
         if (result[0].email == email){

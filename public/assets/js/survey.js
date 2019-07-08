@@ -115,7 +115,27 @@ $(function () {
                 // console.log(data)
                 console.log('create profile for', idProfile)
             });
+            $.post('/survey', {
+              data: userProfile
+            }).then(function(userProfile) {
+              // console.log(userProfile);
+            //   console.log("HELJADLFKJALKAJLKJL")
+            })
+    });
 
-    })
+
+    // console.log ('userProfile', userProfile )
+
+    // $.post('/survey', userProfile)
+    //     .then(function(data) {
+    //     console.log(data)
+    // });
+    // $.get(`/survey/`, (response)=>{
+    //
+    //   console.log(response)
+    // }).then(function(){
+    //   console.log("Updatd")
+    // })
+
+
 })
-

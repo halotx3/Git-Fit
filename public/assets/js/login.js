@@ -1,13 +1,18 @@
 $(function(){
-    $('#logData').on('click', function(event){
-        let logMail = $('#logEmail').val().trim();
-        let logPass = $('#logPass').val().trim();
-        updateData = {
-            email: logMail,
-            password: logPass
-        };
-        console.log(updateData)
-        $.ajax('/api/verify', {
+    $('#submitData').on('click', function(event){
+        let userMail = $('#userEmail').val().trim();
+        let userPass = $('#userPass').val().trim();
+        let fName = $('#firstName').val().trim()
+        let lName = $('#lastName').val().trim()
+        console.log(userMail);
+        console.log(userPass);
+        let userCreds = {
+            email: userMail,
+            password: userPass,
+            firstname: fName,
+            lastname: lName
+        }
+        $.ajax('/create',{
             type: 'POST',
             data: updateData,
             dataType: 'json' 
@@ -15,4 +20,4 @@ $(function(){
             window.location.assign('/profile/' + response.profile)
         })
     })
-});
+})
