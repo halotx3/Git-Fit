@@ -2,13 +2,13 @@
 // const axios = require('axios');
 $(function() {
 
-  $('#messageArea').hide();
+  //$('#messageArea').hide();
 
   // variables fro the URL with the ID
     var url = window.location.pathname;
     // console.log(url)
     var id = url.substring(url.lastIndexOf('/') + 1);
-    
+
     console.log(id)
     // Adding if statement so that it does not keep reloading the screen on homepage
   if(url === '/profile/' + id && id != ""){
@@ -25,7 +25,7 @@ $(function() {
       }
     );
 
-      
+
 
       $.ajax({
         method: 'GET',
@@ -34,11 +34,24 @@ $(function() {
         // render(data);
         // console.log(data, );
       })
-
+      
+      $.ajax({
+        method: 'PUT',
+        url: '/profile/distance/' + id
+      }).then(function(data){
+        
+      })
 
   }
+// geting current users profile
+  $.ajax({
+    method:'GET',
+    url: '/profile/current/' + id
+  }).then(function(data){
+    // render(data);
+  })//end of the current user
 
-      $('.btn-success').on('click', function(event) {
+      $('.gitfitAccept').on('click', function(event) {
         console.log("clicked on accept button")
 
         // console.log(url)
@@ -53,13 +66,13 @@ $(function() {
           function(){
             console.log('Accepted match', id);
             location.reload();
-          }        
-        )    
-    
+          }
+        )
+
       });
     
   
-    $('.btn-dark').on('click', function(event) {
+    $('.gitfitBlock').on('click', function(event) {
       console.log("clicked on block button")
       // Send the PUT request.
       const profilematchid = $(event.target).data('profilematchid')
@@ -81,8 +94,6 @@ $(function() {
       $('#messageArea').show();
     })
 
-  
+
 
   });
-
-

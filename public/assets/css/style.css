@@ -1,11 +1,10 @@
 /************************ Media Queries for Wide Screen***********************/
 /* @media only screen and (max-width: 900px) { */
 /* .headerLinks{
-   color:black; 
+   color:black;
    font-weight: bold;
    padding-right: 10px;
    margin-top: 10px;
-      
       } */
 
       h1{
@@ -204,5 +203,5 @@
         border-radius: 20px;
       }
       
-      /* addding something so it will upload */
+      /* adding something so it will upload */
       /*
