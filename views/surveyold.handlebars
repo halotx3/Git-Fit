@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <div class="container">
     <div class="row">
         <div class="card">
@@ -19,12 +21,6 @@
                             <h3>Personal Information</h3>
                         </tr>
                         <tr>
-                            <label for="idPic">Add Image</label>
-                            <input type="file" id="pic"> <br>
-                            <img src="" height="200" id="pre" alt="Image preview...">
-                            <br>
-                        </tr>
-                        <tr>
                             <label for="idFirstName">First Name</label>
                             <input class="form-control" type="firstName" name="FirstName" id="FirstName" placeholder="">
                             <label for="idLastName">Last Name</label>
@@ -34,6 +30,7 @@
                             <label for="gender">Gender</label>
                             <input type="radio" id="idgender" value="male"> Male<br>
                             <input type="radio" id="idgender" value="female"> Female<br>
+
                             {{!-- <input class="form-control" type="radio" id="idgenderMale" placeholder="Gender" value="1"> Male>
                                   <input class="form-control" type="radio" id="idgenderMale" placeholder="Gender" value="1"> Male> --}}
                         </tr>
@@ -45,7 +42,7 @@
                             <label for="idHomeCity">Home City</label>
                             <input class="form-control" type="text" id="HomeCity" placeholder="">
                             <label for="idHomeState">Home State</label>
-                            <input class="form-control" type="text" id="HomeState" placeholder="">
+                            <input class="form-control" type="text" id="HomeState" placeholder="GA">
                         </tr>
                         <br />
                         <br />
@@ -83,6 +80,7 @@
                                 <h3>Training Information</h3>
                             </tr>
                         </div>
+
                         <div>
                             <div>
                                 <label for="PrExcer">Primary Excercise</label>
@@ -151,3 +149,4 @@
         </form>
     </div>
 </div>
+</html>

@@ -1,3 +1,9 @@
+//Modal functionality for Login Page 
+$(document).ready(function(){
+    $('.modal').modal();
+});
+
+
 $(function(){
     $('#submitData').on('click', function(event){
         let userMail = $('#userEmail').val().trim();

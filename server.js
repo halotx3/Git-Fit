@@ -47,12 +47,14 @@ app.use(chatRoutes);
 app.use(surveyRoutes);
 
 app.use('/', mainroutes);
+app.use('/register', logonRoutes);
 // app.use(express.limit(100000000));
 // app.use(express.bodyParser({limit:"50mb"}));
 
 app.use('/survey', mainroutes);
-app.use('/register', mainroutes);
 app.use('/matches', mainroutes);
+app.use('/login1', mainroutes);
+app.use('/profile-match', mainroutes);
 // app.use('/loggedIn', mainroutes); // Enter the correct file handlebar name here *********
 
 server.listen(PORT, function() {

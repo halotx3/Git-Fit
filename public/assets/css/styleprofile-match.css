@@ -44,7 +44,7 @@ font-weight: bolder;
 
 
 
-bodyPro{
+.bodyPro{
 background-color: grey; 
 background-image: linear-gradient(
     rgba(235, 241, 241, 0.897), 
@@ -126,8 +126,12 @@ background-image: linear-gradient(
 }
 
 
+<<<<<<< HEAD
 
 footer ul {
+=======
+ footer ul {
+>>>>>>> 92a226d1b7c4d6d951e9eabdc91b858a06c564c8
     font-size: 30px; 
     margin:0 auto;
 }
@@ -135,4 +139,8 @@ footer ul {
 footer ul li {
     display: inline; 
     margin: 0 10px; 
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> 92a226d1b7c4d6d951e9eabdc91b858a06c564c8
