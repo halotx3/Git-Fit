@@ -29,10 +29,10 @@
                 </nav>
                 <!--Sidebar -->
                 <ul class="sidenav" id="mobile-demo">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/register">Sign Up</a></li>
                     <!-- <li><a href="./login1.html">Login</a></li> -->
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="/profile-match">Profile</a></li>
                     <!-- Need to initialize the sidenav in index.js file-->
                 </ul>
 
@@ -45,19 +45,19 @@
 
 <div class="modal-content center">
     <!-- <h4 id="loginTitle">Login </h4><br>  --><br><br> <br> 
-            <form action="./login1.html">
+            <form>
 
             <div class="input-field">
                 <i class="material-icons prefix">person</i>
-                    <input type="text" id="username">
-                    <label for="text" style="text-align: center;">Username</label>
+                    <input type="text" style="width: 25%" id="logEmail">
+                    <label for="text" style="text-align: center;">Email</label>
             </div><br>
 
             <div class="input-field">
                     <i class="material-icons prefix">lock</i>
                         <input type="password" id="pass">
                         <label for="pass" style="text-align: center;">Password</label>
-                </div><br>
+            </div><br>
 
                 <div class="center">
                         <!-- <i class="material-icons prefix">Person</i> -->
@@ -65,7 +65,7 @@
                             <label for="check" style="text-align: center;">Remember me</label>
                     </div><br>
 
-                          <input type="submit" value="Login" class="btn btn-large">
+                          <input type="button" value="Login" style="width: 25%"class="sub-btn" id="logData">
 
                                      
         </form>

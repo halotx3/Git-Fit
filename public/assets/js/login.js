@@ -1,13 +1,8 @@
-//Modal functionality for Login Page 
-$(document).ready(function(){
-    $('.modal').modal();
-});
-
 
 $(function(){
     $('#logData').on('click', function(event){
         let logMail = $('#logEmail').val().trim();
-        let logPass = $('#logPass').val().trim();
+        let logPass = $('#pass').val().trim();
         updateData = {
             email: logMail,
             password: logPass

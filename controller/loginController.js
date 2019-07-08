@@ -9,7 +9,7 @@ const cookieParser = require('cookie-parser')
 
 
 // Route for login page 
-router.get('/login1', function(req, res){
+router.get('/login', function(req, res){
     res.render('login1');
 });
 

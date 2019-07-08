@@ -145,10 +145,10 @@ router.get('/profile', function (req, res) {
 
 
 // POST method route*************************
-router.post('/loggedIn', function (req, res) {
-  res.send('POST request to the homepage') //Must enter function here ********************
+// router.post('/loggedIn', function (req, res) {
+//   res.send('POST request to the homepage') //Must enter function here ********************
 
-  res.render("register");// Enter the path that user will be redirected to******************
-})
+//   res.render("register");// Enter the path that user will be redirected to******************
+// })
 
 module.exports = router;
