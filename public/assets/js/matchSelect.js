@@ -42,14 +42,16 @@ $(function() {
         
       })
 
-  }
-// geting current users profile
+      // geting current users profile
   $.ajax({
     method:'GET',
     url: '/profile/current/' + id
   }).then(function(data){
     // render(data);
   })//end of the current user
+
+  }
+
 
       $('.gitfitAccept').on('click', function(event) {
         console.log("clicked on accept button")
