@@ -1,45 +1,44 @@
-
-
 $(function() {
   let socket = io.connect();
   let $messageForm = $('#messageForm');
   let $message = $('#message');
-  let $chat = $('#chat');
+  let $chat = $('#chatBody');
   let $messageArea = $('#messageArea');
   let $userFormArea = $('#userFormArea');
   let $userForm = $('#userForm');
   let $users = $('#users');
   let $username = $('#username');
-  let now = new Date()
   let username = '';
   let html = "";
-
+  let now = moment().fromNow();
 
   $messageForm.submit(function(e) {
     e.preventDefault();
 
-    console.log(now)
+
+   console.log(now)
     socket.emit('send message', $message.val());
     $message.val('');
-  });
+
   socket.on('new message',  function(data) {
 
-    console.log(data.activelist);
-    console.log(data)
-    console.log(data)
-        $chat.prepend(`<div id=${data.user} class="chatmsg">${data.msg}</div>`).prepend(`User ${now.toLocaleTimeString()}`);
-      if (data.activelist[0] == data.user) {
-          $(`#${data.user}`).css('background-color', 'lightblue')
-        }
-        // } else {
-        // $('.chatmsg').css('background-color' ,'red')
-        // }
+    console.log(JSON.parse(JSON.stringify(data)));
+
+
+        $chat.html(`${$username}: ${now}`);
+        $chat.html(`<div id=${data.id} class="chatmsg">${data.msg}</div>`);
 
   });
+
+  socket.emit('new player', {
+  username: $username
+
+  })
 
   const load = function(e) {
     // e.preventDefault();
     socket.emit('new user', function(data) {
+      console.log(data)
       // if (data) {
       //   // $username.val('');
       //   $userFormArea.hide();
@@ -50,17 +49,20 @@ $(function() {
     });
     $username.val('');
   };
-  socket.on('get users', function(data) {
+  socket.on('get user', function(data) {
+    $.ajax(`/profile/${id}`, {
+      type:'GET'
+    }).then(
+      function(){
+        console.log(id);
 
-    // let html = "";
-      // console.log(data + '2')
-      for (let i = 0; i < data.length; i++ ){
-      html += `<li class="list-group strong"> ${data[i]}</li>`;
-      $users.html(html);
-    };
-  });
+      })
+
+  })
+
 
   // load();
 
-  console.log(html);
-});
+  // console.log(html);
+})
+})
