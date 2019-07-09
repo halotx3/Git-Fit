@@ -9,7 +9,8 @@ const axios = require('axios')
 //Importing the surveyOrm. model which has the specific ORM code
 // html routes
 router.get('/survey/:id', function (req, res){
-
+  let statusChange = 0
+    survey.surveyToggle(statusChange,req.params.id, function(req,res){console.log(res)});
     res.render('survey', {title: "survey"});
 
 });

@@ -1,15 +1,16 @@
 <!-- <div class="navbar-fixed"> -->
 
 <div class="bodyPro">
-  <!-- Top Nav -->
-  <nav class="white">
-    <!-- navbar content here  -->
-    <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="menuPro material-icons ">menu</i></a>
-    <span>
-      <p id="titlePro">GitFit Matches</p>
-    </span>
-    <ul class=" right hide-on-small-and-down collection" style="margin:0px; border:0px solid transparent">
-      <!-- <li class="collection-item avatar" style="background-color:transparent; min-height: 64px;"><a href="">
+      <!-- Top Nav -->
+      <nav class="white">
+            <!-- navbar content here  -->
+            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large" id="current-slide"><i
+                        class="menuPro material-icons">menu</i></a>
+            <span>
+                  <p id="titlePro">GitFit Matches</p>
+            </span>
+            <ul class=" right hide-on-small-and-down collection" style="margin:0px; border:0px solid transparent">
+                  <!-- <li class="collection-item avatar" style="background-color:transparent; min-height: 64px;"><a href="">
                             <i class="material-icons white blue-text circle">note</i></a> -->
 
 
@@ -147,6 +148,7 @@
     var x = document.getElementById("chatBody");
     if (x.style.display === "none") {
       x.style.display = "block";
+      x.style.display = "clear"
     } else {
       x.style.display = "none";
     }

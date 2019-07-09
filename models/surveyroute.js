@@ -10,6 +10,11 @@ const orm = require('../config/orm.js');
       orm.getsurvey('profile',function(res){
         cb(res)
       });
+    },
+    surveyToggle: function(status,id,cb){
+      orm.surveyToggle('usercreds',status,id, function(res){
+        cb(res)
+      });
     }
   }
     module.exports = survey;

@@ -2,6 +2,8 @@ $(function () {
     // Image Upload
     let dataurl = ""
 
+
+
     function previewFile() {
 
         // var url = window.location.pathname;
@@ -26,7 +28,9 @@ $(function () {
 
             // var idProfile = url.substring(url.lastIndexOf('/') + 1);
             if (!dataurl.match(/data:image.*/) ){
-                console.log("Reselect picture")
+                console.log("***Reselect picture***")
+                // let dataReview = reader.readAsBinaryString(file)
+                // console.log(dataReview);
                 dataurl = "https://dummyimage.com/197x217/87BED8/white.jpg&text=no+profile+picture"
             }
 
@@ -38,9 +42,28 @@ $(function () {
         }
     }
 
-    $('#pic').on("change", previewFile);
+    // function handleFiles() {
+    //     const fileList = this.files; /* now you can work with the file list */
+    //   }
+
+$('#pic').on("change", previewFile);
 
     // End Image Uplaod
+
+
+
+// $('#pic').on("change", info)
+
+
+// let info = function(){
+//     var reader = new FileReader();
+//     var dataOutput = reader.result;
+//     console.log(dataOutput)
+//     // let info = reader.readAsDataURL(file);
+//     // console.log(info)
+// }
+
+
 
     // var id = url.substring(url.lastIndexOf('/') + 1);
 
