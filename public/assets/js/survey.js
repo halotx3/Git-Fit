@@ -1,11 +1,14 @@
 $(function () {
     // Image Upload
-    let url = ""
+    let dataurl = ""
+
+
 
     function previewFile() {
 
-        var url = window.location.pathname;
-        var idProfile = url.substring(url.lastIndexOf('/') + 1);
+        // var url = window.location.pathname;
+        // var idProfile = url.substring(url.lastIndexOf('/') + 1);
+
         var preview = document.querySelector('img');
         var file = document.querySelector('input[type=file]').files[0];
         var reader = new FileReader();
@@ -20,40 +23,54 @@ $(function () {
 
         if (file) {
             reader.readAsDataURL(file);
-            url = document.getElementById("pre").src
-            console.log(url)
+            dataurl = document.getElementById("pre").src
+            console.log(dataurl)
 
             // var idProfile = url.substring(url.lastIndexOf('/') + 1);
-            if (url === `http://localhost:3000/survey/${idProfile}`){
-                console.log("Reselect picture")
-                //  let imgNew = $('#pre').attr('src') + date.getTime();
-                // previewFile();
-                reader.addEventListener("reload", function () {
-                    preview.src = reader.result;
-                }, false);
-                reader.readAsDataURL(file);
-                
-                imgNew = document.getElementById("pre").src
-                console.log(`The correct image is: ${imgNew}`);
-                // location.reload();
-                // url = document.getElementById("pre").src
-                // console.log(`The correct image is: ${url}`)
+            if (!dataurl.match(/data:image.*/) ){
+                console.log("***Reselect picture***")
+                // let dataReview = reader.readAsBinaryString(file)
+                // console.log(dataReview);
+                dataurl = "https://dummyimage.com/197x217/87BED8/white.jpg&text=no+profile+picture"
             }
 
             // attr.src
         }
+        else{
+            console.log("no picture uploaded")
+            dataurl = "https://dummyimage.com/197x217/87BED8/white.jpg&text=no+profile+picture"
+        }
     }
 
-    $('#pic').on("change", previewFile);
+    // function handleFiles() {
+    //     const fileList = this.files; /* now you can work with the file list */
+    //   }
+
+$('#pic').on("change", previewFile);
 
     // End Image Uplaod
+
+
+
+// $('#pic').on("change", info)
+
+
+// let info = function(){
+//     var reader = new FileReader();
+//     var dataOutput = reader.result;
+//     console.log(dataOutput)
+//     // let info = reader.readAsDataURL(file);
+//     // console.log(info)
+// }
+
+
 
     // var id = url.substring(url.lastIndexOf('/') + 1);
 
 
     $('#submit-survey').on('click', function (event) {
-        var url = window.location.pathname;
-        var idProfile = url.substring(url.lastIndexOf('/') + 1);
+        var url2 = window.location.pathname;
+        var idProfile = url2.substring(url2.lastIndexOf('/') + 1);
 
         event.preventDefault();
         console.log('******Test survey.js*****');
@@ -107,7 +124,7 @@ $(function () {
             primarylevel: primaryLvl,
             secondarylevel: secondaryLvl,
 
-            photo: url,
+            photo: dataurl,
             cred_id: idProfile
 
         };
@@ -121,7 +138,27 @@ $(function () {
                 // console.log(data)
                 console.log('create profile for', idProfile)
             });
+            $.post('/survey', {
+              data: userProfile
+            }).then(function(userProfile) {
+              // console.log(userProfile);
+            //   console.log("HELJADLFKJALKAJLKJL")
+            })
+    });
 
-    })
+
+    // console.log ('userProfile', userProfile )
+
+    // $.post('/survey', userProfile)
+    //     .then(function(data) {
+    //     console.log(data)
+    // });
+    // $.get(`/survey/`, (response)=>{
+    //
+    //   console.log(response)
+    // }).then(function(){
+    //   console.log("Updatd")
+    // })
+
+
 })
-

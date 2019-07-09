@@ -17,26 +17,26 @@ header,
     font-family: 'Permanent Marker', cursive;
     /* font-family: 'Permanent Marker', cursive;
     font-family: 'Archivo Black', sans-serif; */
-    font-weight: bolder; 
-    color: whitesmoke;  
-    font-size: 90px; 
-    font-weight: bolder; 
-    margin: 30 auto; 
-    margin-top: 90px; 
-    padding-top: 15px; 
-    padding-left: 55px; 
+    font-weight: bolder;
+    color: whitesmoke;
+    font-size: 90px;
+    font-weight: bolder;
+    margin: 30 auto;
+    margin-top: 90px;
+    padding-top: 15px;
+    padding-left: 55px;
     /* left: 50%; */
-    transform: translate(-50%, -50%) skewY(-8deg); 
-    display: flex; 
-    margin: 20; 
-    padding:0; 
-    background:grey; 
-     box-shadow: 0px 0px 10px 20px #fff; 
-    text-align: center; 
+    transform: translate(-50%, -50%) skewY(-8deg);
+    display: flex;
+    margin: 20;
+    padding:0;
+    background:grey;
+     box-shadow: 0px 0px 10px 20px #fff;
+    text-align: center;
 }
 
 #namePro #emailPro{
-color: black; 
+color: black;
 font-weight: bolder;
 }
 
@@ -45,9 +45,9 @@ font-weight: bolder;
 
 
 .bodyPro{
-background-color: grey; 
+background-color: grey;
 background-image: linear-gradient(
-    rgba(235, 241, 241, 0.897), 
+    rgba(235, 241, 241, 0.897),
     rgba(255, 255, 255, 0.815)
 ), url();
 }
@@ -61,7 +61,7 @@ background-image: linear-gradient(
     margin:0;
     text-align: center;
     font-size: 60px;
-    font-family: 'Permanent Marker', cursive; 
+    font-family: 'Permanent Marker', cursive;
 }
 
 
@@ -70,22 +70,22 @@ background-image: linear-gradient(
 #match1_picPro{
     width: 150px;
     height:150px;
-    border-radius: 50px;   
+    border-radius: 50px;
 }
 
 #match2_picPro{
     width: 150px;
     height:150px;
-    border-radius: 50px;   
+    border-radius: 50px;
 }
 #match3_picPro{
     width: 150px;
     height:150px;
-    border-radius: 50px;   
+    border-radius: 50px;
 }
 .match_iconsPro{
-    display: inline-block; 
-    margin-left: auto; 
+    display: inline-block;
+    margin-left: auto;
     margin-right:auto;
     text-align: center;
     padding-right: 15px;
@@ -97,41 +97,65 @@ background-image: linear-gradient(
 }
 
 .declineText{
-    display: block; 
-    color: red; 
+    display: block;
+    color: red;
     font-weight: bolder;
-         
+
 }
 
 
 .messageText{
-    display: block; 
-    color:blue; 
+    display: block;
+    color:blue;
     font-weight: bolder;
-         
+
 }
 
 .acceptText{
-    display: block; 
-    color:green; 
+    display: block;
+    color:green;
     font-weight: bolder;
-         
+
 }
 
 
 /* ************ Card Icons**************** */
 
 #foot{
-    font-family: 'Permanent Marker', cursive; 
+    font-family: 'Permanent Marker', cursive;
 }
 
 
- footer ul {
-    font-size: 30px; 
+
+
+footer ul {
+
+
+    font-size: 30px;
     margin:0 auto;
 }
 
 footer ul li {
-    display: inline; 
-    margin: 0 10px; 
-} 
+    display: inline;
+    margin: 0 10px;
+
+}
+
+
+/* ****************= Chat Box ************************* */
+
+#chatBody {
+  height: 250px;
+  width: 1250px;
+  overflow: auto;
+  border-radius: 5px solid black;
+  margin-right:20px;
+  border: solid 2px lightgray;
+  background-color: white;
+
+}
+#message {
+  width: 1300px;
+  text-align: left;
+  
+}

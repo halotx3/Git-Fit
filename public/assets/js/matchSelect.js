@@ -2,13 +2,13 @@
 // const axios = require('axios');
 $(function() {
 
-  $('#messageArea').hide();
+  //$('#messageArea').hide();
 
   // variables fro the URL with the ID
     var url = window.location.pathname;
     // console.log(url)
     var id = url.substring(url.lastIndexOf('/') + 1);
-    
+
     console.log(id)
     // Adding if statement so that it does not keep reloading the screen on homepage
   if(url === '/profile/' + id && id != ""){
@@ -18,14 +18,14 @@ $(function() {
       // data: id
     }).then(
       function() {
-        console.log('create the match', id);
+        // console.log('create the match', id);
         // Reload the page to get the updated list
-        // location.reload();
+        location.reload();
 
       }
     );
 
-      
+
 
       $.ajax({
         method: 'GET',
@@ -34,11 +34,34 @@ $(function() {
         // render(data);
         // console.log(data, );
       })
+      
+      $.ajax({
+        method: 'PUT',
+        url: '/profile/distance/' + id
+      }).then(function(data){
+        
+      })
+
 
 
   }
 
-      $('.btn-success').on('click', function(event) {
+  // Handlebars.registerPartial('sidebar', Handlebars.templates['sidebar']);
+
+  $('#current-slide').on('click',function(event){
+    console.log("sliding out")
+          // geting current users profile
+  $.ajax({
+    method:'GET',
+    url: '/profile/current/' + id
+  }).then(function(data){
+    // render(data);
+  })//end of the current user
+
+  })
+
+
+      $('.gitfitAccept').on('click', function(event) {
         console.log("clicked on accept button")
 
         // console.log(url)
@@ -51,15 +74,15 @@ $(function() {
           data: {profilematchid: profilematchid}
         }).then(
           function(){
-            console.log('Accepted match', id);
+            // console.log('Accepted match', id);
             location.reload();
-          }        
-        )    
-    
+          }
+        )
+
       });
     
   
-    $('.btn-dark').on('click', function(event) {
+    $('.gitfitBlock').on('click', function(event) {
       console.log("clicked on block button")
       // Send the PUT request.
       const profilematchid = $(event.target).data('profilematchid')
@@ -69,7 +92,7 @@ $(function() {
         data: {profilematchid: profilematchid}
       }).then(
         function() {
-          console.log('Match block', id);
+          // console.log('Match block', id);
           // Reload the page to get the updated list
           location.reload();
         }
@@ -81,8 +104,6 @@ $(function() {
       $('#messageArea').show();
     })
 
-  
+
 
   });
-
-

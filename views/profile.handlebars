@@ -1,74 +1,158 @@
-<div class=" back container-fluid">
-      <div class=" row">
-            <div class="space col-lg-10">
+<!-- <div class="navbar-fixed"> -->
 
-                    <!-- blank space on first line to push buttons over -->
-               </div>
+<div class="bodyPro">
+      <!-- Top Nav -->
+      <nav class="white">
+            <!-- navbar content here  -->
+            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large" id="current-slide"><i
+                        class="menuPro material-icons">menu</i></a>
+            <span>
+                  <p id="titlePro">GitFit Matches</p>
+            </span>
+            <ul class=" right hide-on-small-and-down collection" style="margin:0px; border:0px solid transparent">
+                  <!-- <li class="collection-item avatar" style="background-color:transparent; min-height: 64px;"><a href="">
+                            <i class="material-icons white blue-text circle">note</i></a> -->
 
-          <div class="headerLinks col-lg-2">
 
 
-                <a class="headerLinks2" href="index.html"> Login</a>
-                <a class="headerLinks2" href="register.html">Sign Up</a>
 
-           </div>
+      </li>
+    </ul>
+
+  </nav><br><br>
+
+
+  <!-- ################# SideNav Beginning ###################### -->
+  <ul id="slide-out" class="sidenav">
+    <!--If I want is fixed just add sidenav-fixed to class -->
+    <li>
+
+      <div class="user-view center">
+
+        <div class="background">
+          <!-- <img src="../../Desktop/New Website Project 3/img/logo.png" alt="" class="responsive-img"> -->
+          <h5 id="logoPro" style="width:390px; margin-left:65%; margin-top: 100px; ">GitFit </h5>
+        </div>
+
+        <a href="#user"><img class="circle" src="/assets/img/ralph1.png" style=" margin-left:0;"></a><br>
+        {{> sidebar}}
+        <a id="emailPro" href="#emailPro"><span class=" email">jdandturk@gmail.com</span></a>
+
       </div>
-      <br>
-      <br>
-      <div>
-      <div class="row">
-            {{!-- Removing the videos --}}
-            {{!-- <div class="video col-lg-1">
 
-                <iframe width="360" height="215" src="https://www.youtube.com/embed/UBMk30rjy0o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <br>
-                <br>
-                <iframe width="360" height="215" src="https://www.youtube.com/embed/TWVxA9JqP5M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <br>
-                <br>
-                <iframe width="360" height="215" src="https://www.youtube.com/embed/hYcl3TVuQNs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <br>
-                <br>
-                <iframe width="360" height="215" src="https://www.youtube.com/embed/50kH47ZztHs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </li>
+    <li><a href="/"><i class="material-icons">home</i>Home</a></li>
+    <li><a href="#!">Second Link</a></li>
 
-                    <!-- blank space on first line to push buttons over -->
-               </div> --}}
-      <div class="space col-lg-10">
-               <div class ="block">
-                         <img class="logo" src="/assets/img/logo.png" alt="Aerobic" align="left"/>
-                         <br>
-                         <br>
-                         <br>
-                         <p id="gitfit"> Workout Buddies</p>
-                         <a class="blockLinks" href="index.html" > Profile </a>
-                         <a class="blockLinks1" href="register.html">Messages</a>
-<br>
-<br>
-<hr>
-{{> profile-match}}
-{{!-- <div id="pmatch">
+    <!-- *********** Just Add 1*************** -->
 
- </div> --}}
+    {{!-- <li>
+
+            <a href=""><i class="material-icons blue-text">dashboard</i>Dashboard
+            </a>
+        </li>  --}}
+
+    <li>
+      <a href=""><i class="material-icons grey-text">description</i>Description
+      </a>
+    </li>
+    <li>
+      <a href=""><i class="material-icons grey-text">image</i>Images
+      </a>
+    </li>
+    <!-- <li>
+            <a href=""><i class="material-icons blue-text">trending_up</i>Analytics
+            </a>
+        </li> -->
+    <!-- <li>
+            <a href=""><i class="material-icons blue-text">question_answer</i>Comments
+            </a>
+        </li> -->
+    <!-- <li>
+            <a href="#!"><i class="material-icons blue-text">help</i>Help
+            </a>
+        </li> -->
+    <li>
+      <a href="#!"><i class="material-icons grey-text">exit_to_app</i>Logoff
+      </a>
+    </li>
+
+
+    <!-- ************* Just Added Ended 1 ************** -->
+
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
+
+
+  <!-- SideNav Finished -->
+  {{> profile-match}}
 </div>
 
+  <!-- <div id="messageArea hide"> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="chat" id="chat"></div>
 
-  </div>
- </div>
-</div>
-
-
+        <form id="messageForm">
+          <div id="chatBody"></div>
+          <div class="form-group">
+            <!-- <label>Enter a Message</label> -->
+            <input type="text" class="form-control" id="message" placeholder="Start Message">
           </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
-      <br>
-      <br>
 
 
 
+<!--
+***************************Footer******************************** -->
 
-<br>
-<br>
-<br>
-<!-- Left space 2 columns on main page -->
+<footer class="black white-text center" style="padding-left: 0; margin-bottom: 0; ">
+      <div style="padding:20px 0 20px 0;">
+            <h3 id="foot">GitFit</h3>
+            <!-- Font Awesome Icons -->
+            <ul>
+                  <li><i class="fa fa-facebook"></i></li>
+                  <li><i class="fa fa-instagram"></i></li>
+                  <li><i class="fa fa-twitter"></i></li>
+                  <li><i class="fa fa-youtube"></i></li>
+                  <li><i class="fa fa-linkedin"></i></li>
+            </ul>
+      </div>
+      <div class="grey darken-2" style="padding:15px 0; margin-left: 0">
+            &COPY; GitFit Est 2019 . All Rights Reservered
+      </div>
+</footer>
 
+<!-- ********************Footer End******************************* -->
+
+<!-- Import jQuery before materialize.js  -->
+<!-- <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script> -->
+<script>
+  $(document).ready(function() {
+    // Custom JS & jQuery here
+    $('.sidenav').sidenav();
+
+  });
+  //Show and hide message box
+  function myFunction() {
+    var x = document.getElementById("chatBody");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      x.style.display = "clear"
+    } else {
+      x.style.display = "none";
+    }
+  }
+</script>
 
 </div>

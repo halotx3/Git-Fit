@@ -69,6 +69,12 @@ const orm = {
               cb(result);
         });
     },
+    updateDistance: function(table, distance, user_id, match_id, cb){
+      connection.query('UPDATE ?? SET distance = ? WHERE user_id = ? and match_id = ?',[table, distance, user_id, match_id], function (err, result){
+        if (err) throw err;
+        cb(result);
+      })
+    },
     //Updates the active status in the DB to true
     updateMatch: function (table, approved, userid, matchid, cb){
         connection.query('UPDATE ?? SET approved = ? WHERE user_id = ? and match_id = ?',[table, approved, userid, matchid], function(err,result){
@@ -84,7 +90,7 @@ const orm = {
         });
     },
     showOnlineUsers: function(table, JoinTable, vals, cb){
-      connection.query('SELECT usercreds.email, profile.first_name, usercreds.logged FROM ?? LEFT JOIN ?? on profile.cred_id = usercreds.id WHERE usercreds.logged = ?', [table, JoinTable, vals], function (err, result) {
+      connection.query('SELECT usercreds.email, profile.first_name, usercreds.active FROM ?? LEFT JOIN ?? on profile.cred_id = usercreds.id WHERE usercreds.active = ?', [table, JoinTable, vals], function (err, result) {
         if (err){
           throw err;
         }
@@ -115,6 +121,18 @@ const orm = {
             if (err) throw err;
             cb(result);
         });
+    },
+    latNlong: function(table, vals, cb){
+      connection.query('UPDATE ??  SET hlatitude = ?, hlongitude = ? WHERE cred_id = ?',[table, ...vals], function (err, result){
+        if (err) throw err
+        cb(result)
+      })
+    },
+    gymLatnLong: function(table, vals, cb){
+      connection.query('UPDATE ?? SET glatitude = ?, glongitude = ? WHERE cred_id = ?', [table, ...vals], function (err, result){
+        if(err) throw err
+        cb(result)
+      })
     }
     ,
     matchLimit: function (tableInput, id, type, cb) {
@@ -124,9 +142,16 @@ const orm = {
             }
               cb(result);
         });
+    },
+    surveyToggle: function(table, status, id, cb){
+        connection.query('UPDATE ?? SET first = ? WHERE id = ?', [table, status, id], function(err, result){
+            if (err) { 
+                throw err;
+            }
+              cb(result);
+        });
     }
 
 
 }
-
 module.exports = orm;

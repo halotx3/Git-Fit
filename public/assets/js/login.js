@@ -1,13 +1,7 @@
-//Modal functionality for Login Page 
-$(document).ready(function(){
-    $('.modal').modal();
-});
-
-
 $(function(){
     $('#logData').on('click', function(event){
         let logMail = $('#logEmail').val().trim();
-        let logPass = $('#logPass').val().trim();
+        let logPass = $('#pass').val().trim();
         updateData = {
             email: logMail,
             password: logPass
@@ -18,8 +12,12 @@ $(function(){
             data: updateData,
             dataType: 'json' 
         }).done(function(response){
-            window.location.assign('/profile/' + response.profile)
+
+            if (response.status == true){
+                window.location.assign('/survey/' + response.profile)
+            }else if (response.status == false){
+                window.location.assign('/profile/' + response.profile)
+            }
         })
     })
-});
-
+})

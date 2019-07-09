@@ -53,7 +53,6 @@ const emailVer = require('../models/emailVer.js');
         },(error, result) => {
           if (error) console.error(error);
           console.log(result);
-          console.log(window.location.hostname);
           return
         });
          
