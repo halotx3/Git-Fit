@@ -142,6 +142,14 @@ const orm = {
             }
               cb(result);
         });
+    },
+    surveyToggle: function(table, status, id, cb){
+        connection.query('UPDATE ?? SET first = ? WHERE id = ?', [table, status, id], function(err, result){
+            if (err) { 
+                throw err;
+            }
+              cb(result);
+        });
     }
 
 

@@ -12,7 +12,12 @@ $(function(){
             data: updateData,
             dataType: 'json' 
         }).done(function(response){
-            window.location.assign('/profile/' + response.profile)
+
+            if (response.status == true){
+                window.location.assign('/survey/' + response.profile)
+            }else if (response.status == false){
+                window.location.assign('/profile/' + response.profile)
+            }
         })
     })
 })
