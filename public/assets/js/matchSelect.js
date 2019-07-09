@@ -18,9 +18,9 @@ $(function() {
       // data: id
     }).then(
       function() {
-        console.log('create the match', id);
+        // console.log('create the match', id);
         // Reload the page to get the updated list
-        // location.reload();
+        location.reload();
 
       }
     );
@@ -42,7 +42,15 @@ $(function() {
         
       })
 
-      // geting current users profile
+
+
+  }
+
+  // Handlebars.registerPartial('sidebar', Handlebars.templates['sidebar']);
+
+  $('#current-slide').on('click',function(event){
+    console.log("sliding out")
+          // geting current users profile
   $.ajax({
     method:'GET',
     url: '/profile/current/' + id
@@ -50,7 +58,7 @@ $(function() {
     // render(data);
   })//end of the current user
 
-  }
+  })
 
 
       $('.gitfitAccept').on('click', function(event) {
@@ -66,7 +74,7 @@ $(function() {
           data: {profilematchid: profilematchid}
         }).then(
           function(){
-            console.log('Accepted match', id);
+            // console.log('Accepted match', id);
             location.reload();
           }
         )
@@ -84,7 +92,7 @@ $(function() {
         data: {profilematchid: profilematchid}
       }).then(
         function() {
-          console.log('Match block', id);
+          // console.log('Match block', id);
           // Reload the page to get the updated list
           location.reload();
         }

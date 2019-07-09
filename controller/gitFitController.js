@@ -21,7 +21,7 @@ router.put('/profile/:id', function(req, res) {
 
     // res.json({ id: res.insertId});
     res.send(true)
-    console.log("update happened");
+    console.log("ACCEPTED USER MATCH");
   })
 });
 
@@ -134,11 +134,11 @@ router.put('/profile/distance/:id', function(req, res) {
             // console.log("Added Distance!!!")
            })
         }
-        const hbsObject = {
+        const hbsObject10 = {
           matchDistance: result
         };
         // console.log(hbsObject);
-        res.render('profile', hbsObject);
+        res.render('profile', hbsObject10);
       })
     })
 }) //End of Destination
@@ -181,11 +181,12 @@ router.get('/profile/current/:id', function (req, res){
     console.log("***********Current User info************")
     let name = result3[0].first_name
     console.log(`Here is the first name ${name}`)
-    console.log(result3)
-    console.log("***********testing************")
+    // console.log(result3)
+    // console.log("***********testing************")
     console.log(hbsObject1)
     // console.log(hbsObject);
       res.render('profile', hbsObject1);
+      // res.render('sidebar', hbsObject1, partials);
 
   });
 

@@ -30,9 +30,16 @@ app.use(express.json({limit:"50mb"}));
 // Set Handlebars.
 const exphbs = require('express-handlebars');
 
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', exphbs({ 
+  defaultLayout: 'main'
+  // ,
+  // partialsDir: __dirname + 'views/partials',
+  // layoutsDir: __dirname + 'views/layouts'
+ }));
 app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
+// app.registerPartials(__dirname + '/views/partials');
+// app.set('partialsDir', __dirname + '/views/partials');
 // Import routes and give the server access to them.
 
 const everRoutes = require('./controller/emailVerifyController.js');

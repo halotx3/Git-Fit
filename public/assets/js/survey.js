@@ -42,9 +42,9 @@ $(function () {
         }
     }
 
-    function handleFiles() {
-        const fileList = this.files; /* now you can work with the file list */
-      }
+    // function handleFiles() {
+    //     const fileList = this.files; /* now you can work with the file list */
+    //   }
 
 $('#pic').on("change", previewFile);
 
