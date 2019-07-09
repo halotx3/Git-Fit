@@ -34,6 +34,7 @@ $(function() {
         // render(data);
         // console.log(data, );
       })
+      
       $.ajax({
         method: 'PUT',
         url: '/profile/distance/' + id
@@ -42,8 +43,15 @@ $(function() {
       })
 
   }
+// geting current users profile
+  $.ajax({
+    method:'GET',
+    url: '/profile/current/' + id
+  }).then(function(data){
+    // render(data);
+  })//end of the current user
 
-      $('.btn-success').on('click', function(event) {
+      $('.gitfitAccept').on('click', function(event) {
         console.log("clicked on accept button")
 
         // console.log(url)
@@ -62,9 +70,9 @@ $(function() {
         )
 
       });
-
-
-    $('.btn-dark').on('click', function(event) {
+    
+  
+    $('.gitfitBlock').on('click', function(event) {
       console.log("clicked on block button")
       // Send the PUT request.
       const profilematchid = $(event.target).data('profilematchid')

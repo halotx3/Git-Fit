@@ -3,6 +3,8 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io').listen(server);
 const time = require('date-and-time');
+const helmet = require('helmet');
+const randomstring = require("randomstring");
 const bodyparser = require('body-parser');
 require('moment');
 require('./sockets/socket')(io);
@@ -17,6 +19,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(__dirname + "/public"));
 
 
+
+//Additional Securities
+app.use(helmet());
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true, limit:"50mb", parameterLimit:50000 }));
 app.use(express.json({limit:"50mb"}));
@@ -28,7 +33,6 @@ const exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
-
 // Import routes and give the server access to them.
 
 const everRoutes = require('./controller/emailVerifyController.js');
@@ -43,12 +47,14 @@ app.use(chatRoutes);
 app.use(surveyRoutes);
 
 app.use('/', mainroutes);
+app.use('/register', logonRoutes);
 // app.use(express.limit(100000000));
 // app.use(express.bodyParser({limit:"50mb"}));
 
-app.use('/survey', mainroutes);
-app.use('/register', mainroutes);
+app.use('/survey', surveyRoutes);
 app.use('/matches', mainroutes);
+app.use('/login1', mainroutes);
+app.use('/profile-match', mainroutes);
 // app.use('/loggedIn', mainroutes); // Enter the correct file handlebar name here *********
 
 server.listen(PORT, function() {

@@ -1,44 +1,35 @@
 <div class="container">
-<div class="row">
-      {{#each matchLimit}}
-  <div class="col">
-    <div class="card match123 d-inline-block" style="width: 12rem;">
-
-      {{!-- <div class="row" >
-  <div class="col-sm-6"> --}}
-      <div class="d-inline-block">
-        {{!-- style= "display-inline: auto" --}}
-        <img class="card-img-top picformat" src="{{this.photo}}" alt="Card image cap">
-        <div class="card-body" style="margin-bottom: 5%">
-          <h5 id ="username" class="card-title">{{this.first_name}} {{this.last_name}}</h5>
-          <p class="card-text"></p>
-          {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
-          <button class="btn btn-success" id="gitfitAccept" data-profilematchid="{{this.match_id}}"
-            data-pactivity="{{this.primary_training_type}}">Accept</button>
-          <button class="btn btn-dark" id="gitfitBlock" data-profilematchid="{{this.id}}"
-          data-pactivity="{{this.primary_training_type}}">Block</button>
-          <button class="btn btn-info chat-btn" id="Chat{{this.id}}" data-profilematchid="{{this.id}}"
-          data-pactivity="{{this.primary_training_type}}">Chat</button>
-          <button class="btn btn-info map" id="{{this.id}}" data-profilematchid="{{this.id}}"
-          data-pactivity="{{this.primary_training_type}}">Map</button>
-
+  <div class="row">
+    {{#each matchLimit}}
+    <div class="col s12 l4 m4">
+      <div class="card-panel center">
+        <h5 class="match1"><i>{{this.first_name}} {{this.last_name}}</i> <a href=""> <span><i
+                class="material-icons tiny">open_in_new</i></span></a></h5>
+        <div>
+          <img id="match1_picPro" src="{{this.photo}}" alt="">
         </div>
+        <div>
+          <ul>
+            <li class="match_iconsPro collection-item avatar" style="background-color:transparent; min-height: 64px;">
+              <a href="">
+                <i class="medium material-icons red white-text circle">remove_circle </i>
+                <button class="declineText gitfitBlock" id="gitfitBlock" data-profilematchid="{{this.match_id}}"
+                  data-pactivity="{{this.primary_training_type}}">DECLINE</button></a></li>
 
+            <li class="match_iconsPro collection-item avatar" style="background-color:transparent; min-height: 64px;">
+              <a href="#" onclick="myFunction()">
+                <i class="forum medium material-icons blue white-text circle ">forum </i>
+                <span class="messageText">MESSAGE</span></a></li>
+            <!-- <button onclick="myFunction()">Try it</button> -->
+            <li class="match_iconsPro collection-item avatar" style="background-color:transparent; min-height: 64px;">
+              <a href="">
+                <i class="medium material-icons green white-text circle">done_all</i>
+                <button class="acceptText gitfitAccept" id="gitfitAccept" data-profilematchid="{{this.match_id}}"
+                  data-pactivity="{{this.primary_training_type}}">ACCEPT</button></a></li>
+          </ul>
+        </div>
       </div>
-
-    {{!-- </div> --}}
-
-
-  {{!-- </div> --}}
-
-
-
-</div> {{! end of card }}
-</div> {{! end of col }}
-   {{/each}}
-</div>{{! end of row }}
-  <div class="col-sm-6" id="messageChat">
-    {{>chat}}
+    </div>
+     {{/each}}
   </div>
-
-</div> {{! end of container }}
+</div>

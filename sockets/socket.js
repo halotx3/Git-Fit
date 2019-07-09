@@ -41,6 +41,8 @@ io.sockets.on('connection', function(socket) {
   socket.on('new player', function(user) {
     currentUser = user
     socket.join(user)
+    for (let i = 0; i < user.length; i++)
+    console.log(`Getting Username${user[i].first_name}`)
   })
 
   //connections.push(socket);
