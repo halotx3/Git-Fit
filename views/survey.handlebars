@@ -1,3 +1,37 @@
+      <!-- Navigation bar-->
+   <div id="indexBody">
+        <header id="homeIndex" style="padding-left: 0px; ">
+            <nav class="transparent">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo center">
+                        <!--<img src="./img/logo.png" alt="logo" height="64" width="64"> -->
+                    </a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu </i></a>
+                    <ul class="left hide-on-med-and-down">
+                        <!-- <li> <a href="#">Home</a></li> -->
+                        <li> <a href="/register">Sign Up</a></li>
+                        <li> <a href="/login1">Login</a></li>
+                    </ul>
+                    <ul class="right hide-on-med-and-down">
+                        {{!-- <li> <a href="#">Profile</a></li> --}}
+                        <li> <a href="/logoff">Logoff</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!--Sidebar -->
+            <ul class="sidenav" id="mobile-demo">
+                <!-- <li><a href="#">Home</a></li> -->
+                <li><a href="#">Sign Up</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="/login1">Login</a></li>
+               
+                <!-- Need to initialize the sidenav in index.js file-->
+            </ul>
+     
+    
+
+
+ <div id="surveyPic">             
 <div class="container">
     <div class="row">
         <div class="card">
@@ -11,81 +45,203 @@
             </div>
         </div>
         <br>
+
+
         <form class="create-surveyform">
             <table>
                 <div>
-                    <div>
-                        <tr>
-                            <h3>Personal Information</h3>
-                        </tr>
-                        <tr>
-                            <label for="idPic">Add Image</label>
-                            <input type="file" id="pic"> <br>
-                            <img src="" height="200" id="pre" alt="Image preview...">
-                            <br>
-                        </tr>
-                        <tr>
-                            <label for="idFirstName">First Name</label>
-                            <input class="form-control" type="firstName" name="FirstName" id="FirstName" placeholder="">
-                            <label for="idLastName">Last Name</label>
-                            <input class="form-control" type="LastName" id="LastName" placeholder="">
-                        </tr>
-                        <tr>
-                            <label for="gender">Gender</label>
-                            <input type="radio" id="idgender" value="male"> Male<br>
-                            <input type="radio" id="idgender" value="female"> Female<br>
-                            {{!-- <input class="form-control" type="radio" id="idgenderMale" placeholder="Gender" value="1"> Male>
-                                  <input class="form-control" type="radio" id="idgenderMale" placeholder="Gender" value="1"> Male> --}}
-                        </tr>
-                        <br />
-                        <br />
-                        <tr>
-                            <label for="idHomeStr">Home Street Address</label>
-                            <input class="form-control" type="text" id="HomeStr" placeholder="">
-                            <label for="idHomeCity">Home City</label>
+                    
+                            <p class="pTop" style="margin-bottom: 0px;">_________________________________________________________________________________</p>
+                            <h3 style="margin-top:0px; margin-bottom:0px;">Member Information</h3>
+                            <p class="pBottom" style="margin-top: 0px; margin-bottom:16px;">_________________________________________________________________________________</p>
+                        
+                        
+                            <label for="idFirstName" class="active" style="padding-right: 25px;">First Name: </label>
+                            <input class="input-field" type="firstName" name="FirstName" id="FirstName">
+                           
+                            <label for="idLastName" class="active" style="padding-left: 95px;">Last Name: </label>
+                            <input class="form-control" type="LastName" id="LastName" placeholder=""><br><br> 
+
+                            <label for="idMobilePh">Phone Number: </label>
+                            <input class="form-control" type="PhoneNum" id="idMobilePh" placeholder="">
+                        <br><br>
+                        <label for="idEmailAddr" class="active" style="padding-right: 5px;">Email Address: </label>
+                        <input class="form-control" type="EmailAddr" id="EmailAddrm" placeholder="">
+
+                        <label for="idConfimEmail" class="active" style="padding-left: 15px;">Confirm Email Address: </label>
+                        <input class="form-control" type="EmailAddr" id="ConfirmEmail" placeholder=""><br><br>
+                                                
+                        
+                            <label for="idHomeStr" class="active" style="padding-right: 45px; width: 30%;">Address:</label>
+                            <input class="form-control" type="text" id="HomeStr" style="height: 15px; width:525px; "><br><br>
+
+                            <label for="idHomeCity" class="active" style="padding-right: 75px; ">City</label>
                             <input class="form-control" type="text" id="HomeCity" placeholder="">
-                            <label for="idHomeState">Home State</label>
-                            <input class="form-control" type="text" id="HomeState" placeholder="">
-                        </tr>
-                        <br />
-                        <br />
-                        <tr>
-                            <label for="idHomeZip"> Home Zip</label>
-                            <input class="form-control" type="text" id="HomeZip" placeholder="">
-                            <label for="idMobilePh">Mobile Phone</label>
-                            <input class="form-control" type="text" id="Mobile" placeholder="">
-                        </tr>
-                        <br />
-                        <br />
-                    </div>
-                    <div>
-                        <tr>
-                            <h3>Workout Information</h3>
-                        </tr>
-                        <tr>
-                            <label for="idGymName">Gym Name</label>
-                            <input class="form-control" type="text" id="idGymName" placeholder="">
-                            <label for="idGymStr">Gym Street Address</label>
-                            <input class="form-control" type="text" id="idGymStreet" placeholder="">
-                            <label for="idGymCity">Gym City</label>
+
+                            <label for="idHomeState">State</label>
+                            <select class="form-control" type="text" id="HomeState" placeholder="GA">
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="CA">California</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="CT">Connecticut</option>
+                                    <option value="DE">Delaware</option>
+                                    <option value="DC">District Of Columbia</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="IA">Iowa</option>
+                                    <option value="KS">Kansas</option>
+                                    <option value="KY">Kentucky</option>
+                                    <option value="LA">Louisiana</option>
+                                    <option value="ME">Maine</option>
+                                    <option value="MD">Maryland</option>
+                                    <option value="MA">Massachusetts</option>
+                                    <option value="MI">Michigan</option>
+                                    <option value="MN">Minnesota</option>
+                                    <option value="MS">Mississippi</option>
+                                    <option value="MO">Missouri</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="NH">New Hampshire</option>
+                                    <option value="NJ">New Jersey</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="NY">New York</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="OK">Oklahoma</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="RI">Rhode Island</option>
+                                    <option value="SC">South Carolina</option>
+                                    <option value="SD">South Dakota</option>
+                                    <option value="TN">Tennessee</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="VT">Vermont</option>
+                                    <option value="VA">Virginia</option>
+                                    <option value="WA">Washington</option>
+                                    <option value="WV">West Virginia</option>
+                                    <option value="WI">Wisconsin</option>
+                                    <option value="WY">Wyoming</option>
+                     </select>    
+
+                            <label for="idHomeZip"> Zip</label>
+                            <input class="form-control" type="text" id="HomeZip" style="width: 140px;"><br><br>
+
+
+                     <!-- ****************************** Gender *************************************************** -->
+                   
+                            <label for="gender">Gender</label><br> 
+                            <input class="with-gap" name="idgender" type="radio"  value="male"> <span> Male</span><br>
+                            <input class="with-gap" name="idgender" type="radio"  value="female"><span> Female </span><br>
+                          
+
+                     <!-- ****************************************************************************************** -->
+
+
+
+                            
+                       
+                    
+                        <!-- *******************************Gym information Section*********************************************************** -->
+                        <p class="pTop" style="margin-bottom: 0px;">_________________________________________________________________________________</p>
+                        <h3 style="margin-top:0px; margin-bottom:0px;">Gym Information</h3>
+                        <p class="pBottom" style="margin-top: 0px; margin-bottom:16px;">_________________________________________________________________________________</p>
+                      
+                            <label for="idGymName" class="active" style="padding-right: 25px;">Gym Name</label>
+                            <input class="form-control" type="text" id="idGymName" placeholder=""><br><br>
+
+                            <label for="idGymStr" class="active" style="padding-right: 45px; width: 30%;">Address</label>
+                            <input class="form-control" type="text" id="idGymStreet" style="height: 15px; width:525px; "><br><br>
+
+                            <label for="idGymCity" class="active" style="padding-right: 70px; ">City</label>
                             <input class="form-control" type="text" id="idGymCity" placeholder="">
-                            <label for="idGymState">Gym State</label>
-                            <input class="form-control" type="text" id="idGymState" placeholder="">
-                            <label for="idGymZip">Gym Zip</label>
-                            <input class="form-control" type="text" id="idGymZip" placeholder="">
-                        </tr>
-                        <br />
-                        <br />
-                    </div>
+
+                            <label for="idGymState">State</label>
+                            <select class="form-control" type="text" id="idGymState" placeholder="">
+                                   
+                                            <option value="AL">Alabama</option>
+                                            <option value="AK">Alaska</option>
+                                            <option value="AZ">Arizona</option>
+                                            <option value="AR">Arkansas</option>
+                                            <option value="CA">California</option>
+                                            <option value="CO">Colorado</option>
+                                            <option value="CT">Connecticut</option>
+                                            <option value="DE">Delaware</option>
+                                            <option value="DC">District Of Columbia</option>
+                                            <option value="FL">Florida</option>
+                                            <option value="GA">Georgia</option>
+                                            <option value="HI">Hawaii</option>
+                                            <option value="ID">Idaho</option>
+                                            <option value="IL">Illinois</option>
+                                            <option value="IN">Indiana</option>
+                                            <option value="IA">Iowa</option>
+                                            <option value="KS">Kansas</option>
+                                            <option value="KY">Kentucky</option>
+                                            <option value="LA">Louisiana</option>
+                                            <option value="ME">Maine</option>
+                                            <option value="MD">Maryland</option>
+                                            <option value="MA">Massachusetts</option>
+                                            <option value="MI">Michigan</option>
+                                            <option value="MN">Minnesota</option>
+                                            <option value="MS">Mississippi</option>
+                                            <option value="MO">Missouri</option>
+                                            <option value="MT">Montana</option>
+                                            <option value="NE">Nebraska</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="NH">New Hampshire</option>
+                                            <option value="NJ">New Jersey</option>
+                                            <option value="NM">New Mexico</option>
+                                            <option value="NY">New York</option>
+                                            <option value="NC">North Carolina</option>
+                                            <option value="ND">North Dakota</option>
+                                            <option value="OH">Ohio</option>
+                                            <option value="OK">Oklahoma</option>
+                                            <option value="OR">Oregon</option>
+                                            <option value="PA">Pennsylvania</option>
+                                            <option value="RI">Rhode Island</option>
+                                            <option value="SC">South Carolina</option>
+                                            <option value="SD">South Dakota</option>
+                                            <option value="TN">Tennessee</option>
+                                            <option value="TX">Texas</option>
+                                            <option value="UT">Utah</option>
+                                            <option value="VT">Vermont</option>
+                                            <option value="VA">Virginia</option>
+                                            <option value="WA">Washington</option>
+                                            <option value="WV">West Virginia</option>
+                                            <option value="WI">Wisconsin</option>
+                                            <option value="WY">Wyoming</option>
+                             </select>           
+                            <label for="idGymZip">Zip</label>
+                            <input class="form-control" type="text" id="idGymZip" style="width: 140px;">
+                        
+                    
+
+                  <!-- ****************************************************************************************** -->
+                
+
+
+                    <!-- *******************************Training Information Section*********************************************************** -->
                     <div>
                         <div>
+
                             <tr>
-                                <h3>Training Information</h3>
+                                    <p class="pTop" style="margin-bottom: 0px;">_________________________________________________________________________________</p>
+                                    <h3 style="margin-top:0px; margin-bottom:0px;">Training Information</h3>
+                                    <p class="pBottom" style="margin-top: 0px; margin-bottom:16px;">_________________________________________________________________________________</p>
                             </tr>
                         </div>
                         <div>
                             <div>
-                                <label for="PrExcer">Primary Excercise</label>
+                               <h4> <label for="PrExcer">Primary Excercise</label></h4>
                             </div>
                             <div class="col-md-6">
                                 <select class="form-control" id="PrExcer" name="Primary Excercise">
@@ -101,20 +257,20 @@
                                     <option value="wtraining">Weight Training</option>
                                     <option value="yoga">Yoga</option>
                                 </select>
-                            </div>
+                            </div> <br>
                             <div class="col-md-6">
                                 <select class="form-control" id="idprlevel" name="Primary Excercise Level">
                                     <option value="beglevel">Beginner</option>
                                     <option value="intlevel">Intermidiate</option>
                                     <option value="adlevl">Advanced</option>
-                                </select>
+                                </select><br> 
                             </div>
                         </div>
                         <tr>
                             <div>
-                                <div>
-                                    <label for="PrExcer">Secondary Excercise</label>
-                                </div>
+                               
+                                   <h4><label for="PrExcer">Secondary Excercise</label></h4>
+                                
                                 <div class="col-md-6">
                                     <select class="form-control" id="idScExcer" name="Secondary Excercise">
                                         <option value="nba">Basketball</option>
@@ -129,7 +285,7 @@
                                         <option value="wtraining">Weight Training</option>
                                         <option value="yoga">Yoga</option>
                                     </select>
-                                </div>
+                                </div><br>
                                 <div class="col-md-6">
                                     <select class="form-control" id="idsclevel" name="Secondary Excercise Level">
                                         <option value="beglevel">Beginner</option>
@@ -140,6 +296,8 @@
                             </div>
                         </tr>
                     </div>
+
+                    <!-- ****************************************************************************************** -->
                 </div>
             </table>
             <br />
@@ -151,3 +309,11 @@
         </form>
     </div>
 </div>
+</div>  
+<script>
+  $(document).ready(function() {
+    M.updateTextFields();
+  });
+       
+
+</script>
