@@ -22,11 +22,10 @@ $(function() {
 
   socket.on('new message',  function(data) {
 
-    console.log(JSON.parse(JSON.stringify(data)));
+    // console.log(JSON.parse(JSON.stringify(data)));
 
-
-        $chat.html(`${$username}: ${now}`);
-        $chat.html(`<div id=${data.id} class="chatmsg">${data.msg}</div>`);
+        $chat.append(`${$username}: ${now}`);
+        $chat.append(`<div id=${data.id} class="chatmsg">${data.msg}</div>`);
 
   });
 

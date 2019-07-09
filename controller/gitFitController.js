@@ -66,7 +66,7 @@ router.put('/profile/match/:id', function(req, res) {
       // console.log(result2.length);
       for (let x = 0; x < result2.length; x++) {
 
-    
+
         // console.log(result2[0].id);
         // console.log(result2[1].id);
         // console.log(user_id1);
@@ -109,13 +109,13 @@ router.put('/profile/distance/:id', function(req, res) {
           // console.log(`Matched User:!!!${result[i].id}`)
           const match_id = result[i].cred_id
           // console.log(match_id)
-          
+
           const matched_User_1_lat = result[i].hlatitude
           const matched_User_1_long = result[i].hlongitude
-          
+
           // console.log(matched_User_1_lat)
           // console.log(matched_User_1_long)
-        
+
           const current_distance = {
             lat: current_latitude,
             long: current_longitude
@@ -126,12 +126,12 @@ router.put('/profile/distance/:id', function(req, res) {
           }
           // shows the distance
           const distance = geodist(current_distance, matched_User_distance,{unit:'miles'})
-          // const setDistance = distance / 100
-          // console.log(`Matched User Distance:${setDistance}`)
+           const setDistance = distance / 100
+           console.log(`Matched User Distance:${setDistance}`)
           // console.log(`Current User: ${user_id}`)
           // console.log(`Matched User ID: ${match_id}`)
-           matching.updateDistance(distance, user_id, match_id, function(result, err){
-            // console.log("Added Distance!!!")
+           matching.updateDistance(setDistance, user_id, match_id, function(result, err){
+            console.log("Added Distance!!!")
            })
         }
         const hbsObject10 = {
@@ -171,8 +171,8 @@ router.get('/profile/:id', function(req, res) {
 router.get('/profile/current/:id', function (req, res){
   console.log(req.params.id);
   const user_id3 = req.params.id;
- 
-  
+
+
   matching.findzip([user_id3], function (result3){
     const hbsObject1 = {
       currentUser: result3[0],
@@ -203,7 +203,7 @@ router.get('/profile/current/:id', function (req, res){
 //       };
 //       console.log("GET THE MAIN USER");
 //       // console.log(hbsObject)
-//       res.render('sidebar', hbsObject)      
+//       res.render('sidebar', hbsObject)
 
 //     })
 
