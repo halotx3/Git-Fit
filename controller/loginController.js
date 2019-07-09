@@ -23,10 +23,11 @@ router.post('/api/verify', function(req, res){
         console.log(result[0]);
         if (result[0].email == email){
             let id = result[0].id;
+            let first = result[0].first
             bcrypt.compare(req.body.password,result[0].password, function(err, result){
                 if(result) {
                     console.log('Log in attempt successful')
-                    res.json({profile: id})
+                    res.json({profile: id,status: first})
                 }else {
                     //password does not match
                     console.log('Incorrect Username/Password!')

@@ -4,8 +4,8 @@
       <!-- Top Nav -->
       <nav class="white">
             <!-- navbar content here  -->
-            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i
-                        class="menuPro material-icons ">menu</i></a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large" id="current-slide"><i
+                        class="menuPro material-icons">menu</i></a>
             <span>
                   <p id="titlePro">GitFit Matches</p>
             </span>
@@ -16,117 +16,103 @@
 
 
 
-                  </li>
-            </ul>
+      </li>
+    </ul>
 
-      </nav><br><br>
+  </nav><br><br>
 
 
-      <!-- ################# SideNav Beginning ###################### -->
-      <ul id="slide-out" class="sidenav">
-            <!--If I want is fixed just add sidenav-fixed to class -->
-            <li>
+  <!-- ################# SideNav Beginning ###################### -->
+  <ul id="slide-out" class="sidenav">
+    <!--If I want is fixed just add sidenav-fixed to class -->
+    <li>
 
-                  <div class="user-view center">
+      <div class="user-view center">
 
-                        <div class="background">
-                              <!-- <img src="../../Desktop/New Website Project 3/img/logo.png" alt="" class="responsive-img"> -->
-                              <h5 id="logoPro" style="width:390px; margin-left:65%; margin-top: 100px; ">GitFit </h5>
-                        </div>
+        <div class="background">
+          <!-- <img src="../../Desktop/New Website Project 3/img/logo.png" alt="" class="responsive-img"> -->
+          <h5 id="logoPro" style="width:390px; margin-left:65%; margin-top: 100px; ">GitFit </h5>
+        </div>
 
-                        <a href="#user"><img class="circle" src="/assets/img/ralph1.png"
-                                    style=" margin-left:0;"></a><br>
-                {{> sidebar}}
-                        <a id="emailPro" href="#emailPro"><span class=" email">jdandturk@gmail.com</span></a>
+        <a href="#user"><img class="circle" src="/assets/img/ralph1.png" style=" margin-left:0;"></a><br>
+        {{> sidebar}}
+        <a id="emailPro" href="#emailPro"><span class=" email">jdandturk@gmail.com</span></a>
 
-                  </div>
+      </div>
 
-            </li>
-            <li><a href="/"><i class="material-icons">home</i>Home</a></li>
-            <li><a href="#!">Second Link</a></li>
+    </li>
+    <li><a href="/"><i class="material-icons">home</i>Home</a></li>
+    <li><a href="#!">Second Link</a></li>
 
-            <!-- *********** Just Add 1*************** -->
+    <!-- *********** Just Add 1*************** -->
 
-            {{!-- <li>
+    {{!-- <li>
 
             <a href=""><i class="material-icons blue-text">dashboard</i>Dashboard
             </a>
         </li>  --}}
 
-            <li>
-                  <a href=""><i class="material-icons grey-text">description</i>Description
-                  </a>
-            </li>
-            <li>
-                  <a href=""><i class="material-icons grey-text">image</i>Images
-                  </a>
-            </li>
-            <!-- <li>
+    <li>
+      <a href=""><i class="material-icons grey-text">description</i>Description
+      </a>
+    </li>
+    <li>
+      <a href=""><i class="material-icons grey-text">image</i>Images
+      </a>
+    </li>
+    <!-- <li>
             <a href=""><i class="material-icons blue-text">trending_up</i>Analytics
             </a>
         </li> -->
-            <!-- <li>
+    <!-- <li>
             <a href=""><i class="material-icons blue-text">question_answer</i>Comments
             </a>
         </li> -->
-            <!-- <li>
+    <!-- <li>
             <a href="#!"><i class="material-icons blue-text">help</i>Help
             </a>
         </li> -->
-            <li>
-                  <a href="#!"><i class="material-icons grey-text">exit_to_app</i>Logoff
-                  </a>
-            </li>
+    <li>
+      <a href="#!"><i class="material-icons grey-text">exit_to_app</i>Logoff
+      </a>
+    </li>
 
 
-            <!-- ************* Just Added Ended 1 ************** -->
+    <!-- ************* Just Added Ended 1 ************** -->
 
-            <li>
-                  <div class="divider"></div>
-            </li>
-            <li><a class="subheader">Subheader</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-      </ul>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
 
 
-      <!-- SideNav Finished -->
-      {{> profile-match}}
+  <!-- SideNav Finished -->
+  {{> profile-match}}
 </div>
-<div id="myDIV">
-      <!-- <div id="messageArea hide"> -->
-      <div class="row">
-            <div class="col-md-4">
-                  <div class="well onlineUsers"
-                        style="border: solid 5px; color: grey; width: 80%; margin-left: 120px; border-radius: 20px;">
-                        <h4 id="txtcolor">Online Users</h4>
-                        <ul class="list-group-item" id="users">
-                              {{#each profile}}
-           
-                  <li>{{first_name}}</li>
-                              {{/each}}
-                        </ul>
-                  </div>
-            </div>
-            <div class="col-md-8">
-                  <div class="chat" id="chat"></div>
 
-                  <form id="messageForm">
-                        <div id="chatBody"></div>
-                        <div class="form-group">
-                              <!-- <label>Enter a Message</label> -->
-                              <input type="text" class="form-control" id="message" placeholder="Start Message">
-                              <br>
-                              <input type="submit" class="btn btn-primary" value="Send Message">
-                        </div>
-                  </form>
-            </div>
+  <!-- <div id="messageArea hide"> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="chat" id="chat"></div>
+
+        <form id="messageForm">
+          <div id="chatBody"></div>
+          <div class="form-group">
+            <!-- <label>Enter a Message</label> -->
+            <input type="text" class="form-control" id="message" placeholder="Start Message">
+          </div>
+        </form>
       </div>
-</div>
+    </div>
+  </div>
 
-</div>
 
 
-<!-- 
+
+<!--
 ***************************Footer******************************** -->
 
 <footer class="black white-text center" style="padding-left: 0; margin-bottom: 0; ">
@@ -152,22 +138,21 @@
 <!-- <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script> -->
 <script>
-      $(document).ready(function () {
-            // Custom JS & jQuery here
-            $('.sidenav').sidenav();
+  $(document).ready(function() {
+    // Custom JS & jQuery here
+    $('.sidenav').sidenav();
 
-      });
-      //Show and hide message box 
-      function myFunction() {
-            var x = document.getElementById("myDIV");
-            if (x.style.display === "none") {
-                  x.style.display = "block";
-            } else {
-                  x.style.display = "none";
-            }
-      }
-
-
+  });
+  //Show and hide message box
+  function myFunction() {
+    var x = document.getElementById("chatBody");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      x.style.display = "clear"
+    } else {
+      x.style.display = "none";
+    }
+  }
 </script>
 
 </div>
