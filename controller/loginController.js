@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser')
 // const cookieSession = require('cookie-session');
 
 // Route for login page 
-router.get('/login1', function(req, res){
+router.get('/login', function(req, res){
     res.render('login1');
 });
 
@@ -26,8 +26,6 @@ router.post('/api/verify', function(req, res){
             bcrypt.compare(req.body.password,result[0].password, function(err, result){
                 if(result) {
                     console.log('Log in attempt successful')
-                    req.session.user = {'id': id}
-                    console.log(req.session.user)
                     res.json({profile: id})
                 }else {
                     //password does not match
