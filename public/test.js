@@ -1,22 +1,22 @@
 // Password Validation Test
 describe("isValidPassword", function() {
   it("should return true if the password provided is greater than seven characters", function() {
-    expect(isValidPassword('georgewashington')).to.equal(true);
+    expect(isValidPassword('cocopuff')).to.equal(true);
   });
 
-  it("should return false if the passwords do not match", function() {
-    expect(isValidPassword('bicycle', 'stopwatch')).to.equal(false);
-  });
+  it("should return false if the password provided is less than seven characters", function() {
+    expect(isValidPassword('coco')).to.equal(false);
+  });  
 });
 
 // Username Validation Test
 describe("isValidemailAddress", function() {
-  it("should return true if the username provided is greater than seven characters", function() {
-    expect(isValidemailAddress('gwash@test.com')).to.equal(true);
+  it("should return true if the email address is greater than 12 characters", function() {
+    expect(isValidemailAddress('emailtest@email.com')).to.equal(true);
   });
 
-  it("should return false if the username provided is less than 5 characters", function() {
-    expect(isValidemailAddress('gwash')).to.equal(false);
+  it("should return false if the email address provided is less than 10 characters", function() {
+    expect(isValidemailAddress('gpayton')).to.equal(false);
   });
 });
 
@@ -42,10 +42,9 @@ describe('register click', function () {
       200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
     ]);
     
-    $('#emailaddress').val('Horacio');
-    $('#password1').val('burgers');
-    // $('#password2').val('burgers');
-
+    $('#emailaddress').val('myemail@test.com');
+    $('#password').val('burgers');
+    
     $('#register').trigger('click');
 
     server.respond();
