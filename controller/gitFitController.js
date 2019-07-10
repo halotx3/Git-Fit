@@ -29,13 +29,13 @@ router.put('/profile/:id', function(req, res) {
 router.put('/profile/block/:id', function(req, res) {
   // console.log(req.params.id);
   const user_id1 = req.params.id;
-  // const matchid = req.body.profilematchid
+  const matchid = req.body.profilematchid
   // console.log(matchid)
 
   let block = true;
 
   matching.updateBlock(block, user_id1, matchid, function() {
-    // console.log(block, matchid, user_id1)
+    console.log(block, matchid, user_id1)
 
     // res.json({ id: res.insertId});
     res.send(false)
@@ -160,6 +160,8 @@ router.get('/profile/:id', function(req, res) {
     // console.log(hbsObject);
     res.render('profile', hbsObject);
 
+    // Adding finding 
+
     
 
   })
@@ -169,31 +171,31 @@ router.get('/profile/:id', function(req, res) {
 }) //End of matching.Limit results route to display the matches
 
 // Show the current user on the page
-router.get('/profile/current/:id', function (req, res){
-  console.log(req.params.id);
-  const user_id3 = req.params.id;
+// router.get('/profile/current/:id', function (req, res){
+//   console.log(req.params.id);
+//   const user_id3 = req.params.id;
 
 
-  matching.findzip([user_id3], function (result3){
-    const currentUser = {
-      // currentUser: result3[0],
-      name1:result3[0].first_name,
-      name2:result3[0].last_name,
-      picture:result3[0].photo
-    };
-    console.log("***********Current User info************")
-    let name = result3[0].first_name
-    console.log(`Here is the first name ${name}`)
-    // console.log(result3)
-    // console.log("***********testing************")
-    console.log(currentUser)
-    // console.log(hbsObject);
-  res.render('profile', currentUser);
-      // res.render('sidebar', hbsObject1, partials);
+//   matching.findzip([user_id3], function (result3){
+//     const currentUser = {
+//       // currentUser: result3[0],
+//       name1:result3[0].first_name,
+//       name2:result3[0].last_name,
+//       picture:result3[0].photo
+//     };
+//     console.log("***********Current User info************")
+//     let name = result3[0].first_name
+//     console.log(`Here is the first name ${name}`)
+//     // console.log(result3)
+//     // console.log("***********testing************")
+//     console.log(currentUser)
+//     // console.log(hbsObject);
+//   res.render('profile', currentUser);
+//       // res.render('sidebar', hbsObject1, partials);
 
-  })
+//   })
 
-}) //End of current user profile information
+// }) //End of current user profile information
 
 // Redo current user
 // router.put('/sidebar/:id', function(req, res){
