@@ -1,6 +1,4 @@
 $(function(){
-    event.preventDefault()
-      });
     $('#submitData').on('click', function(event){
         let userMail = $('#userEmail').val().trim();
         let userPass = $('#userPass').val().trim();
@@ -41,3 +39,4 @@ $(function(){
         //     alert('Before proceeding you need to accept the TOS.')
         // }
     })
+})
