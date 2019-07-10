@@ -77,20 +77,28 @@ const orm = {
     },
     //Updates the active status in the DB to true
     updateMatch: function (table, approved, userid, matchid, cb){
-        connection.query('UPDATE ?? SET approved = ? WHERE user_id = ? and match_id = ?',[table, approved, userid, matchid], function(err,result){
+        connection.query('UPDATE ?? SET approved = ?, block = "0" WHERE user_id = ? and match_id = ?',[table, approved, userid, matchid], function(err,result){
             if (err) throw err;
             cb(result);
         });
     },
     //Updates the active status in the DB to true
     updateBlock: function (table, block, userid, matchid, cb){
-        connection.query('UPDATE ?? SET block = ? WHERE user_id = ? and match_id = ?',[table, block, userid, matchid], function(err,result){
+        connection.query('UPDATE ?? SET block = ?, approved = "0" WHERE user_id = ? and match_id = ?',[table, block, userid, matchid], function(err,result){
             if (err) throw err;
             cb(result);
         });
     },
     showOnlineUsers: function(table, JoinTable, vals, cb){
       connection.query('SELECT usercreds.email, profile.first_name, usercreds.active FROM ?? LEFT JOIN ?? on profile.cred_id = usercreds.id WHERE usercreds.active = ?', [table, JoinTable, vals], function (err, result) {
+        if (err){
+          throw err;
+        }
+          cb(result);
+      });
+    },
+    showChatUsers: function(table, vals, cb){
+      connection.query('SELECT  profile.first_name FROM ??  WHERE profile.cred_id = ?', [table, vals], function (err, result) {
         if (err){
           throw err;
         }
@@ -136,7 +144,7 @@ const orm = {
     }
     ,
     matchLimit: function (tableInput, id, type, cb) {
-        connection.query('SELECT * FROM ?? a inner join profile b on a.match_id = b.cred_id where user_id = ? and type = ? and block = "0" limit 3 ', [tableInput, id, type], function (err, result) {
+        connection.query('SELECT * FROM ?? a inner join profile b on a.match_id = b.cred_id where user_id = ? and type = ? and block = "0" order by a.distance ASC limit 3 ', [tableInput, id, type], function (err, result) {
             if (err) {
                 throw err;
             }
@@ -145,7 +153,7 @@ const orm = {
     },
     surveyToggle: function(table, status, id, cb){
         connection.query('UPDATE ?? SET first = ? WHERE id = ?', [table, status, id], function(err, result){
-            if (err) { 
+            if (err) {
                 throw err;
             }
               cb(result);

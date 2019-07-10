@@ -1,6 +1,5 @@
 $(function(){
-    document.getElementById("submitData").addEventListener("click", function(event){
-        event.preventDefault()
+    event.preventDefault()
       });
     $('#submitData').on('click', function(event){
         let userMail = $('#userEmail').val().trim();
@@ -21,7 +20,7 @@ $(function(){
             }).then(
                 function(){
                     console.log('Account has been created');
-                    location.reload();
+                    window.location.assign('/')
                 })
         }else {
             alert('Passwords do not match')
@@ -42,4 +41,3 @@ $(function(){
         //     alert('Before proceeding you need to accept the TOS.')
         // }
     })
-})

@@ -41,7 +41,7 @@ router.post('/api/verify', function(req, res){
 
 //Logout functionality
 router.get('/signout',function(req,res){
-    req.session.destroy()
+    
     res.send('User has been signed out.');
 })
 module.exports = router;
