@@ -38,7 +38,7 @@ $(function() {
   const load = function(e) {
     // e.preventDefault();
     socket.emit('new user', function(data) {
-      console.log(data)
+      // console.log(data)
       // if (data) {
       //   // $username.val('');
       //   $userFormArea.hide();

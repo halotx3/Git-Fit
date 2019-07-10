@@ -9,37 +9,25 @@ $(function () {
         // var url = window.location.pathname;
         // var idProfile = url.substring(url.lastIndexOf('/') + 1);
 
-        var preview = document.querySelector('img');
+        var preview = document.getElementById('pre');
         var file = document.querySelector('input[type=file]').files[0];
         var reader = new FileReader();
+        
 
-        // reader.addEventListener("load", function () {
         reader.addEventListener("load", function () {
             preview.src = reader.result;
+            console.log(preview.src)
+            dataurl = preview.src
+
         }, false);
 
-        // reader.onload = function(event){
-        // }
-
+            console.log(file)
         if (file) {
             reader.readAsDataURL(file);
-            dataurl = document.getElementById("pre").src
-            console.log(dataurl)
+            let dataurl2 = document.getElementById("pre").src
 
-            // var idProfile = url.substring(url.lastIndexOf('/') + 1);
-            if (!dataurl.match(/data:image.*/) ){
-                console.log("***Reselect picture***")
-                // let dataReview = reader.readAsBinaryString(file)
-                // console.log(dataReview);
-                dataurl = "https://dummyimage.com/197x217/87BED8/white.jpg&text=no+profile+picture"
-            }
-
-            // attr.src
         }
-        else{
-            console.log("no picture uploaded")
-            dataurl = "https://dummyimage.com/197x217/87BED8/white.jpg&text=no+profile+picture"
-        }
+ 
     }
 
     // function handleFiles() {
