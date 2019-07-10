@@ -42,23 +42,28 @@ $(function() {
         
       })
 
-
+      // $.ajax({
+      //   method:'GET',
+      //   url: '/profile/current/' + id
+      // }).then(function(data){
+      //   // render(data);
+      // })//end of the current user
 
   }
 
   // Handlebars.registerPartial('sidebar', Handlebars.templates['sidebar']);
 
-  $('#current-slide').on('click',function(event){
-    console.log("sliding out")
-          // geting current users profile
-  $.ajax({
-    method:'GET',
-    url: '/profile/current/' + id
-  }).then(function(data){
-    // render(data);
-  })//end of the current user
+  // $('#current-slide').on('click',function(event){
+  //   console.log("sliding out")
+  //         // geting current users profile
+  // $.ajax({
+  //   method:'GET',
+  //   url: '/profile/current/' + id
+  // }).then(function(data){
+  //   // render(data);
+  // })//end of the current user
 
-  })
+  // })
 
 
       $('.gitfitAccept').on('click', function(event) {

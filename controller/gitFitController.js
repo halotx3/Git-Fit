@@ -160,6 +160,7 @@ router.get('/profile/:id', function(req, res) {
     // console.log(hbsObject);
     res.render('profile', hbsObject);
 
+    
 
   })
 
@@ -174,21 +175,23 @@ router.get('/profile/current/:id', function (req, res){
 
 
   matching.findzip([user_id3], function (result3){
-    const hbsObject1 = {
-      currentUser: result3[0],
-      // name:result3[0].first_name
+    const currentUser = {
+      // currentUser: result3[0],
+      name1:result3[0].first_name,
+      name2:result3[0].last_name,
+      picture:result3[0].photo
     };
     console.log("***********Current User info************")
     let name = result3[0].first_name
     console.log(`Here is the first name ${name}`)
     // console.log(result3)
     // console.log("***********testing************")
-    console.log(hbsObject1)
+    console.log(currentUser)
     // console.log(hbsObject);
-      res.render('profile', hbsObject1);
+  res.render('profile', currentUser);
       // res.render('sidebar', hbsObject1, partials);
 
-  });
+  })
 
 }) //End of current user profile information
 

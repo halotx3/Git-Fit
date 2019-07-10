@@ -2,70 +2,36 @@ $(function () {
     // Image Upload
     let dataurl = ""
 
-
-
     function previewFile() {
 
         // var url = window.location.pathname;
         // var idProfile = url.substring(url.lastIndexOf('/') + 1);
 
-        var preview = document.querySelector('img');
+        var preview = document.getElementById('pre');
         var file = document.querySelector('input[type=file]').files[0];
         var reader = new FileReader();
+        
 
-        // reader.addEventListener("load", function () {
         reader.addEventListener("load", function () {
             preview.src = reader.result;
+            console.log(preview.src)
+            dataurl = preview.src
+
         }, false);
 
-        // reader.onload = function(event){
-        // }
-
+            console.log(file)
         if (file) {
             reader.readAsDataURL(file);
-            dataurl = document.getElementById("pre").src
-            console.log(dataurl)
+            let dataurl2 = document.getElementById("pre").src
 
-            // var idProfile = url.substring(url.lastIndexOf('/') + 1);
-            if (!dataurl.match(/data:image.*/) ){
-                console.log("***Reselect picture***")
-                // let dataReview = reader.readAsBinaryString(file)
-                // console.log(dataReview);
-                dataurl = "https://dummyimage.com/197x217/87BED8/white.jpg&text=no+profile+picture"
-            }
-
-            // attr.src
         }
-        else{
-            console.log("no picture uploaded")
-            dataurl = "https://dummyimage.com/197x217/87BED8/white.jpg&text=no+profile+picture"
-        }
+ 
     }
-
-    // function handleFiles() {
-    //     const fileList = this.files; /* now you can work with the file list */
-    //   }
 
 $('#pic').on("change", previewFile);
 
     // End Image Uplaod
 
-
-
-// $('#pic').on("change", info)
-
-
-// let info = function(){
-//     var reader = new FileReader();
-//     var dataOutput = reader.result;
-//     console.log(dataOutput)
-//     // let info = reader.readAsDataURL(file);
-//     // console.log(info)
-// }
-
-
-
-    // var id = url.substring(url.lastIndexOf('/') + 1);
 
 
     $('#submit-survey').on('click', function (event) {
@@ -78,7 +44,7 @@ $('#pic').on("change", previewFile);
 
         let fName = $('#FirstName').val().trim();
         let lName = $('#LastName').val().trim();
-        let gendermf = $('#idgender').val().trim();
+        let gendermf = $('idgender').val();
         let homeStreet = $('#HomeStr').val().trim();
         let homeCity = $('#HomeCity').val().trim();
         let homeState = $('#HomeState').val().trim();
@@ -91,11 +57,11 @@ $('#pic').on("change", previewFile);
         let gymState = $('#idGymState').val().trim();
         let gymZip = $('#idGymZip').val().trim();
 
-        let primaryEx = $('#PrExcer').val().trim();
-        let secondaryEx = $('#idScExcer').val().trim();
+        let primaryEx = $('#PrExcer').val();
+        let secondaryEx = $('#idScExcer').val();
 
-        let primaryLvl = $('#idprlevel').val().trim();
-        let secondaryLvl = $('#idsclevel').val().trim();
+        let primaryLvl = $('#idprlevel').val();
+        let secondaryLvl = $('#idsclevel').val();
 
         // if(!url){
         //     url = document.getElementById("pre").src
@@ -137,9 +103,6 @@ $('#pic').on("change", previewFile);
             .then(function (data) {
                 // console.log(data)
                 console.log('create profile for', idProfile)
-            });
-            $.post('/survey', {
-              data: userProfile
             }).then(function(userProfile) {
               // console.log(userProfile);
             //   console.log("HELJADLFKJALKAJLKJL")
