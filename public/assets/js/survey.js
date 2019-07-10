@@ -2,8 +2,6 @@ $(function () {
     // Image Upload
     let dataurl = ""
 
-
-
     function previewFile() {
 
         // var url = window.location.pathname;
@@ -30,30 +28,10 @@ $(function () {
  
     }
 
-    // function handleFiles() {
-    //     const fileList = this.files; /* now you can work with the file list */
-    //   }
-
 $('#pic').on("change", previewFile);
 
     // End Image Uplaod
 
-
-
-// $('#pic').on("change", info)
-
-
-// let info = function(){
-//     var reader = new FileReader();
-//     var dataOutput = reader.result;
-//     console.log(dataOutput)
-//     // let info = reader.readAsDataURL(file);
-//     // console.log(info)
-// }
-
-
-
-    // var id = url.substring(url.lastIndexOf('/') + 1);
 
 
     $('#submit-survey').on('click', function (event) {

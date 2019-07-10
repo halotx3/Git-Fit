@@ -11,7 +11,7 @@ let connection = mysql.createConnection({
     user: process.env.RDS_USER,
     password: process.env.RDS_PASS,
     database: process.env.RDS_DB 
-  
+    
 })
 
 
