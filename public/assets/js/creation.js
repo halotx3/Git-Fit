@@ -20,7 +20,7 @@ $(function(){
             }).then(
                 function(){
                     console.log('Account has been created');
-                    location.reload();
+                    window.location.assign('/')
                 })
         }else {
             alert('Passwords do not match')

@@ -79,7 +79,7 @@ $(function() {
           data: {profilematchid: profilematchid}
         }).then(
           function(){
-            // console.log('Accepted match', id);
+            console.log('Accepted match', id);
             location.reload();
           }
         )
@@ -97,7 +97,7 @@ $(function() {
         data: {profilematchid: profilematchid}
       }).then(
         function() {
-          // console.log('Match block', id);
+          console.log('Match block', id);
           // Reload the page to get the updated list
           location.reload();
         }
