@@ -17,6 +17,11 @@ $(function () {
             console.log(preview.src)
             dataurl = preview.src
 
+            if (!dataurl.match(/data:image.*/) ){
+                console.log("Reselect picture")
+                dataurl = "https://dummyimage.com/197x217/87BED8/white.jpg&text=no+profile+picture"
+            }
+
         }, false);
 
             console.log(file)

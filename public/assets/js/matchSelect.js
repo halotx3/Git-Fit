@@ -13,6 +13,7 @@ $(function() {
     // Adding if statement so that it does not keep reloading the screen on homepage
   if(url === '/profile/' + id && id != ""){
     console.log(`Looking at this site ${url}`)
+    // location.reload();
     $.ajax('/profile/match/' + id, {
       type: 'PUT',
       // data: id
