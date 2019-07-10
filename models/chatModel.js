@@ -22,7 +22,12 @@ const chat = {
       orm.findzip('profile', val, function (res) {
         cb(res);
       });
-    }
+    },
+    showChatUsers: function(id,cb) {
+        orm.showChatUsers('profile', id, function(res) {
+          cb(res);
+        });
+      }
 };
 
 module.exports = chat;

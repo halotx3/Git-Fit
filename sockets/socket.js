@@ -30,7 +30,6 @@ io.sockets.on('connection', function(socket) {
 
 
   socket.on('send message', function(data){
-    console.log(data)
     io.emit('new message', {
     // io.in(`${currentUser}`).emit('new message', {
       id: id,
