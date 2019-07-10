@@ -43,7 +43,7 @@ describe('register click', function () {
     ]);
     
     $('#emailaddress').val('myemail@test.com');
-    $('#password').val('burgers');
+    $('#password').val('burgerss');
     
     $('#register').trigger('click');
 
