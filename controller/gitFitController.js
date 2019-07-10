@@ -169,7 +169,7 @@ router.get('/profile/:id', function(req, res) {
 
 
 }) //End of matching.Limit results route to display the matches
-
+// ANNOYED THAT THIS DID NOT WORK!!!!!!!!!!!!!!
 // Show the current user on the page
 // router.get('/profile/current/:id', function (req, res){
 //   console.log(req.params.id);
