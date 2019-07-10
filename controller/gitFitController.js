@@ -160,6 +160,7 @@ router.get('/profile/:id', function(req, res) {
     // console.log(hbsObject);
     res.render('profile', hbsObject);
 
+    
 
   })
 
