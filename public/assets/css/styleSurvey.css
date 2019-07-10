@@ -1,6 +1,6 @@
-#surveyPic {
+/* #surveyPic {
     height: 150vh; 
-    /* padding-top: 50%;  */
+    /* padding-top: 50%;  
     background-image: linear-gradient(
         rgba(240, 243, 243, 0.959), 
         rgba(250, 249, 249, 0.164)
@@ -10,5 +10,30 @@
     background-repeat: no-repeat; 
     background-blend-mode: lighten; 
     
-    }
+    } */
       
+
+    .surveyPic{
+        /* width:100%;  */
+        height:150vh; 
+        /* margin: 220px;  */
+        /* padding: 0;  */
+        background-image: linear-gradient(
+        rgba(235, 241, 241, 0.897), 
+        rgba(255, 255, 255, 0.74)
+    ), url(../img/survey2.png);
+        background-size: 20px; 
+        background-position: right 15px;
+        background-size: cover;    
+        background-size: auto 75%;
+    background-repeat: no-repeat; 
+     background-blend-mode: lighten;
+     /* background-color: grey;   */
+    /* background-blend-mode: luminosity;  */
+    /* padding-bottom: 50px;  */
+    
+    }
+
+    .surveyBody{
+background-color:  rgba(235, 241, 241, 0.897); 
+    }
