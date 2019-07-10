@@ -44,7 +44,7 @@ $('#pic').on("change", previewFile);
 
         let fName = $('#FirstName').val().trim();
         let lName = $('#LastName').val().trim();
-        let gendermf = $('#idgender').val().trim();
+        let gendermf = $('idgender').val();
         let homeStreet = $('#HomeStr').val().trim();
         let homeCity = $('#HomeCity').val().trim();
         let homeState = $('#HomeState').val().trim();
@@ -57,11 +57,11 @@ $('#pic').on("change", previewFile);
         let gymState = $('#idGymState').val().trim();
         let gymZip = $('#idGymZip').val().trim();
 
-        let primaryEx = $('#PrExcer').val().trim();
-        let secondaryEx = $('#idScExcer').val().trim();
+        let primaryEx = $('#PrExcer').val();
+        let secondaryEx = $('#idScExcer').val();
 
-        let primaryLvl = $('#idprlevel').val().trim();
-        let secondaryLvl = $('#idsclevel').val().trim();
+        let primaryLvl = $('#idprlevel').val();
+        let secondaryLvl = $('#idsclevel').val();
 
         // if(!url){
         //     url = document.getElementById("pre").src
@@ -103,9 +103,6 @@ $('#pic').on("change", previewFile);
             .then(function (data) {
                 // console.log(data)
                 console.log('create profile for', idProfile)
-            });
-            $.post('/survey', {
-              data: userProfile
             }).then(function(userProfile) {
               // console.log(userProfile);
             //   console.log("HELJADLFKJALKAJLKJL")

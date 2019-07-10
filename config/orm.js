@@ -97,6 +97,14 @@ const orm = {
           cb(result);
       });
     },
+    showChatUsers: function(table, vals, cb){
+      connection.query('SELECT  profile.first_name FROM ??  WHERE profile.cred_id = ?', [table, vals], function (err, result) {
+        if (err){
+          throw err;
+        }
+          cb(result);
+      });
+    },
     pullLogin: function(table,val1, cb){
         connection.query('SELECT * FROM ?? WHERE email = ?',[table,val1], function(err, result){
             if (err) throw err;
@@ -145,7 +153,7 @@ const orm = {
     },
     surveyToggle: function(table, status, id, cb){
         connection.query('UPDATE ?? SET first = ? WHERE id = ?', [table, status, id], function(err, result){
-            if (err) { 
+            if (err) {
                 throw err;
             }
               cb(result);
