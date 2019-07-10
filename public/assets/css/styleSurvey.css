@@ -1,0 +1,14 @@
+#surveyPic {
+    height: 150vh; 
+    /* padding-top: 50%;  */
+    background-image: linear-gradient(
+        rgba(240, 243, 243, 0.959), 
+        rgba(250, 249, 249, 0.164)
+    ), url("../Git-fit/public/assets/img/survey2.png");
+    background-position: right 15px center; 
+    background-size: auto 100%;
+    background-repeat: no-repeat; 
+    background-blend-mode: lighten; 
+    
+    }
+      
