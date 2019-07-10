@@ -1,6 +1,5 @@
 $(function(){
-    document.getElementById("submitData").addEventListener("click", function(event){
-        event.preventDefault()
+    event.preventDefault()
       });
     $('#submitData').on('click', function(event){
         let userMail = $('#userEmail').val().trim();
@@ -42,4 +41,3 @@ $(function(){
         //     alert('Before proceeding you need to accept the TOS.')
         // }
     })
-})
