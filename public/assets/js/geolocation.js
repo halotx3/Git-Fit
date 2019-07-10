@@ -4,7 +4,7 @@ $(function(){
 
 $('.msgBtn').on('click', function (e){
 
-  $('.chatmsg').val("");
+  $('#chatBody').empty();
 
 
 
