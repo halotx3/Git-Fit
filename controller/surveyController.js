@@ -60,7 +60,7 @@ router.post('/survey/:id', function(req, res){
               chatMatch.gymLatnLong([gym_latitude, gym_longitude, cred_id1], (gymResponse) => {
                 console.log('Updated Gym Location')
               })
-            res.send(data);
+            res.json({data: cred_id1});
     })
 
   })

@@ -102,10 +102,8 @@ $('#pic').on("change", previewFile);
         $.post(`/survey/${idProfile}`, userProfile)
             .then(function (data) {
                 // console.log(data)
-                console.log('create profile for', idProfile)
-            }).then(function(userProfile) {
-              // console.log(userProfile);
-            //   console.log("HELJADLFKJALKAJLKJL")
+                console.log('create profile for', idProfile);
+                window.location.assign('/profile/' + data.data)
             })
     });
 

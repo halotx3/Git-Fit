@@ -18,7 +18,7 @@ const emailVer = require('../models/emailVer.js');
     },
   });
 
-  const EMAIL_SECRET = randomstring.generate();
+  const EMAIL_SECRET = 'yareyaredaze';
 
   router.post('/create', function(req, res){
     console.log(req.body.email);
@@ -43,13 +43,13 @@ const emailVer = require('../models/emailVer.js');
 
         // })
 
-        const verURL = req.body.hostname + '/confirm/' + emailToken
+        const verURL = 'http://' + req.body.hostname + '/confirm/' + emailToken
 
          transporter.sendMail({
           to: req.body.email,
           subject: 'Please Verify Your email to Complete Your Git Fit Registration',
           html: `Hello,<br>
-          Please use the following link to complete your registration and activate your account:<a href="${verURL}">${verURL}</a>`,
+          Please use the following link to complete your registration and activate your account: <a href="${verURL}">${verURL}</a>`,
         },(error, result) => {
           if (error) console.error(error);
           console.log(result);
