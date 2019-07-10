@@ -24,10 +24,6 @@ io.sockets.on('connection', function(socket) {
     console.log(users + ' has joined the chat.');
 
   });
-  // io.socket.emit('new player', {
-  //   users: users
-  // })
-
 
   socket.on('send message', function(data){
     io.emit('new message', {
@@ -50,7 +46,7 @@ io.sockets.on('connection', function(socket) {
 
   socket.on('get user', function(data, callback) {
     callback(data)
-    console.log(data)
+  
   })
 
   //Disconnect
