@@ -21,7 +21,7 @@
         background-image: linear-gradient(
         rgba(235, 241, 241, 0.897), 
         rgba(255, 255, 255, 0.74)
-    ), url(../img/survey2.png);
+    ), url(../img/loginPic3.png);
         background-size: 20px; 
         background-position: right 15px;
         background-size: cover;    
@@ -34,6 +34,7 @@
     
     }
 
-    .surveyBody{
-background-color:  rgba(235, 241, 241, 0.897); 
+    .pibox{
+        border-block: 2px solid grey;  
+        background-color:  rgba(235, 241, 241, 0.897); 
     }
