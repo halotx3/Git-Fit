@@ -1,4 +1,7 @@
 $(function() {
+  var url = window.location.pathname;
+  // console.log(url)
+  var id = url.substring(url.lastIndexOf('/') + 1);
   let socket = io.connect();
   let $messageForm = $('#messageForm');
   let $message = $('#message');
@@ -8,6 +11,7 @@ $(function() {
   let $userForm = $('#userForm');
   let $users = $('#users');
   let $username = $('#username');
+  let $body = $('.chatmsg')
   let username = '';
   let html = "";
   let now = moment().fromNow();
@@ -16,15 +20,11 @@ $(function() {
   $messageForm.submit(function(e) {
     e.preventDefault();
 
-    socket.emit('send message', $message.val());
-    $message.val('');
 
-    var url = window.location.pathname;
-    // console.log(url)
-    var id = url.substring(url.lastIndexOf('/') + 1);
 
   $.post(`/profile/${id}`).then(function(data){
-    $chat.append(`${data[0].first_name}: ${now}`);
+    socket.emit('send message', { name: data[0].first_name, id: id, msg: $message.val() });
+    $message.val('');
   })
 
   socket.emit('new player', {
@@ -35,8 +35,8 @@ $(function() {
 })
 socket.on('new message',  function(data) {
   // console.log(JSON.parse(JSON.stringify(data)));
-
-      $chat.append(`<div id=${data.id} class="chatmsg">${data.msg}</div>`);
+      $chat.append(`<div class="chatmsg"> <strong>${data.name}:</strong></div>`);
+      $chat.append(`<div class="text-chat" id=${data.id}>${data.msg}</div>`);
 });
 
 })

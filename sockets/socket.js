@@ -28,8 +28,9 @@ io.sockets.on('connection', function(socket) {
   socket.on('send message', function(data){
     io.emit('new message', {
     // io.in(`${currentUser}`).emit('new message', {
-      id: id,
-      msg: data
+      id: data.id,
+      name: data.name,
+      msg: data.msg
     });
   });
 
@@ -39,14 +40,13 @@ io.sockets.on('connection', function(socket) {
     for (let i = 0; i < user.length; i++)
     console.log(`Getting Username${user[i].first_name}`)
   })
-
   //connections.push(socket);
   console.log("Connected: %s socket Connected", connections.length);
 
 
   socket.on('get user', function(data, callback) {
     callback(data)
-  
+
   })
 
   //Disconnect
