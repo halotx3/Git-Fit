@@ -18,7 +18,7 @@ router.post('/api/verify', function(req, res){
     let email = req.body.email;
     let mRes = res;
     console.log(password)
-
+    if (email) {
     logon.pullLogin(req.body.email,function(result){
         console.log(result[0]);
         if (result[0].email == email){
@@ -36,7 +36,10 @@ router.post('/api/verify', function(req, res){
             })
         }
         
-    })
+    });
+    } else {
+        res.status(403);
+    }
 });
 
 //Logout functionality
