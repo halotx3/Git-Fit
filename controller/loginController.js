@@ -37,7 +37,9 @@ router.post('/api/verify', function(req, res){
         }
         
     });
-    } res.status(403);
+    } else {
+        res.status(403);
+    }
 });
 
 //Logout functionality
