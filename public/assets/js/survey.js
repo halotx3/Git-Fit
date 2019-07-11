@@ -11,7 +11,7 @@ $(function () {
         var file = document.querySelector('input[type=file]').files[0];
         var reader = new FileReader();
         
-
+// Preview image
         reader.addEventListener("load", function () {
             preview.src = reader.result;
             console.log(preview.src)
@@ -27,7 +27,7 @@ $(function () {
 
         }
         
-        
+
     }
 
 $('#pic').on("change", previewFile);
