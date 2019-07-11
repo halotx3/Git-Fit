@@ -17,10 +17,6 @@ $(function () {
             console.log(preview.src)
             dataurl = preview.src
 
-            if (!file) ){
-                console.log("Reselect picture")
-                dataurl = "https://dummyimage.com/197x217/87BED8/white.jpg&text=no+profile+picture"
-            }
 
         }, false);
 
@@ -30,12 +26,18 @@ $(function () {
             let dataurl2 = document.getElementById("pre").src
 
         }
- 
+        
+        
     }
 
 $('#pic').on("change", previewFile);
 
     // End Image Uplaod
+    
+    // if (!file) {
+    //     console.log("Reselect picture")
+    //     dataurl = "https://dummyimage.com/197x217/87BED8/white.jpg&text=no+profile+picture"
+    // }
 
 
 
