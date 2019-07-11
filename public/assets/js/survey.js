@@ -11,11 +11,12 @@ $(function () {
         var file = document.querySelector('input[type=file]').files[0];
         var reader = new FileReader();
         
-
+// Preview image
         reader.addEventListener("load", function () {
             preview.src = reader.result;
             console.log(preview.src)
             dataurl = preview.src
+
 
         }, false);
 
@@ -25,12 +26,18 @@ $(function () {
             let dataurl2 = document.getElementById("pre").src
 
         }
- 
+        
+
     }
 
 $('#pic').on("change", previewFile);
 
     // End Image Uplaod
+    
+    // if (!file) {
+    //     console.log("Reselect picture")
+    //     dataurl = "https://dummyimage.com/197x217/87BED8/white.jpg&text=no+profile+picture"
+    // }
 
 
 
