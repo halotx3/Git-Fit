@@ -126,7 +126,7 @@ router.put('/profile/distance/:id', function(req, res) {
           }
           // shows the distance
           const distance = geodist(current_distance, matched_User_distance,{unit:'miles'})
-           const setDistance = distance / 100
+           const setDistance = distance / 10
            console.log(`Matched User Distance:${setDistance}`)
           // console.log(`Current User: ${user_id}`)
           // console.log(`Matched User ID: ${match_id}`)
@@ -160,9 +160,9 @@ router.get('/profile/:id', function(req, res) {
     // console.log(hbsObject);
     res.render('profile', hbsObject);
 
-    // Adding finding 
+    // Adding finding
 
-    
+
 
   })
 
