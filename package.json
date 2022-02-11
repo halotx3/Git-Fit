@@ -41,7 +41,7 @@
     "date-and-time": "^0.6.3",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
-    "express-handlebars": "^3.1.0",
+    "express-handlebars": "^5.3.1",
     "express-session": "^1.16.2",
     "geodist": "^0.2.1",
     "geolib": "^3.0.4",
